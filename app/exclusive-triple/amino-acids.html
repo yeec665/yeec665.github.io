@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="qsq">
+    <meta name="keywords" content="wiki,biochemistry">
+    <meta name="color-scheme" content="light">
+    <title>二十种氨基酸</title>
+    <link rel="icon" type="image/svg+xml" href="../image/favicon.svg">
+    <link rel="stylesheet" href="amino-acids.css">
+    <script src="amino-acids.js"></script>
+</head>
+<body class="light">
+    <main>
+        <div id="left" class="side">
+            <div id="matrix" class="db-xl"></div>
+        </div>
+        <div id="right" class="side">
+            <div id="settings" class="tab">
+                <div class="form-label">排序方式</div>
+                <div id="selectOrder" class="form-row">
+                    <div id="selectOrderDefault" class="button-a selected">
+                        <div class="button-b">默认</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectOrderAbbr1" class="button-a">
+                        <div class="button-b">单字母缩写</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectOrderAbbr3" class="button-a">
+                        <div class="button-b">三字母缩写</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectOrderEn" class="button-a">
+                        <div class="button-b">英文名</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectOrderZh" class="button-a">
+                        <div class="button-b">中文名</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectOrderCarbon" class="button-a">
+                        <div class="button-b">碳原子数</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectOrderMr" class="button-a">
+                        <div class="button-b">相对分子质量</div>
+                        <div class="button-c"></div>
+                    </div>
+                </div>
+                <div class="form-label">显示</div>
+                <div id="selectDisplay" class="form-row">
+                    <div id="selectDisplayAbbr1" class="button-a">
+                        <div class="button-b">单字母缩写</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectDisplayAbbr3" class="button-a">
+                        <div class="button-b">三字母缩写</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectDisplayEn" class="button-a">
+                        <div class="button-b">英文名</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectDisplayZh" class="button-a">
+                        <div class="button-b">中文名</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectDisplayAbbr3Formula" class="button-a">
+                        <div class="button-b">三字母缩写和化学式</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectDisplayAbbr3Mr" class="button-a selected">
+                        <div class="button-b">三字母缩写和相对分子质量</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectDisplayEnMr" class="button-a">
+                        <div class="button-b">英文名和相对分子质量</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectDisplayEnZh" class="button-a">
+                        <div class="button-b">英文名和中文名</div>
+                        <div class="button-c"></div>
+                    </div>
+                </div>
+                <div class="form-label">过滤器</div>
+                <div id="selectFilter" class="form-row"></div>
+                <div class="form-label">主题颜色</div>
+                <div id="selectTheme" class="form-row">
+                    <div id="selectThemeLight" class="button-a selected">
+                        <div class="button-b">浅色主题</div>
+                        <div class="button-c"></div>
+                    </div>
+                    <div id="selectThemeDark" class="button-a">
+                        <div class="button-b">深色主题</div>
+                        <div class="button-c"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="info" class="tab">
+                <div id="imageContainer">
+                    <div id="loadingIcon" class="loading-a">
+                        <div class="loading-b">
+                            <div class="loading-c"></div>
+                        </div>
+                    </div>
+                    <img id="imageContent">
+                </div>
+                <div class="wrap-kv">
+                    <div class="wrap-row">
+                        <div class="key">单字母缩写</div>
+                        <div id="valAbbr1" class="val en"></div>
+                    </div>
+                    <div class="wrap-row">
+                        <div class="key">三字母缩写</div>
+                        <div id="valAbbr3" class="val en"></div>
+                    </div>
+                    <div class="wrap-row">
+                        <div class="key">英文名</div>
+                        <div id="valEn" class="val en"></div>
+                    </div>
+                    <div class="wrap-row">
+                        <div class="key">中文名</div>
+                        <div id="valZh" class="val"></div>
+                    </div>
+                    <div class="wrap-row">
+                        <div class="key">化学式</div>
+                        <div id="valFormula" class="val"></div>
+                    </div>
+                    <div class="wrap-row">
+                        <div class="key">相对分子质量</div>
+                        <div id="valMR" class="val num"></div>
+                    </div>
+                    <div class="wrap-row">
+                        <div class="key">等电点</div>
+                        <div id="valPI" class="val num"></div>
+                    </div>
+                    <div class="wrap-row">
+                        <div class="key" title="&alpha;-羧基的电离平衡常数">pK1</div>
+                        <div id="valPK1" class="val num"></div>
+                    </div>
+                    <div class="wrap-row">
+                        <div class="key" title="&alpha;-氨基的电离平衡常数">pK2</div>
+                        <div id="valPK2" class="val num"></div>
+                    </div>
+                    <div class="wrap-row">
+                        <div class="key">密码子</div>
+                        <div id="valCodon" class="val"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+@charset "utf-8";
+body {
+    user-select: none;
+    font-family: 'Arial black', Helvetica, sans-serif
+}
+table {
+    margin: auto;
+    border-collapse: separate;
+}
+td {
+    margin: 2px;
+    padding: 1px;
+    width: 36px;
+    height: 36px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border-style: none;
+    background-color: #d3d3d3;
+    line-height: 34px;
+    text-align: center;
+    text-overflow: clip;
+}
+td.barrier {
+    border-radius: 9px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    background-color: #686868;
+    line-height: 28px;
+}

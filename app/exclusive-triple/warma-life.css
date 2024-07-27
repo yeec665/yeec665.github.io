@@ -1,0 +1,111 @@
+@charset "utf-8";
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    user-select: none;
+}
+p,label.title {
+    display: block;
+    margin: 0;
+    padding: 10px 0;
+}
+span {
+    margin: 0 0.25em;
+}
+#bodyBack,#bodyFront {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+#bodyFront {
+    padding: 18px;
+}
+#mainContent {
+    margin: auto;
+    max-width: 1000px;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 36px;
+    padding: 18px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(200, 200, 200, 0.2);
+}
+#scrollContent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    overflow-y: auto;
+}
+#scrollContent::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+#scrollContent::-webkit-scrollbar-thumb {
+    min-width: 24px;
+    min-height: 24px;
+    background-color: rgb(180, 180, 180);
+}
+#scrollContent::-webkit-scrollbar-track,#scrollContent::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+#logo {
+    align-self: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+#contentList {
+    align-self: stretch;
+}
+#dokidokiHint {
+    color: rgb(243, 243, 243);
+}
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transition-timing-function: linear;
+    visibility: hidden;
+}
+.item {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(212, 212, 212, 0.4);
+}
+.title {
+    font-weight: bold;
+    cursor: pointer;
+}
+.detail {
+    display: none;
+}
+input:checked+.detail {
+    display: block;
+}
+.icon.salesgirl {
+    content: "店员";
+}
+.icon.spider {
+    content: "蜘蛛";
+}
+.icon.homophone {
+    content: "谐音梗";
+}
+.icon.meta {
+    content: "META";
+}
+.icon.old {
+    content: "老梗";
+}
+.icon.metaphor {
+    content: "奇妙比喻";
+}
+.icon.suggestive {
+    content: "暗示";
+}

@@ -1,0 +1,97 @@
+@charset "utf-8";
+.flex-row-center-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.flex-row-center-stretch {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+#selectFormat {
+    --color: #ffa500;
+}
+#selectSize {
+    --color: #0a6ec0;
+}
+#selectMarkPosition {
+    --color: #069111;
+}
+#selectMarkContent {
+    --color: #cc381e;
+}
+#trailingAction {
+    --color: #303030;
+}
+.label {
+    align-self: center;
+    margin: 6px;
+    font-weight: bold;
+    color: #202020;
+}
+.button,input {
+    display: block;
+    margin: 4px;
+    line-height: 22px;
+    font-size: 17px;
+    border-width: 2px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--color);
+    outline-style: none;
+    background-color: white;
+    color: var(--color);
+}
+input {
+    align-self: center;
+    padding: 3px 9px;
+}
+.button {
+    padding: 3px 19px;
+    text-align: center;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+}
+.button.dimension {
+    padding: 3px 6px;
+    font-family: Helvetica, sans-serif;
+}
+.button:hover {
+    transform: translateY(-2px);
+}
+.button.selected {
+    background-color: var(--color);
+    color: white;
+}
+.input-size {
+    width: 100px;
+}
+.input-size,#inputTextMarkContent {
+    visibility: hidden;
+    pointer-events: none;
+}
+.input-size.visible,.mark-content.other.selected+#inputTextMarkContent {
+    visibility: visible;
+    pointer-events: all;
+}
+#pickedColor {
+    font-family: Consolas, Courier, monospace;
+}
+#inputChooseFile {
+    display: none;
+}
+body>img {
+    margin: 10px auto;
+    display: block;
+    max-width: calc(100vw - 20px);
+    object-fit: scale-down;
+}
+body>img:hover {
+    outline: 2px solid #069111;
+    outline-offset: 2px;
+}

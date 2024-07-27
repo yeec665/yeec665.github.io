@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="app-light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="qsq">
+    <meta name="keywords" content="number,float,bits">
+    <meta name="color-scheme" content="light">
+    <title>浮点数</title>
+    <link rel="icon" type="image/svg+xml" href="../image/favicon.svg">
+    <link rel="stylesheet" href="float.css">
+    <script src="float.js"></script>
+</head>
+<body>
+    <div class="options row card opaque">
+        <div class="option">
+            <input id="int32Checkbox" token="int32" type="checkbox">
+            <label for="int32Checkbox">带符号<span class="number">32</span>位整数</label>
+        </div>
+        <div class="option">
+            <input id="uint32Checkbox" token="uint32" type="checkbox">
+            <label for="uint32Checkbox">无符号<span class="number">32</span>位整数</label>
+        </div>
+        <div class="option">
+            <input id="int64Checkbox" token="int64" type="checkbox">
+            <label for="int64Checkbox">带符号<span class="number">64</span>位整数</label>
+        </div>
+        <div class="option">
+            <input id="uint64Checkbox" token="uint64" type="checkbox">
+            <label for="uint64Checkbox">无符号<span class="number">64</span>位整数</label>
+        </div>
+        <div class="option">
+            <input id="float32Checkbox" token="float32" type="checkbox" checked>
+            <label for="float32Checkbox"><span class="number">32</span>位浮点数</label>
+        </div>
+        <div class="option">
+            <input id="float64Checkbox" token="float64" type="checkbox" checked>
+            <label for="float64Checkbox"><span class="number">64</span>位浮点数</label>
+        </div>
+    </div>
+    <!--
+    <div class="template row card">
+        <div class="eval">
+            <div class="input"></div>
+            <div class="output normal"></div>
+            <div class="output error"></div>
+        </div>
+        <div class="detail">
+            <div class="int32"></div>
+            <div class="uint32"></div>
+            <div class="int64"></div>
+            <div class="uint64"></div>
+            <div class="float32"></div>
+            <div class="float64"></div>
+        </div>
+        <div class="actions">
+            <div class="action duplicate"></div>
+            <div class="action delete"></div>
+        </div>
+    </div>
+    <div class="popup-menu">
+        <div class="menu-item">0.1 + 0.2</div>
+        <div class="menu-item">0.3</div>
+        <div class="menu-item">-0.0</div>
+        <div class="menu-item">Math.random()</div>
+        <div class="menu-item">Number.NaN</div>
+        <div class="menu-item">Number.POSITIVE_INFINITY</div>
+        <div class="menu-item">Number.NEGATIVE_INFINITY</div>
+        <div class="menu-item">Number.MAX_VALUE</div>
+        <div class="menu-item">Number.MIN_VALUE</div>
+        <div class="menu-item">Number.MAX_SAFE_INTEGER</div>
+        <div class="menu-item">Number.MIN_SAFE_INTEGER</div>
+        <div class="menu-item">Number.EPSILON</div>
+        <div class="menu-item">java.lang.Integer.MAX_VALUE</div>
+        <div class="menu-item">java.lang.Integer.MIN_VALUE</div>
+        <div class="menu-item">java.lang.Long.MAX_VALUE</div>
+        <div class="menu-item">java.lang.Long.MIN_VALUE</div>
+        <div class="menu-item">java.lang.Float.MAX_VALUE</div>
+        <div class="menu-item">java.lang.Float.MIN_NORMAL</div>
+        <div class="menu-item">java.lang.Float.MIN_VALUE</div>
+        <div class="menu-item">java.lang.Double.MIN_NORMAL</div>
+        <div class="menu-item">std.numeric_limits.quiet_NaN</div>
+        <div class="menu-item">std.numeric_limits.signaling_NaN</div>
+    </div>
+    -->
+</body>
+</html>

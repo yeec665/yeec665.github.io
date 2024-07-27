@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>元素周期表</title>
+    <style>
+        table {
+            position: relative;
+            margin: auto;
+            border-collapse: collapse;
+            empty-cells: hide;
+        }
+        caption {
+            font-size: xx-large;
+        }
+        .group {
+            vertical-align: bottom;
+            text-align: center;
+            padding: 4px;
+        }
+        .group>.content {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .period,.item {
+            border: 2px solid gray;
+            padding: 4px;
+        }
+        .item {
+            min-width: 54px;
+        }
+        .item>.header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .item>.content {
+            font-size: x-large;
+            text-align: center;
+        }
+        .item * {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>元素周期表</caption>
+        <tbody>
+            <tr>
+                <td></td>
+                <td class="group">
+                    <div class="content">IA</div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="group">0</td>
+            </tr>
+            <tr>
+                <td class="period">
+                    <div class="content">1</div>
+                </td>
+                <td class="item" data-electron="[1]" data-electronegativity="2.20">
+                    <div class="header">
+                        <div class="sequence">1</div>
+                        <div class="sign">H</div>
+                    </div>
+                    <div class="content">氢</div>
+                    <div class="mass">1.0079</div>
+                </td>
+                <td class="group">
+                    <div class="content">IIA</div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="group">
+                    <div class="content">IIIA</div>
+                </td>
+                <td class="group">
+                    <div class="content">IVA</div>
+                </td>
+                <td class="group">
+                    <div class="content">VA</div>
+                </td>
+                <td class="group">
+                    <div class="content">VIA</div>
+                </td>
+                <td class="group">
+                    <div class="content">VIIA</div>
+                </td>
+                <td class="item" data-electron="[2]">
+                    <div class="header">
+                        <div class="sequence">2</div>
+                        <div class="sign">He</div>
+                    </div>
+                    <div class="content">氦</div>
+                    <div class="mass">4.003</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="period">
+                    <div class="content">2</div>
+                </td>
+                <td class="item" data-electron="[2,1]" data-electronegativity="0.98">
+                    <div class="header">
+                        <div class="sequence">3</div>
+                        <div class="sign">Li</div>
+                    </div>
+                    <div class="content">锂</div>
+                    <div class="mass">6.941</div>
+                </td>
+                <td class="item" data-electron="[2,2]" data-electronegativity="1.57">
+                    <div class="header">
+                        <div class="sequence">4</div>
+                        <div class="sign">Be</div>
+                    </div>
+                    <div class="content">铍</div>
+                    <div class="mass">9.012</div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="item" data-electron="[2,1,2]" data-electronegativity="2.04">
+                    <div class="header">
+                        <div class="sequence">5</div>
+                        <div class="sign">B</div>
+                    </div>
+                    <div class="content">硼</div>
+                    <div class="mass">10.811</div>
+                </td>
+                <td class="item" data-electron="[2,2,2]" data-electronegativity="2.55">
+                    <div class="header">
+                        <div class="sequence">6</div>
+                        <div class="sign">C</div>
+                    </div>
+                    <div class="content">碳</div>
+                    <div class="mass">12.011</div>
+                </td>
+                <td class="item" data-electron="[2,2,3]" data-electronegativity="3.04">
+                    <div class="header">
+                        <div class="sequence">7</div>
+                        <div class="sign">N</div>
+                    </div>
+                    <div class="content">氮</div>
+                    <div class="mass">14.007</div>
+                </td>
+                <td class="item" data-electron="[2,2,4]" data-electronegativity="3.44">
+                    <div class="header">
+                        <div class="sequence">8</div>
+                        <div class="sign">O</div>
+                    </div>
+                    <div class="content">氧</div>
+                    <div class="mass">15.999</div>
+                </td>
+                <td class="item" data-electron="[2,2,5]" data-electronegativity="3.98">
+                    <div class="header">
+                        <div class="sequence">9</div>
+                        <div class="sign">F</div>
+                    </div>
+                    <div class="content">氟</div>
+                    <div class="mass">18.998</div>
+                </td>
+                <td class="item" data-electron="[2,2,6]">
+                    <div class="header">
+                        <div class="sequence">10</div>
+                        <div class="sign">Ne</div>
+                    </div>
+                    <div class="content">氖</div>
+                    <div class="mass">20.180</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="period">
+                    <div class="content">3</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,1]" data-electronegativity="0.93">
+                    <div class="header">
+                        <div class="sequence">11</div>
+                        <div class="sign">Na</div>
+                    </div>
+                    <div class="content">钠</div>
+                    <div class="mass">22.990</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2]" data-electronegativity="1.31">
+                    <div class="header">
+                        <div class="sequence">12</div>
+                        <div class="sign">Mg</div>
+                    </div>
+                    <div class="content">镁</div>
+                    <div class="mass">24.305</div>
+                </td>
+                <td class="group">
+                    <div class="content">IIIB</div>
+                </td>
+                <td class="group">
+                    <div class="content">IVB</div>
+                </td>
+                <td class="group">
+                    <div class="content">VB</div>
+                </td>
+                <td class="group">
+                    <div class="content">VIB</div>
+                </td>
+                <td class="group">
+                    <div class="content">VIIB</div>
+                </td>
+                <td class="group" colspan="3">
+                    <div class="content">VIII</div>
+                </td>
+                <td class="group">
+                    <div class="content">IB</div>
+                </td>
+                <td class="group">
+                    <div class="content">IIB</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,1]" data-electronegativity="1.61">
+                    <div class="header">
+                        <div class="sequence">13</div>
+                        <div class="sign">Al</div>
+                    </div>
+                    <div class="content">铝</div>
+                    <div class="mass">26.982</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,2]" data-electronegativity="1.90">
+                    <div class="header">
+                        <div class="sequence">14</div>
+                        <div class="sign">Si</div>
+                    </div>
+                    <div class="content">硅</div>
+                    <div class="mass">28.086</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,3]" data-electronegativity="2.19">
+                    <div class="header">
+                        <div class="sequence">15</div>
+                        <div class="sign">P</div>
+                    </div>
+                    <div class="content">磷</div>
+                    <div class="mass">30.974</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,4]" data-electronegativity="2.58">
+                    <div class="header">
+                        <div class="sequence">16</div>
+                        <div class="sign">S</div>
+                    </div>
+                    <div class="content">硫</div>
+                    <div class="mass">32.066</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,5]" data-electronegativity="3.16">
+                    <div class="header">
+                        <div class="sequence">17</div>
+                        <div class="sign">Cl</div>
+                    </div>
+                    <div class="content">氯</div>
+                    <div class="mass">35.453</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6]">
+                    <div class="header">
+                        <div class="sequence">18</div>
+                        <div class="sign">Ar</div>
+                    </div>
+                    <div class="content">氩</div>
+                    <div class="mass">39.948</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="period">
+                    <div class="content">4</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,1]" data-electronegativity="0.82">
+                    <div class="header">
+                        <div class="sequence">19</div>
+                        <div class="sign">K</div>
+                    </div>
+                    <div class="content">钾</div>
+                    <div class="mass">39.098</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2]" data-electronegativity="1.00">
+                    <div class="header">
+                        <div class="sequence">20</div>
+                        <div class="sign">Ca</div>
+                    </div>
+                    <div class="content">钙</div>
+                    <div class="mass">40.078</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,1]" data-electronegativity="1.36">
+                    <div class="header">
+                        <div class="sequence">21</div>
+                        <div class="sign">Sc</div>
+                    </div>
+                    <div class="content">钪</div>
+                    <div class="mass">44.95</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,2]" data-electronegativity="1.54">
+                    <div class="header">
+                        <div class="sequence">22</div>
+                        <div class="sign">Ti</div>
+                    </div>
+                    <div class="content">钛</div>
+                    <div class="mass">47.88</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,3]" data-electronegativity="1.63">
+                    <div class="header">
+                        <div class="sequence">23</div>
+                        <div class="sign">V</div>
+                    </div>
+                    <div class="content">钒</div>
+                    <div class="mass">50.942</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,1,5]" data-electronegativity="1.66">
+                    <div class="header">
+                        <div class="sequence">24</div>
+                        <div class="sign">Cr</div>
+                    </div>
+                    <div class="content">铬</div>
+                    <div class="mass">51.996</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,5]" data-electronegativity="1.55">
+                    <div class="header">
+                        <div class="sequence">25</div>
+                        <div class="sign">Mn</div>
+                    </div>
+                    <div class="content">锰</div>
+                    <div class="mass">54.938</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,6]" data-electronegativity="1.83">
+                    <div class="header">
+                        <div class="sequence">26</div>
+                        <div class="sign">Fe</div>
+                    </div>
+                    <div class="content">铁</div>
+                    <div class="mass">55.847</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,7]" data-electronegativity="1.88">
+                    <div class="header">
+                        <div class="sequence">27</div>
+                        <div class="sign">Co</div>
+                    </div>
+                    <div class="content">钴</div>
+                    <div class="mass">58.933</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,8]" data-electronegativity="1.91">
+                    <div class="header">
+                        <div class="sequence">28</div>
+                        <div class="sign">Ni</div>
+                    </div>
+                    <div class="content">镍</div>
+                    <div class="mass">58.693</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,1,10]" data-electronegativity="1.90">
+                    <div class="header">
+                        <div class="sequence">29</div>
+                        <div class="sign">Cu</div>
+                    </div>
+                    <div class="content">铜</div>
+                    <div class="mass">63.546</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10]" data-electronegativity="1.65">
+                    <div class="header">
+                        <div class="sequence">30</div>
+                        <div class="sign">Zn</div>
+                    </div>
+                    <div class="content">锌</div>
+                    <div class="mass">65.39</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,1]" data-electronegativity="1.81">
+                    <div class="header">
+                        <div class="sequence">31</div>
+                        <div class="sign">Ga</div>
+                    </div>
+                    <div class="content">镓</div>
+                    <div class="mass">69.723</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,2]" data-electronegativity="2.01">
+                    <div class="header">
+                        <div class="sequence">32</div>
+                        <div class="sign">Ge</div>
+                    </div>
+                    <div class="content">锗</div>
+                    <div class="mass">72.61</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,3]" data-electronegativity="2.18">
+                    <div class="header">
+                        <div class="sequence">33</div>
+                        <div class="sign">As</div>
+                    </div>
+                    <div class="content">砷</div>
+                    <div class="mass">74.922</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,4]" data-electronegativity="2.55">
+                    <div class="header">
+                        <div class="sequence">34</div>
+                        <div class="sign">Se</div>
+                    </div>
+                    <div class="content">硒</div>
+                    <div class="mass">78.96</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,5]" data-electronegativity="2.96">
+                    <div class="header">
+                        <div class="sequence">35</div>
+                        <div class="sign">Br</div>
+                    </div>
+                    <div class="content">溴</div>
+                    <div class="mass">79.904</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6]" data-electronegativity="3.00">
+                    <div class="header">
+                        <div class="sequence">36</div>
+                        <div class="sign">Kr</div>
+                    </div>
+                    <div class="content">氪</div>
+                    <div class="mass">83.80</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="period">
+                    <div class="content">5</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,1]" data-electronegativity="0.82">
+                    <div class="header">
+                        <div class="sequence">37</div>
+                        <div class="sign">Rb</div>
+                    </div>
+                    <div class="content">铷</div>
+                    <div class="mass">85.468</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2]" data-electronegativity="0.95">
+                    <div class="header">
+                        <div class="sequence">38</div>
+                        <div class="sign">Sr</div>
+                    </div>
+                    <div class="content">锶</div>
+                    <div class="mass">87.62</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,1]" data-electronegativity="1.22">
+                    <div class="header">
+                        <div class="sequence">39</div>
+                        <div class="sign">Y</div>
+                    </div>
+                    <div class="content">钇</div>
+                    <div class="mass">88.906</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,2]" data-electronegativity="1.33">
+                    <div class="header">
+                        <div class="sequence">40</div>
+                        <div class="sign">Zr</div>
+                    </div>
+                    <div class="content">锆</div>
+                    <div class="mass">91.224</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,1,4]" data-electronegativity="1.6">
+                    <div class="header">
+                        <div class="sequence">41</div>
+                        <div class="sign">Nb</div>
+                    </div>
+                    <div class="content">铌</div>
+                    <div class="mass">92.906</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,1,5]" data-electronegativity="2.16">
+                    <div class="header">
+                        <div class="sequence">42</div>
+                        <div class="sign">Mo</div>
+                    </div>
+                    <div class="content">钼</div>
+                    <div class="mass">95.94</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,5]" data-electronegativity="1.9">
+                    <div class="header">
+                        <div class="sequence">43</div>
+                        <div class="sign">Tc</div>
+                    </div>
+                    <div class="content">锝</div>
+                    <div class="mass">98.906</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,1,7]" data-electronegativity="2.2">
+                    <div class="header">
+                        <div class="sequence">44</div>
+                        <div class="sign">Ru</div>
+                    </div>
+                    <div class="content">钌</div>
+                    <div class="mass">101.07</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,1,8]" data-electronegativity="2.28">
+                    <div class="header">
+                        <div class="sequence">45</div>
+                        <div class="sign">Rh</div>
+                    </div>
+                    <div class="content">铑</div>
+                    <div class="mass">102.91</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,0,10]" data-electronegativity="2.20">
+                    <div class="header">
+                        <div class="sequence">46</div>
+                        <div class="sign">Pd</div>
+                    </div>
+                    <div class="content">钯</div>
+                    <div class="mass">106.42</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,1,10]" data-electronegativity="1.93">
+                    <div class="header">
+                        <div class="sequence">47</div>
+                        <div class="sign">Ag</div>
+                    </div>
+                    <div class="content">银</div>
+                    <div class="mass">107.87</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10]" data-electronegativity="1.69">
+                    <div class="header">
+                        <div class="sequence">48</div>
+                        <div class="sign">Cd</div>
+                    </div>
+                    <div class="content">镉</div>
+                    <div class="mass">112.41</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,1]" data-electronegativity="1.78">
+                    <div class="header">
+                        <div class="sequence">49</div>
+                        <div class="sign">In</div>
+                    </div>
+                    <div class="content">铟</div>
+                    <div class="mass">114.82</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,2]" data-electronegativity="1.96">
+                    <div class="header">
+                        <div class="sequence">50</div>
+                        <div class="sign">Sn</div>
+                    </div>
+                    <div class="content">锡</div>
+                    <div class="mass">118.71</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,3]" data-electronegativity="2.05">
+                    <div class="header">
+                        <div class="sequence">51</div>
+                        <div class="sign">Sb</div>
+                    </div>
+                    <div class="content">锑</div>
+                    <div class="mass">121.76</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,4]" data-electronegativity="2.1">
+                    <div class="header">
+                        <div class="sequence">52</div>
+                        <div class="sign">Te</div>
+                    </div>
+                    <div class="content">碲</div>
+                    <div class="mass">127.60</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,5]" data-electronegativity="2.66">
+                    <div class="header">
+                        <div class="sequence">53</div>
+                        <div class="sign">I</div>
+                    </div>
+                    <div class="content">碘</div>
+                    <div class="mass">126.90</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6]" data-electronegativity="2.60">
+                    <div class="header">
+                        <div class="sequence">54</div>
+                        <div class="sign">Xe</div>
+                    </div>
+                    <div class="content">氙</div>
+                    <div class="mass">131.29</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="period">
+                    <div class="content">6</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,1]" data-electronegativity="0.79">
+                    <div class="header">
+                        <div class="sequence">55</div>
+                        <div class="sign">Cs</div>
+                    </div>
+                    <div class="content">铯</div>
+                    <div class="mass">132.91</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2]" data-electronegativity="0.89">
+                    <div class="header">
+                        <div class="sequence">56</div>
+                        <div class="sign">Ba</div>
+                    </div>
+                    <div class="content">钡</div>
+                    <div class="mass">137.33</div>
+                </td>
+                <td class="item family">
+                    <div class="content">镧系</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,2]" data-electronegativity="1.3">
+                    <div class="header">
+                        <div class="sequence">72</div>
+                        <div class="sign">Hf</div>
+                    </div>
+                    <div class="content">铪</div>
+                    <div class="mass">178.49</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,3]" data-electronegativity="1.5">
+                    <div class="header">
+                        <div class="sequence">73</div>
+                        <div class="sign">Ta</div>
+                    </div>
+                    <div class="content">钽</div>
+                    <div class="mass">180.95</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,4]" data-electronegativity="2.36">
+                    <div class="header">
+                        <div class="sequence">74</div>
+                        <div class="sign">W</div>
+                    </div>
+                    <div class="content">钨</div>
+                    <div class="mass">183.85</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,5]" data-electronegativity="1.9">
+                    <div class="header">
+                        <div class="sequence">75</div>
+                        <div class="sign">Re</div>
+                    </div>
+                    <div class="content">铼</div>
+                    <div class="mass">186.21</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,6]" data-electronegativity="2.2">
+                    <div class="header">
+                        <div class="sequence">76</div>
+                        <div class="sign">Os</div>
+                    </div>
+                    <div class="content">锇</div>
+                    <div class="mass">190.2</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,7]" data-electronegativity="2.20">
+                    <div class="header">
+                        <div class="sequence">77</div>
+                        <div class="sign">Ir</div>
+                    </div>
+                    <div class="content">铱</div>
+                    <div class="mass">192.22</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,1,14,9]" data-electronegativity="2.28">
+                    <div class="header">
+                        <div class="sequence">78</div>
+                        <div class="sign">Pt</div>
+                    </div>
+                    <div class="content">铂</div>
+                    <div class="mass">195.08</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,1,14,10]" data-electronegativity="2.54">
+                    <div class="header">
+                        <div class="sequence">79</div>
+                        <div class="sign">Au</div>
+                    </div>
+                    <div class="content">金</div>
+                    <div class="mass">196.97</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,10]" data-electronegativity="2.00">
+                    <div class="header">
+                        <div class="sequence">80</div>
+                        <div class="sign">Hg</div>
+                    </div>
+                    <div class="content">汞</div>
+                    <div class="mass">114.82</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,10,1]" data-electronegativity="1.62">
+                    <div class="header">
+                        <div class="sequence">81</div>
+                        <div class="sign">Tl</div>
+                    </div>
+                    <div class="content">铊</div>
+                    <div class="mass">204.38</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,10,2]" data-electronegativity="2.33">
+                    <div class="header">
+                        <div class="sequence">82</div>
+                        <div class="sign">Pb</div>
+                    </div>
+                    <div class="content">铅</div>
+                    <div class="mass">207.2</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,10,3]" data-electronegativity="2.02">
+                    <div class="header">
+                        <div class="sequence">83</div>
+                        <div class="sign">Bi</div>
+                    </div>
+                    <div class="content">铋</div>
+                    <div class="mass">208.98</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,10,4]" data-electronegativity="2.0">
+                    <div class="header">
+                        <div class="sequence">84</div>
+                        <div class="sign">Po</div>
+                    </div>
+                    <div class="content">钋</div>
+                    <div class="mass">(209)</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,10,5]" data-electronegativity="2.2">
+                    <div class="header">
+                        <div class="sequence">85</div>
+                        <div class="sign">At</div>
+                    </div>
+                    <div class="content">砹</div>
+                    <div class="mass">(210)</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,10,6]" data-electronegativity="2.2">
+                    <div class="header">
+                        <div class="sequence">86</div>
+                        <div class="sign">Rn</div>
+                    </div>
+                    <div class="content">氡</div>
+                    <div class="mass">(222)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="period">
+                    <div class="content">7</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,10,6,1]">
+                    <div class="header">
+                        <div class="sequence">87</div>
+                        <div class="sign">Fr</div>
+                    </div>
+                    <div class="content">钫</div>
+                    <div class="mass">(223)</div>
+                </td>
+                <td class="item" data-electron="[2,2,6,2,6,2,10,6,2,10,6,2,14,10,6,2]" data-electronegativity="0.9">
+                    <div class="header">
+                        <div class="sequence">88</div>
+                        <div class="sign">Ra</div>
+                    </div>
+                    <div class="content">镭</div>
+                    <div class="mass">(226)</div>
+                </td>
+                <td class="item family">
+                    <div class="content">锕系</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

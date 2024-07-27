@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="fullscreen">
+    <meta name="color-scheme" content="dark">
+    <title>black</title>
+    <link rel="shortcut icon" href="../image/favicon-crown.png">
+    <style>
+        html {
+            background-color: black;
+            cursor: none;
+            user-select: none;
+            pointer-events: none;
+        }
+        html.ctrl {
+            cursor: auto;
+        }
+    </style>
+    <script>
+        window.addEventListener("contextmenu", event => {
+            event.preventDefault();
+        });
+        window.addEventListener("keydown", event => {
+            if (event.key == "Control") {
+                event.preventDefault();
+                document.documentElement.classList.add("ctrl");
+            }
+        });
+        window.addEventListener("keyup", event => {
+            if (event.key == "Control") {
+                event.preventDefault();
+                document.documentElement.classList.remove("ctrl");
+            }
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

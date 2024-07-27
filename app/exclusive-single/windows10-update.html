@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="windows,fullscreen">
+    <meta name="color-scheme" content="light">
+    <title>Windows更新</title>
+    <link rel="shortcut icon" href="../image/favicon-crown.png">
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(19 114 170);
+            color: rgb(255 255 255);
+            font-family: 'Microsoft YaHei', 'Calibri', 'Trebuchet MS', sans-serif;
+            font-size: 26px;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="120" height="120"></canvas>
+    <div>正在配置Windows更新</div>
+    <div>已完成<span id="percent">0</span>%</div>
+    <div>请勿关闭计算机</div>
+    <script>
+        const percent = document.getElementById("percent");
+        const context = document.getElementById("canvas").getContext("2d");
+        function animate(timestamp) {
+            if (window.animationStart) {
+                percent.innerText = Math.min(100, Math.floor((timestamp - window.animationStart) / 36000));
+            } else {
+                window.animationStart = timestamp;
+            }
+            timestamp *= 0.00075 * Math.PI;
+            let x, y, r;
+            context.clearRect(0, 0, 120, 120);
+            context.fillStyle = "#ffffff";
+            for (let i = 0; i < 5; i++) {
+                x = 300 * Math.cos(timestamp);
+                y = 300 * Math.sin(timestamp) - 200;
+                r = 50 / Math.hypot(x, y);
+                x = 60 + x * r;
+                y = 60 + y * r;
+                context.beginPath();
+                context.arc(x, y, 4, 0, 2 * Math.PI, false);
+                context.fill();
+                timestamp += Math.PI / 6;
+            }
+            window.requestAnimationFrame(animate);
+        }
+        if (context) {
+            window.requestAnimationFrame(animate);
+        }
+        if (navigator.wakeLock) {
+            function change() {
+                if (document.visibilityState == "visible") {
+                    navigator.wakeLock.request().then(sentinel => {
+                        window.wakeLockSentinel = sentinel;
+                    });
+                } else if (window.wakeLockSentinel != null) {
+                    window.wakeLockSentinel.release();
+                    window.wakeLockSentinel = null;
+                }
+            }
+            document.addEventListener("visibilitychange", change);
+            change();
+        }
+    </script>
+</body>
+</html>

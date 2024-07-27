@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="qsq">
+    <meta name="keywords" content="programming,language,library">
+    <title>编程语言基本类型</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th,td {
+            border: 1px solid gray;
+            padding: 1px 7px;
+        }
+        td {
+            font-family: Consolas, Courier, monospace;
+        }
+    </style>
+    <script>
+        document.addEventListener("readystatechange", () => {
+            if (document.readyState !== "interactive") {
+                return;
+            }
+            document.querySelectorAll("a").forEach(a => {
+                a.setAttribute("target", "_blank");
+                a.setAttribute("rel", "noreferrer");
+                a.setAttribute("referrerpolicy", "no-referrer");
+            });
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <caption>整数运算</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Java</th>
+                <th>Java BigInteger</th>
+                <th>Kotlin</th>
+                <th>Javascript</th>
+                <th>Javascript bigint</th>
+                <th>Python</th>
+                <th>MySQL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>加</th>
+                <td>3 + 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#add(java.math.BigInteger)">add</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</td>
+                <td>3 + 5</td>
+                <td>3 + 5</td>
+                <td>3n + 5n</td>
+                <td>3 + 5</td>
+                <td>3 + 5</td>
+            </tr>
+            <tr>
+                <th>赋值加</th>
+                <td>x += 3</td>
+                <td class="none"><!-- BigInteger is immutable --></td>
+                <td>x += 3</td>
+                <td>x += 3</td>
+                <td>x += 3n</td>
+                <td>x += 3</td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>自增</th>
+                <td>i++</td>
+                <td class="none"><!-- BigInteger is immutable --></td>
+                <td>i++</td>
+                <td>i++</td>
+                <td>i++</td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>减</th>
+                <td>3 - 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#subtract(java.math.BigInteger)">subtract</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</td>
+                <td>3 - 5</td>
+                <td>3 - 5</td>
+                <td>3n - 5n</td>
+                <td>3 - 5</td>
+                <td>3 - 5</td>
+            </tr>
+            <tr>
+                <th>赋值减</th>
+                <td>x -= 3</td>
+                <td class="none"><!-- BigInteger is immutable --></td>
+                <td>x -= 3</td>
+                <td>x -= 3</td>
+                <td>x -= 3n</td>
+                <td>x -= 3</td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>自减</th>
+                <td>i--</td>
+                <td class="none"><!-- BigInteger is immutable --></td>
+                <td>i--</td>
+                <td>i--</td>
+                <td>i--</td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>乘</th>
+                <td>3 * 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#multiply(java.math.BigInteger)">multiply</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</td>
+                <td>3 * 5</td>
+                <td>3 * 5</td>
+                <td>3n * 5n</td>
+                <td>3 * 5</td>
+                <td>3 * 5</td>
+            </tr>
+            <tr>
+                <th>赋值乘</th>
+                <td>x *= 3</td>
+                <td class="none"><!-- BigInteger is immutable --></td>
+                <td>x *= 3</td>
+                <td>x *= 3</td>
+                <td>x *= 3n</td>
+                <td>x *= 3</td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>除</th>
+                <td>
+                    <div>((double) 3) / 5</div>
+                    <div class="hidden">3 / ((double) 5)</div>
+                    <div class="hidden">((double) 3) / ((double) 5)</div>
+                    <div class="hidden">3.0 / 5</div>
+                    <div class="hidden">3 / 5.0</div>
+                    <div class="hidden">3.0 / 5.0</div>
+                    <div class="hidden">((float) 3) / 5</div>
+                    <div class="hidden">3 / ((float) 5)</div>
+                    <div class="hidden">((float) 3) / ((float) 5)</div>
+                    <div class="hidden">3f / 5</div>
+                    <div class="hidden">3 / 5f</div>
+                    <div class="hidden">3f / 5f</div>
+                </td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#doubleValue()">doubleValue</a>() / BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#doubleValue()">doubleValue</a>()</td>
+                <td>
+                    <div>3.toDouble() / 5</div>
+                    <div class="hidden">3 / 5.toDouble()</div>
+                    <div class="hidden">3.toDouble() / 5.toDouble()</div>
+                    <div class="hidden">3.0 / 5</div>
+                    <div class="hidden">3 / 5.0</div>
+                    <div class="hidden">3.0 / 5.0</div>
+                    <div class="hidden">3.toFloat() / 5</div>
+                    <div class="hidden">3 / 5.toFloat()</div>
+                    <div class="hidden">3.toFloat() / 5.toFloat()</div>
+                    <div class="hidden">3f / 5</div>
+                    <div class="hidden">3 / 5f</div>
+                    <div class="hidden">3f / 5f</div>
+                <td>3 / 5</td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/Number">Number</a>(3n) / <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/Number">Number</a>(5n)</td>
+                <td>3 / 5</td>
+                <td>3 / 5</td>
+            </tr>
+            <tr>
+                <th>赋值除</th>
+                <td>
+                    <div>x /= (double) 3</div>
+                    <div>x /= 3.0</div>
+                    <div>x /= (float) 3</div>
+                    <div>x /= 3f</div>
+                </td>
+                <td class="none"><!-- BigInteger is immutable --></td>
+                <td>x /= 3</td>
+                <td>x /= 3</td>
+                <td class="none"></td>
+                <td>x /= 3</td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>整除</th>
+                <td>3 / 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#divide(java.math.BigInteger)">divide</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</td>
+                <td>3 / 5</td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor">floor</a>(3 / 5)</td>
+                <td>3n / 5n</td>
+                <td>3 // 5</td>
+                <td>3 <a href="https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_div">DIV</a> 5</td>
+            </tr>
+            <tr>
+                <th>赋值整除</th>
+                <td>x /= 3</td>
+                <td class="none"><!-- BigInteger is immutable --></td>
+                <td>x /= 3</td>
+                <td class="none"></td>
+                <td>x /= 3n</td>
+                <td>x /= 3</td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>模除</th>
+                <td>3 % 5</td>
+                <td>
+                    <div>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#remainder(java.math.BigInteger)">remainder</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</div>
+                    <div>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#mod(java.math.BigInteger)" title="总是返回非负结果">mod</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</div>
+                </td>
+                <td>3 % 5</td>
+                <td>3 % 5</td>
+                <td>3n % 5n</td>
+                <td>3 % 5</td>
+                <td>
+                    <div>3 % 5</div>
+                    <div>3 <a href="https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_mod">MOD</a> 5</div>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_mod">MOD</a>(3, 5)</div>
+                </td>
+            </tr>
+            <tr>
+                <th>赋值模除</th>
+                <td>x %= 3</td>
+                <td class="none"><!-- BigInteger is immutable --></td>
+                <td>x %= 3</td>
+                <td>x %= 3</td>
+                <td>x %= 3n</td>
+                <td>x %= 3</td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>模逆</th>
+                <td></td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#modInverse(java.math.BigInteger)">modInverse</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>商和余数</th>
+                <td></td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#divideAndRemainder(java.math.BigInteger)">divideAndRemainder</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a href="https://docs.python.org/3/library/functions.html#divmod">divmod</a>(3, 5)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>绝对值</th>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#abs(int)">abs</a>(3)</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#abs()">abs</a>()</td>
+                <td>
+                    <div><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/abs.html#kotlin.math$abs(kotlin.Double)">abs</a>(3)</div>
+                    <div>x.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/absolute-value.html">absoluteValue</a></div>
+                </td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs">abs</a>(3)</td>
+                <td><!-- Math.abs() do not accept bigint --></td>
+                <td><a href="https://docs.python.org/3/library/functions.html#abs">abs</a>(3)</td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_abs">ABS</a>(3)</td>
+            </tr>
+            <tr>
+                <th>最大值</th>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#max(int,int)">max</a>(3, 5)</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#max(java.math.BigInteger)">max</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/max.html">max</a>(3, 5)</td>
+                <td class="varargs">Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max">max</a>(3, 5)</td>
+                <td class="none"></td>
+                <td class="varargs"><a href="https://docs.python.org/3/library/functions.html#max">max</a>(3, 5)</td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#function_greatest">GREATEST</a>(3, 5)</td>
+            </tr>
+            <tr>
+                <th>最小值</th>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#min(int,int)">min</a>(3, 5)</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#max(java.math.BigInteger)">min</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/min.html">min</a>(3, 5)</td>
+                <td class="varargs">Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min">min</a>(3, 5)</td>
+                <td class="none"></td>
+                <td class="varargs"><a href="https://docs.python.org/3/library/functions.html#min">min</a>(3, 5)</td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#function_least">LEAST</a>(3, 5)</td>
+            </tr>
+            <tr>
+                <th>乘方</th>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#pow(double,double)">pow</a>(3, 5)</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#pow(int)">pow</a>(5)</td>
+                <td></td>
+                <td>
+                    <div>3 ** 5</div>
+                    <div class="hidden">Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow">pow</a>(3, 5)</div>
+                </td>
+                <td>3n ** 5n</td>
+                <td>
+                    <div>3 ** 5</div>
+                    <div><a href="https://docs.python.org/3/library/functions.html#pow">pow</a>(3, 5)</div>
+                </td>
+                <td>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_pow">POW</a>(3, 5)</div>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_power">POWER</a>(3, 5)</div>
+                </td>
+            </tr>
+            <tr>
+                <th>模乘方</th>
+                <td></td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#modPow(java.math.BigInteger,java.math.BigInteger)">modPow</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5), BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(17))</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a href="https://docs.python.org/3/library/functions.html#pow">pow</a>(3, 5, 17)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>小于</th>
+                <td>3 &lt; 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#compareTo(java.math.BigInteger)">compareTo</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5)) &lt; 0</td>
+                <td>3 &lt; 5</td>
+                <td>3 &lt; 5</td>
+                <td>3n &lt; 5n</td>
+                <td>3 &lt; 5</td>
+                <td>3 &lt; 5</td>
+            </tr>
+            <tr>
+                <th>小于等于</th>
+                <td>3 &lt;= 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#compareTo(java.math.BigInteger)">compareTo</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5)) &lt;= 0</td>
+                <td>3 &lt;= 5</td>
+                <td>3 &lt;= 5</td>
+                <td>3n &lt;= 5n</td>
+                <td>3 &lt;= 5</td>
+                <td>3 &lt;= 5</td>
+            </tr>
+            <tr>
+                <th>大于</th>
+                <td>3 &gt; 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#compareTo(java.math.BigInteger)">compareTo</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5)) &gt; 0</td>
+                <td>3 &gt; 5</td>
+                <td>3 &gt; 5</td>
+                <td>3n &gt; 5n</td>
+                <td>3 &gt; 5</td>
+                <td>3 &gt; 5</td>
+            </tr>
+            <tr>
+                <th>大于等于</th>
+                <td>3 &gt;= 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#compareTo(java.math.BigInteger)">compareTo</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5)) &gt;= 0</td>
+                <td>3 &gt;= 5</td>
+                <td>3 &gt;= 5</td>
+                <td>3n &gt;= 5n</td>
+                <td>3 &gt;= 5</td>
+                <td>3 &gt;= 5</td>
+            </tr>
+            <tr>
+                <th>等于</th>
+                <td>3 == 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#equals(java.lang.Object)">equals</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</td>
+                <td>3 == 5</td>
+                <td>3 == 5</td>
+                <td>3n == 5n</td>
+                <td>3 == 5</td>
+                <td>3 = 5</td>
+            </tr>
+            <tr>
+                <th>不等于</th>
+                <td>3 != 5</td>
+                <td>!BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#equals(java.lang.Object)">equals</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</td>
+                <td>3 != 5</td>
+                <td>3 != 5</td>
+                <td>3n != 5n</td>
+                <td>3 != 5</td>
+                <td>
+                    <div>3 != 5</div>
+                    <div>3 &lt;&gt; 5</div>
+                </td>
+            </tr>
+            <tr>
+                <th>二进制字符串</th>
+                <td>
+                    <div>Integer.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html#toBinaryString(int)">toBinaryString</a>(3)</div>
+                    <div>Long.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Long.html#toBinaryString(long)">toBinaryString</a>(3L)</div>
+                </td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#toString(int)">toString</a>(2)</td>
+                <td></td>
+                <td>(3).toString(2)</td>
+                <td>3n.toString(2)</td>
+                <td title="带0b开头"><a href="https://docs.python.org/3/library/functions.html#bin">bin</a>(3)</td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_bin">BIN</a>(3)</td>
+            </tr>
+            <tr>
+                <th>五进制字符串</th>
+                <td>Integer.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html#toString(int,int)">toString</a>(3, 5)</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#toString(int)">toString</a>(5)</td>
+                <td></td>
+                <td>(3).toString(5)</td>
+                <td>3n.toString(5)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>八进制字符串</th>
+                <td>
+                    <div>Integer.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html#toOctalString(int)">toOctalString</a>(3)</div>
+                    <div>Long.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Long.html#toOctalString(long)">toOctalString</a>(3L)</div>
+                </td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#toString(int)">toString</a>(8)</td>
+                <td></td>
+                <td>(3).toString(8)</td>
+                <td>3n.toString(8)</td>
+                <td title="带0o开头"><a href="https://docs.python.org/3/library/functions.html#oct">oct</a>(3)</td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_oct">OCT</a>(3)</td>
+            </tr>
+            <tr>
+                <th>十进制字符串</th>
+                <td>
+                    <div>"" + 3</div>
+                    <div>Integer.toString(3)</div>
+                    <div>Long.toString(3L)</div>
+                    <div>String.valueOf(3)</div>
+                </td>
+                <td>
+                    <div>"" + BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3)</div>
+                    <div>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).toString()</div>
+                </td>
+                <td>3.toString()</td>
+                <td>
+                    <div>"" + 3</div>
+                    <div>(3).toString()</div>
+                </td>
+                <td>
+                    <div>"" + 3n</div>
+                    <div>3n.toString()</div>
+                </td>
+                <td></td>
+                <td>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/cast-functions.html#function_cast">CAST</a>(3 AS CHAR)</div>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/cast-functions.html#function_convert">CONVERT</a>(3, CHAR)</div>
+                </td>
+            </tr>
+            <tr>
+                <th>十六进制字符串</th>
+                <td>
+                    <div>Integer.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html#toHexString(int)">toHexString</a>(3)</div>
+                    <div>Long.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Long.html#toHexString(long)">toHexString</a>(3L)</div>
+                </td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#toString(int)">toString</a>(16)</td>
+                <td></td>
+                <td>(3).toString(16)</td>
+                <td>3n.toString(16)</td>
+                <td title="小写，带0x开头"><a href="https://docs.python.org/3/library/functions.html#hex">hex</a>(3)</td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_hex">HEX</a>(3)</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <caption>位运算</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Java</th>
+                <th>Java <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html">BigInteger</a></th>
+                <th>Kotlin</th>
+                <th>Javascript</th>
+                <th>Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt">BigInt</a></th>
+                <th>Python</th>
+                <th>MySQL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>按位与</th>
+                <td>3 & 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#and(java.math.BigInteger)">and</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</td>
+                <td></td>
+                <td>3 & 5</td>
+                <td>3n & 5n</td>
+                <td>3 & 5</td>
+                <td>3 & 5</td>
+            </tr>
+            <tr>
+                <th>按位或</th>
+                <td>3 | 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#or(java.math.BigInteger)">or</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</td>
+                <td></td>
+                <td>3 | 5</td>
+                <td>3n | 5n</td>
+                <td>3 | 5</td>
+                <td>3 | 5</td>
+            </tr>
+            <tr>
+                <th>按位异或</th>
+                <td>3 ^ 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#xor(java.math.BigInteger)">xor</a>(BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(5))</td>
+                <td></td>
+                <td>3 ^ 5</td>
+                <td>3n ^ 5n</td>
+                <td>3 ^ 5</td>
+                <td>3 ^ 5</td>
+            </tr>
+            <tr>
+                <th>按位取反</th>
+                <td>~3</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#not()">not</a>()</td>
+                <td></td>
+                <td>~3</td>
+                <td>~3n</td>
+                <td>~3</td>
+                <td>~3</td>
+            </tr>
+            <tr>
+                <th>左移</th>
+                <td>3 &lt;&lt; 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#shiftLeft(int)">shiftLeft</a>(5)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>3 &lt;&lt; 5</td>
+                <td>3 &lt;&lt; 5</td>
+            </tr>
+            <tr>
+                <th>带符号右移</th>
+                <td>3 &gt;&gt; 5</td>
+                <td class="none"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>3 &gt;&gt; 5</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>无符号右移</th>
+                <td>3 &gt;&gt;&gt; 5</td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#shiftLeft(int)">shiftRight</a>(5)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="none"></td>
+                <td>3 &gt;&gt; 5</td>
+            </tr>
+            <tr>
+                <th>循环左移</th>
+                <td></td>
+                <td class="none"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="none"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>循环右移</th>
+                <td></td>
+                <td class="none"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="none"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>比特计数</th>
+                <td>
+                    <div>Integer.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html#bitCount(int)">bitCount</a>(3)</div>
+                    <div>Long.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Long.html#bitCount(long)">bitCount</a>(3L)</div>
+                </td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#bitCount()">bitCount</a>()</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>(3).<a href="https://docs.python.org/3/library/stdtypes.html#int.bit_count">bit_count</a>()</td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#function_bit-count">BIT_COUNT</a>(3)</td>
+            </tr>
+            <tr>
+                <th>占用位计数</th>
+                <td>
+                    <div>Integer.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html#SIZE"></a>SIZE - Integer.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html#numberOfLeadingZeros(int)">numberOfLeadingZeros</a>(3)</div>
+                    <div>Long.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Long.html#SIZE"></a>SIZE - Long.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Long.html#numberOfLeadingZeros(int)">numberOfLeadingZeros</a>(3L)</div>
+                </td>
+                <td>BigInteger.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#valueOf(long)">valueOf</a>(3).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html#bitLength()">bitLength</a>()</td>
+                <td></td>
+                <td>32 - Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/clz32">clz32</a>(3)</td>
+                <td class="none"></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <caption>逻辑运算</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Java</th>
+                <th>Kotlin</th>
+                <th>Javascript</th>
+                <th>Python</th>
+                <th>MySQL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>逻辑与</th>
+                <td>true & false</td>
+                <td>true.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/and.html">and</a>(false)</td>
+                <td>true & false</td>
+                <td class="none"></td>
+                <td>1 <a href="https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_and">AND</a> 0</td>
+            </tr>
+            <tr>
+                <th>短路与</th>
+                <td>true && false</td>
+                <td>true && false</td>
+                <td>true && false</td>
+                <td>True and False</td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>逻辑或</th>
+                <td>true | false</td>
+                <td>true.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/or.html">or</a>(false)</td>
+                <td>true | false</td>
+                <td class="none"></td>
+                <td>1 <a href="https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_or">OR</a> 0</td>
+            </tr>
+            <tr>
+                <th>短路或</th>
+                <td>true || false</td>
+                <td>true || false</td>
+                <td>true || false</td>
+                <td>True or False</td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>逻辑异或</th>
+                <td>true ^ false</td>
+                <td>true.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/xor.html">xor</a>(false)</td>
+                <td>true ^ false</td>
+                <td></td>
+                <td>1 <a href="https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_xor">XOR</a> 0</td>
+            </tr>
+            <tr>
+                <th>逻辑非</th>
+                <td>!true</td>
+                <td>
+                    <div>!true</div>
+                    <div>true.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/not.html">not</a>()</div>
+                </td>
+                <td>!true</td>
+                <td>not True</td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_not">NOT</a> 1</td>
+            </tr>
+            <tr>
+                <th>选择</th>
+                <td>true ? 3 : 5</td>
+                <td></td>
+                <td>true ? 3 : 5</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <caption>浮点运算</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Java float</th>
+                <th>Java double</th>
+                <th>Kotlin float</th>
+                <th>Kotlin double</th>
+                <th>Javascript</th>
+                <th>Python</th>
+                <th>MySQL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>判断整数</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger">isInteger</a>(3)</td>
+                <td>(3.0).<a href="https://docs.python.org/3/library/stdtypes.html#float.is_integer">is_integer</a>()</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>判断无穷</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <div>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-finite.html">isFinite</a>(3)</div>
+                    <div>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-infinite.html">isInfinite</a>(3)</div>
+                </td>
+                <td>
+                    <div>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-finite.html">isFinite</a>(3)</div>
+                    <div>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-infinite.html">isInfinite</a>(3)</div>
+                </td>
+                <td>
+                    <div><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isFinite">isFinite</a>(3)</div>
+                    <div>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite">isFinite</a>(3)</div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>判断非数</th>
+                <td></td>
+                <td></td>
+                <td>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-na-n.html">isNaN</a>(3)</td>
+                <td>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-na-n.html">isNaN</a>(3)</td>
+                <td>
+                    <div><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN">isNaN</a>(3)</div>
+                    <div>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN">isNaN</a>(3)</div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>符号函数</th>
+                <td></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sign.html">sign</a>(3f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sign.html">sign</a>(3.0)</td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign">sign</a>(3)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>绝对值</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <div><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/abs.html#kotlin.math$abs(kotlin.Double)">abs</a>(3f)</div>
+                    <div>x.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/absolute-value.html">absoluteValue</a></div>
+                </td>
+                <td>
+                    <div><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/abs.html#kotlin.math$abs(kotlin.Double)">abs</a>(3.0)</div>
+                    <div>x.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/absolute-value.html">absoluteValue</a></div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>向下取整</th>
+                <td></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/floor.html">floor</a>(3f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/floor.html">floor</a>(3.0)</td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor">floor</a>(3)</td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_floor">FLOOR</a>(1.23)</td>
+            </tr>
+            <tr>
+                <th>向上取整</th>
+                <td></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/ceil.html">ceil</a>(3f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/ceil.html">ceil</a>(3.0)</td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil">ceil</a>(3)</td>
+                <td></td>
+                <td>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_ceil">CEIL</a>(1.23)</div>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_ceiling">CEILING</a>(1.23)</div>
+                </td>
+            </tr>
+            <tr>
+                <th>向零取整</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc">trunc</a>(3)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>非数</th>
+                <td></td>
+                <td></td>
+                <td>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/-na-n.html">NaN</a></td>
+                <td>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/-na-n.html">NaN</a></td>
+                <td>
+                    <div><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN">NaN</a></div>
+                    <div>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NaN">NaN</a></div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>无穷</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <div>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/-p-o-s-i-t-i-v-e_-i-n-f-i-n-i-t-y.html">POSITIVE_INFINITY</a></div>
+                    <div>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/-n-e-g-a-t-i-v-e_-i-n-f-i-n-i-t-y.html">NEGATIVE_INFINITY</a></div>
+                </td>
+                <td>
+                    <div>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/-p-o-s-i-t-i-v-e_-i-n-f-i-n-i-t-y.html">POSITIVE_INFINITY</a></div>
+                    <div>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/-n-e-g-a-t-i-v-e_-i-n-f-i-n-i-t-y.html">NEGATIVE_INFINITY</a></div>
+                </td>
+                <td>
+                    <div><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity">Infinity</a></div>
+                    <div>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/POSITIVE_INFINITY">POSITIVE_INFINITY</a></div>
+                    <div>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NEGATIVE_INFINITY">NEGATIVE_INFINITY</a></div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>除负无穷外的最小值</th>
+                <td></td>
+                <td></td>
+                <td>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/-m-i-n_-v-a-l-u-e.html">MIN_VALUE</a></td>
+                <td>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/-m-i-n_-v-a-l-u-e.html">MIN_VALUE</a></td>
+                <td>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_VALUE">MIN_VALUE</a></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>除正无穷外的最大值</th>
+                <td></td>
+                <td></td>
+                <td>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/-m-a-x_-v-a-l-u-e.html">MAX_VALUE</a></td>
+                <td>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/-m-a-x_-v-a-l-u-e.html">MAX_VALUE</a></td>
+                <td>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_VALUE">MAX_VALUE</a></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>平方根</th>
+                <td class="none"></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sqrt.html">sqrt</a>(20f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sqrt.html">sqrt</a>(20.0)</td>
+                <td></td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_sqrt">SQRT</a>(20)</td>
+            </tr>
+            <tr>
+                <th>立方根</th>
+                <td class="none"></td>
+                <td></td>
+                <td class="none"></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/cbrt.html">cbrt</a>(2f)</td>
+                <td></td>
+                <td></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>乘方</th>
+                <td class="none"></td>
+                <td></td>
+                <td>
+                    <div>(3f).<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/pow.html">pow</a>(5)</div>
+                    <div>(3f).<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/pow.html">pow</a>(5f)</div>
+                </td>
+                <td>
+                    <div>(3.0).<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/pow.html">pow</a>(5)</div>
+                    <div>(3.0).<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/pow.html">pow</a>(5.0)</div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>指数函数</th>
+                <td class="none"></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/exp.html">exp</a>(2f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/exp.html">exp</a>(2.0)</td>
+                <td></td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_exp">EXP</a>(2)</td>
+            </tr>
+            <tr>
+                <th>自然对数</th>
+                <td class="none"></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/ln.html">ln</a>(2f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/ln.html">ln</a>(2.0)</td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_ln">LN</a>(2)</div>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_log">LOG</a>(2)</div>
+                </td>
+            </tr>
+            <tr>
+                <th>常用对数</th>
+                <td class="none"></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/log10.html">log10</a>(2f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/log10.html">log10</a>(2.0)</td>
+                <td></td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_log10">LOG10</a>(2)</td>
+            </tr>
+            <tr>
+                <th>任意底对数</th>
+                <td class="none"></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/log.html">log</a>(x, base)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/log.html">log</a>(x, base)</td>
+                <td></td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_log">LOG</a>(2, 65536)</td>
+            </tr>
+            <tr>
+                <th>正弦函数</th>
+                <td class="none"></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sin.html">sin</a>(3f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sin.html">sin</a>(3.0)</td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sin">sin</a>(3)</td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_sin">SIN</a>(1)</td>
+            </tr>
+            <tr>
+                <th>余弦函数</th>
+                <td class="none"></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/cos.html">cos</a>(3f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/cos.html">cos</a>(3.0)</td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cos">cos</a>(3)</td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_cos">COS</a>(1)</td>
+            </tr>
+            <tr>
+                <th>正切函数</th>
+                <td class="none"></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/tan.html">tan</a>(3f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/tan.html">tan</a>(3.0)</td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tan">tan</a>(3)</td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_tan">TAN</a>(1)</td>
+            </tr>
+            <tr>
+                <th>双曲正弦函数</th>
+                <td class="none"></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sinh.html">sinh</a>(3f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sinh.html">sinh</a>(3.0)</td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sinh">sinh</a>(3)</td>
+                <td></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>双曲余弦函数</th>
+                <td class="none"></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/cosh.html">cosh</a>(3f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/cosh.html">cosh</a>(3.0)</td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cosh">cosh</a>(3)</td>
+                <td></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>双曲正切函数</th>
+                <td class="none"></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/tanh.html">tanh</a>(3f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/tanh.html">tanh</a>(3.0)</td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tanh">tanh</a>(3)</td>
+                <td></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>反正弦函数</th>
+                <td></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/asin.html">asin</a>(0.2f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/asin.html">asin</a>(0.2)</td>
+                <td></td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_asin">ASIN</a>(0.2)</td>
+            </tr>
+            <tr>
+                <th>反余弦函数</th>
+                <td></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/acos.html">acos</a>(0.2f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/acos.html">acos</a>(0.2)</td>
+                <td></td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_acos">ACOS</a>(0.2)</td>
+            </tr>
+            <tr>
+                <th>反正切函数</th>
+                <td></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/atan.html">atan</a>(2f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/atan.html">atan</a>(2.0)</td>
+                <td></td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_atan">ATAN</a>(2)</td>
+            </tr>
+            <tr>
+                <th>双参数反正切函数</th>
+                <td class="none"></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/atan2.html">atan2</a>(y, x)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/atan2.html">atan2</a>(y, x)</td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_atan2">ATAN</a>(Y, X)</div>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_atan2">ATAN2</a>(Y, X)</div>
+                </td>
+            </tr>
+            <tr>
+                <th>直角三角形斜边函数</th>
+                <td class="none"></td>
+                <td></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/hypot.html">hypot</a>(3f, 4f)</td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/hypot.html">hypot</a>(3.0, 4.0)</td>
+                <td></td>
+                <td></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>圆周率</th>
+                <td class="none"></td>
+                <td></td>
+                <td class="none"></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/-p-i.html">PI</a></td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI">PI</a></td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_pi">PI</a>()</td>
+            </tr>
+            <tr>
+                <th>自然对数的底</th>
+                <td class="none"></td>
+                <td></td>
+                <td class="none"></td>
+                <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/-e.html">E</a></td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/E">E</a></td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_exp">EXP</a>(1)</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <caption>通用对象</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Java</th>
+                <th>Kotlin</th>
+                <th>Javascript</th>
+                <th>Python</th>
+                <th>MySQL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>空</th>
+                <td>obj == null</td>
+                <td></td>
+                <td>obj === null</td>
+                <td>obj == None</td>
+                <td>
+                    <div>obj <a href="https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-null">IS NULL</a></div>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#function_isnull">ISNULL</a>(obj)</div>
+                </td>
+            </tr>
+            <tr>
+                <th>非空</th>
+                <td>obj != null</td>
+                <td></td>
+                <td>obj !== null</td>
+                <td>obj != None</td>
+                <td>obj <a href="https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-not-null">IS NOT NULL</a></td>
+            </tr>
+            <tr>
+                <th>引用相等</th>
+                <td>a == b</td>
+                <td>a === b</td>
+                <td>a === b</td>
+                <td>
+                    <div>a is b</div>
+                    <div><a href="https://docs.python.org/3/library/functions.html#id">id</a>(a) == <a href="https://docs.python.org/3/library/functions.html#id">id</a>(b)</div>
+                </td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>引用不等</th>
+                <td>a != b</td>
+                <td>a !== b</td>
+                <td>a !== b</td>
+                <td>
+                    <div>a is not b</div>
+                    <div><a href="https://docs.python.org/3/library/functions.html#id">id</a>(a) != <a href="https://docs.python.org/3/library/functions.html#id">id</a>(b)</div>
+                </td>
+                <td class="none"></td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <caption>字符串</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Java</th>
+                <th>Kotlin</th>
+                <th>Javascript</th>
+                <th>Python</th>
+                <th>MySQL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>空字符串</th>
+                <td>
+                    <div><span class="string">""</span></div>
+                    <div class="hidden">new String()</div>
+                </td>
+                <td></td>
+                <td>
+                    <div><span class="string">""</span></div>
+                    <div><span class="string">''</span></div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>单引号</th>
+                <td><span class="string">"<span class="kernel">'</span>"</span></td>
+                <td></td>
+                <td>
+                    <div><span class="string">"<span class="kernel">'</span>"</span></div>
+                    <div><span class="string">'<span class="kernel escape">\'</span>'</span></div>
+                    <div><span class="string">`<span class="kernel">'</span>`</span></div>
+                </td>
+                <td>
+                    <div><span class="string">"<span class="kernel">'</span>"</span></div>
+                    <div><span class="string">'<span class="kernel escape">\'</span>'</span></div>
+                    <div><span class="string">"""<span class="kernel">'</span>"""</span></div>
+                    <div><span class="string">'''<span class="kernel escape">\'</span>'''</span></div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>双引号</th>
+                <td>"\""</td>
+                <td></td>
+                <td>
+                    <div>'"'</div>
+                    <div>"\""</div>
+                    <div>`"`</div>
+                </td>
+                <td>
+                    <div>'"'</div>
+                    <div>"\""</div>
+                    <div>'''"'''</div>
+                    <div>"""\""""</div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>重音符</th>
+                <td>"`"</td>
+                <td></td>
+                <td>
+                    <div>"`"</div>
+                    <div>'`'</div>
+                    <div>`\``</div>
+                </td>
+                <td>
+                    <div>"`"</div>
+                    <div>'`'</div>
+                    <div>"""`"""</div>
+                    <div>'''`'''</div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>反斜杠</th>
+                <td><span class="string">"<span class="kernel escape">\\</span>"</span></td>
+                <td></td>
+                <td>
+                    <div><span class="string">'<span class="kernel escape">\\</span>'</span></div>
+                    <div><span class="string">"<span class="kernel escape">\\</span>"</span></div>
+                </td>
+                <td>
+                    <div><span class="string">'<span class="kernel escape">\\</span>'</span></div>
+                    <div><span class="string">"<span class="kernel escape">\\</span>"</span></div>
+                    <div><span class="string">r'<span class="kernel">\</span>'</span></div>
+                    <div><span class="string">r"<span class="kernel">\</span>"</span></div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>长度</th>
+                <td>"string".<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#length()">length</a>()</td>
+                <td></td>
+                <td>"string".<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length">length</a></td>
+                <td>len("string")</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>模板</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>内插</th>
+                <td class="none"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>拼接</th>
+                <td>
+                    <div><span class="string">"<span class="kernel">start</span>"</span> + <span class="string">"<span class="kernel">end</span>"</span></div>
+                    <div><span class="string">"<span class="kernel">start</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#concat(java.lang.String)">concat</a>(<span class="string">"<span class="kernel">end</span>"</span>)</div>
+                </td>
+                <td></td>
+                <td>
+                    <div><span class="string">"<span class="kernel">start</span>"</span> + <span class="string">"<span class="kernel">end</span>"</span></div>
+                    <div class="varargs">"start".<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat">concat</a>("end")</div>
+                </td>
+                <td><span class="string">"<span class="kernel">start</span>"</span> + <span class="string">"<span class="kernel">end</span>"</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>重复</th>
+                <td>
+                    <div><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#repeat(int)">repeat</a>(3)</div>
+                    <div>(new StringBuilder()).<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html#repeat(java.lang.CharSequence,int)">repeat</a>(<span class="string">"<span class="kernel">string</span>"</span>, 3).toString()</div>
+                </td>
+                <td></td>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat">repeat</a>(3)</td>
+                <td>
+                    <div><span class="string">"<span class="kernel">string</span>"</span> * 3</div>
+                    <div>3 * <span class="string">"<span class="kernel">string</span>"</span></div>
+                </td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_repeat">REPEAT</a>(<span class="string">"<span class="kernel">string</span>"</span>, 3)</td>
+            </tr>
+            <tr>
+                <th>插值</th>
+                <td></td>
+                <td><span class="string">"<span class="kernel">sum of 8 and 4 is <span class="embed">${<span class="code">8 + 4</span>}</span></span>"</span></td>
+                <td><span class="string">`<span class="kernel">sum of 8 and 4 is <span class="embed">${<span class="code">8 + 4</span>}</span></span>`</span></td>
+                <td></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>取前缀</th>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#substring(int,int)">substring</a>(0, 4)</td>
+                <td></td>
+                <td></td>
+                <td title="结果是&quot;stri&quot;"><span class="string">"<span class="kernel">string</span>"</span>[:4]</td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_left">LEFT</a>(<span class="string">"<span class="kernel">string</span>"</span>, 4)</td>
+            </tr>
+            <tr>
+                <th>取后缀</th>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#substring(int)">substring</a>(2)</td>
+                <td></td>
+                <td>
+                    <div><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring">substring</a>(2)</div>
+                    <div><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice">slice</a>(2)</div>
+                </td>
+                <td title="结果是&quot;ring&quot;"><span class="string">"<span class="kernel">string</span>"</span>[2:]</td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_right">RIGHT</a>(<span class="string">"<span class="kernel">string</span>"</span>, 4)</td>
+            </tr>
+            <tr>
+                <th>子串</th>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#substring(int,int)">substring</a>(2, 4)</td>
+                <td></td>
+                <td>
+                    <div title="如果两个参数顺序不对，会自动交换"><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring">substring</a>(2, 4)</div>
+                    <div title="如果参数为负，表示从尾部开始计算的下标"><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice">slice</a>(2, 4)</div>
+                </td>
+                <td title="包括起始下标，不包括终止下标，结果是&quot;ri&quot;"><span class="string">"<span class="kernel">string</span>"</span>[2:4]</td>
+                <td>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_substr">SUBSTR</a>(<span class="string">"<span class="kernel">string</span>"</span>, 2, 2)</div>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_substr">SUBSTR</a>(<span class="string">"<span class="kernel">string</span>"</span> FROM 2 FOR 2)</div>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_substring">SUBSTRING</a>(<span class="string">"<span class="kernel">string</span>"</span>, 2, 2)</div>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_substring">SUBSTRING</a>(<span class="string">"<span class="kernel">string</span>"</span> FROM 2 FOR 2)</div>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_mid">MID</a>(<span class="string">"<span class="kernel">string</span>"</span>, 2, 2)</div>
+                </td>
+            </tr>
+            <tr>
+                <th>长度为一的子串</th>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#charAt(int)">charAt</a>(2)</td>
+                <td></td>
+                <td>
+                    <div><span class="string">"<span class="kernel">string</span>"</span>[2]</div>
+                    <div><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt">charAt</a>(2)</div>
+                </td>
+                <td><span class="string">"<span class="kernel">string</span>"</span>[2]</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>字符转代码</th>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#charAt(int)">charAt</a>(2)</td>
+                <td></td>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt">charCodeAt</a>(2)</td>
+                <td><a href="https://docs.python.org/3/library/functions.html#ord">ord</a>("string"[2])</td>
+                <td title="只返回第一个字符的代码">
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_ord">ORD</a>(<span class="string">"<span class="kernel">s</span>"</span>)</div>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_ascii">ASCII</a>(<span class="string">"<span class="kernel">s</span>"</span>)</div>
+                </td>
+            </tr>
+            <tr>
+                <th>代码转字符</th>
+                <td>String.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#valueOf(char)">valueOf</a>((char) 97)</td>
+                <td></td>
+                <td class="varargs">String.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode">fromCharCode</a>(97)</td>
+                <td title="结果是只有一个字符的字符串&quot;a&quot;"><a href="https://docs.python.org/3/library/functions.html#chr">chr</a>(97)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>转大写</th>
+                <td></td>
+                <td></td>
+                <td><span class="string">"<span class="kernel">Mike</span>"</span>.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase">toUpperCase</a>()</td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_upper">UPPER</a>(<span class="string">"<span class="kernel">Mike</span>"</span>)</td>
+            </tr>
+            <tr>
+                <th>转小写</th>
+                <td></td>
+                <td></td>
+                <td><span class="string">"<span class="kernel">Mike</span>"</span>.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase">toLowerCase</a>()</td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_lower">LOWER</a>(<span class="string">"<span class="kernel">Mike</span>"</span>)</td>
+            </tr>
+            <tr>
+                <th>判断前缀</th>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#startsWith(java.lang.String)">startsWith</a>(<span class="string">"<span class="kernel">prefix</span>"</span>)</td>
+                <td></td>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith">startsWith</a>(<span class="string">"<span class="kernel">prefix</span>"</span>)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>判断后缀</th>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#endsWith(java.lang.String)">endsWith</a>(<span class="string">"<span class="kernel">suffix</span>"</span>)</td>
+                <td></td>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith">endsWith</a>(<span class="string">"<span class="kernel">suffix</span>"</span>)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>比较大小</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#function_strcmp">STRCMP</a>(<span class="string">"<span class="kernel">aaa</span>"</span>, <span class="string">"<span class="kernel">bbb</span>"</span>)</td>
+            </tr>
+            <tr>
+                <th>建立正则表达式</th>
+                <td></td>
+                <td></td>
+                <td>new <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp">RegExp</a>(<span class="string">"<span class="kernel">regex</span>"</span>, "g")</td>
+                <td></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>提取正则表达式</th>
+                <td></td>
+                <td></td>
+                <td>regex.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source">source</a></td>
+                <td></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>正则表达式匹配</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <div>regex.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test">test</a>(<span class="string">"<span class="kernel">string</span>"</span>)</div>
+                </td>
+                <td></td>
+                <td>
+                    <div><span class="string">"<span class="kernel">string</span>"</span> <a href="https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp">REGEXP</a> <span class="string">"<span class="kernel">regex</span>"</span></div>
+                    <div><span class="string">"<span class="kernel">string</span>"</span> <a href="https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp">RLIKE</a> <span class="string">"<span class="kernel">regex</span>"</span></div>
+                    <div><a href="https://dev.mysql.com/doc/refman/8.0/en/regexp.html#function_regexp-like">REGEXP_LIKE</a>(<span class="string">"<span class="kernel">string</span>"</span>, <span class="string">"<span class="kernel">regex</span>"</span>)</div>
+                </td>
+            </tr>
+            <tr>
+                <th>正则表达式搜索</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <div>regex[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.search">Symbol.search</a>](<span class="string">"<span class="kernel">string</span>"</span>)</div>
+                </td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/regexp.html#function_regexp-instr">REGEXP_INSTR</a>(<span class="string">"<span class="kernel">string</span>"</span>, <span class="string">"<span class="kernel">regex</span>"</span>)</td>
+            </tr>
+            <tr>
+                <th>正则表达式捕获分组</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <div>regex.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec">exec</a>(<span class="string">"<span class="kernel">string</span>"</span>)</div>
+                </td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/regexp.html#function_regexp-substr">REGEXP_SUBSTR</a>(<span class="string">"<span class="kernel">string</span>"</span>, <span class="string">"<span class="kernel">regex</span>"</span>)</td>
+            </tr>
+            <tr>
+                <th>替换第一个</th>
+                <td class="none"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <th>替换全部</th>
+                <td>
+                    <div><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#replace(char,char)">replace</a>(<span class="char">'<span class="kernel">a</span>'</span>, <span class="char">'<span class="kernel">b</span>'</span>)</div>
+                    <div><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#replace(java.lang.CharSequence,java.lang.CharSequence)">replace</a>(<span class="string">"<span class="kernel">old</span>"</span>, <span class="string">"<span class="kernel">new</span>"</span>)</div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_replace">REPLACE</a>(<span class="string">"<span class="kernel">string</span>"</span>, <span class="string">"<span class="kernel">old</span>"</span>, <span class="string">"<span class="kernel">new</span>"</span>)</td>
+            </tr>
+            <tr>
+                <th>正则表达式替换第一个</th>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#replaceFirst(java.lang.String,java.lang.String)">replaceFirst</a>(<span class="string">"<span class="kernel">regex</span>"</span>, <span class="string">"<span class="kernel">replacement</span>"</span>)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/regexp.html#function_regexp-replace">REGEXP_REPLACE</a>(<span class="string">"<span class="kernel">string</span>"</span>, <span class="string">"<span class="kernel">regex</span>"</span>, <span class="string">"<span class="kernel">replacement</span>"</span>, 1, 1)</td>
+            </tr>
+            <tr>
+                <th>正则表达式替换全部</th>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#replaceAll(java.lang.String,java.lang.String)">replaceAll</a>(<span class="string">"<span class="kernel">regex</span>"</span>, <span class="string">"<span class="kernel">replacement</span>"</span>)</td>
+                <td></td>
+                <td>
+                    <div>regex[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.replace">Symbol.replace</a>](<span class="string">"<span class="kernel">string</span>"</span>, <span class="string">"<span class="kernel">replacement</span>"</span>)</div>
+                </td>
+                <td></td>
+                <td><a href="https://dev.mysql.com/doc/refman/8.0/en/regexp.html#function_regexp-replace">REGEXP_REPLACE</a>(<span class="string">"<span class="kernel">string</span>"</span>, <span class="string">"<span class="kernel">regex</span>"</span>, <span class="string">"<span class="kernel">replacement</span>"</span>)</td>
+            </tr>
+            <tr>
+                <th>分割</th>
+                <td class="none"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>正则表达式分割</th>
+                <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#split(java.lang.String)">split</a>(<span class="string">"<span class="kernel">regex</span>"</span>)</td>
+                <td></td>
+                <td>
+                    <div>regex[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.split">Symbol.split</a>](<span class="string">"<span class="kernel">string</span>"</span>)</div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

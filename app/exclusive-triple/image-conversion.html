@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="color-scheme" content="light">
+    <title>图像快速转换</title>
+    <link rel="icon" type="image/svg+xml" href="../image/favicon.svg">
+    <link rel="stylesheet" href="image-conversion.css">
+    <script src="image-conversion.js"></script>
+</head>
+<body>
+    <div id="selectFormat" class="flex-row-center-stretch">
+        <div class="label">输出格式</div>
+        <div class="button toggle format selected" data-mime="image/png">.png</div>
+        <div class="button toggle format" data-mime="image/jpeg">.jpg</div>
+        <div class="button toggle format" data-mime="image/gif">.gif</div>
+        <div class="button toggle format" data-mime="image/apng">.apng</div>
+        <div class="button toggle format" data-mime="image/avif">.avif</div>
+        <div class="button toggle format" data-mime="image/webp">.webp</div>
+    </div>
+    <div id="selectSize" class="flex-row-center-stretch">
+        <div class="label">输出尺寸</div>
+        <div class="button toggle size selected">原尺寸</div>
+        <div class="button toggle size dimension" data-width="32" data-height="32"></div>
+        <div class="button toggle size dimension" data-width="64" data-height="64"></div>
+        <div class="button toggle size dimension" data-width="128" data-height="128"></div>
+        <div class="button toggle size dimension" data-width="256" data-height="256"></div>
+        <div class="button toggle size dimension" data-width="800" data-height="600"></div>
+        <div class="button toggle size dimension" data-width="1280" data-height="720"></div>
+        <div class="button toggle size dimension" data-width="1280" data-height="1024"></div>
+        <div class="button toggle size dimension" data-width="1440" data-height="900"></div>
+        <div class="button toggle size dimension" data-width="1600" data-height="900"></div>
+        <div class="button toggle size dimension" data-width="1600" data-height="1200"></div>
+        <div class="button toggle size dimension" data-width="1920" data-height="1080"></div>
+        <div class="button toggle size dimension" data-width="2160" data-height="1440"></div>
+        <div class="button toggle size other">自定义</div>
+        <input id="inputNumberWidth" class="input-size" type="number" title="宽度" value="1000">
+        <input id="inputNumberHeight" class="input-size" type="number" title="高度" value="1000">
+    </div>
+    <div id="selectMarkPosition" class="flex-row-center-stretch">
+        <div class="label">标记位置</div>
+        <div class="button toggle mark-position" data-horizontal="start" data-vertical="start">左上角</div>
+        <div class="button toggle mark-position" data-horizontal="start" data-vertical="end">左下角</div>
+        <div class="button toggle mark-position" data-horizontal="end" data-vertical="start">右上角</div>
+        <div class="button toggle mark-position" data-horizontal="end" data-vertical="end">右下角</div>
+        <div class="button toggle mark-position selected" data-horizontal="center" data-vertical="end">底部中央</div>
+    </div>
+    <div id="selectMarkContent" class="flex-row-center-stretch">
+        <div class="label">标记内容</div>
+        <div class="button toggle mark-content selected" data-content="none">无标记</div>
+        <div class="button toggle mark-content" data-content="timestamp">时间戳</div>
+        <div class="button toggle mark-content" data-content="name">文件名</div>
+        <div class="button toggle mark-content" data-content="src-size">原文件大小</div>
+        <div class="button toggle mark-content" data-content="dst-size">图片尺寸</div>
+        <div class="button toggle mark-content other" data-content="other">自定义</div>
+        <input id="inputTextMarkContent" type="text" value="@泉平方">
+    </div>
+    <div id="trailingAction" class="flex-row-center-center">
+        <div class="label">背景填充</div>
+        <div id="buttonTransparent" class="button toggle background">使用透明背景</div>
+        <div id="buttonUseBlur" class="button toggle background">使用模糊背景</div>
+        <div id="buttonPickColor" class="button toggle background selected">
+            <div>选择背景颜色</div>
+            <div id="pickedColor">#ffffff</div>
+        </div>
+        <div style="width: 100px;"></div>
+        <input id="inputChooseFile" type="file" hidden>
+        <div id="buttonChooseFile" class="button action" title="Ctrl+O">选择文件</div>
+        <div class="label">或者将文件拖动到此处</div>
+    </div>
+</body>
+</html>

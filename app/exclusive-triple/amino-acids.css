@@ -1,0 +1,233 @@
+@charset "utf-8";
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    font-size: 20px;
+}
+body.light {
+    background-color: white;
+    color: black;
+}
+body.dark {
+    background-color: #101010;
+    color: #dadada;
+}
+main {
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+@media(orientation: portrait) {
+    main {
+        top: 2vmin;
+        right: 8vmin;
+        bottom: 2vmin;
+        left: 8vmin;
+        flex-direction: column;
+    }
+}
+@media(orientation: landscape) {
+    main {
+        top: 8vmin;
+        right: 4vmin;
+        bottom: 8vmin;
+        left: 4vmin;
+        flex-direction: row;
+    }
+}
+.side {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin: 2vmin;
+    transition-duration: 0.8s;
+    transform: translateY(2vmin);
+    opacity: 0;
+}
+.side.show {
+    transform: none;
+    opacity: 1;
+}
+#right {
+    padding: 2vmin;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #555555;
+    overflow: hidden;
+}
+.tab {
+    height: 100%;
+    display: none;
+}
+.tab.selected {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+#matrix {
+    display: grid;
+    box-sizing: border-box;
+    height: 100%;
+    font-size: 1.3em;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vmin;
+}
+.item-a {
+    border-style: solid;
+    border-width: 4px;
+    padding: 8px 8px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    border-color: transparent;
+    background-origin: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.item-a.filtered {
+    opacity: 0.2;
+}
+.db-xxl .item-b {
+    font-size: 1.8em;
+}
+.db-xl .item-b {
+    font-size: 1.5em;
+}
+.db-l .item-b {
+    font-size: 1.2em;
+}
+.dc-l .item-c {
+    font-size: 1.2em;
+}
+.form-label {
+    margin: 20px 10px 0 10px;
+}
+.form-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.button-a {
+    margin: 4px 8px;
+    padding: 4px 8px;
+    user-select: none;
+    background-origin: border-box;
+}
+.button-b {
+    margin: 2px 4px;
+    text-align: center;
+}
+.button-c {
+    height: 6px;
+    border-radius: 3px;
+    opacity: 0.2;
+}
+.button-c {
+    background-color: rgb(191, 255, 255);
+}
+.button-a.selected .button-c {
+    opacity: 1;
+}
+body.light .item-a,body.light .button-a {
+    background-image: linear-gradient(rgb(220 220, 220), rgb(204 204 204));
+}
+body.light .item-a:hover,body.light .button-a:hover {
+    background-image: linear-gradient(rgb(244 244 244), rgb(234 234 234));
+}
+body.dark .item-a {
+    background-image: linear-gradient(black, black);
+    transition-property: border-color;
+    transition-duration: 2s;
+}
+body.dark .item-a:hover {
+    border-color: rgba(191 255 255/0.5);
+    transition: 0s;
+}
+body.dark .button-a {
+    background-color: rgb(48 48 48);
+}
+body.dark .button-a:hover {
+    background-color: rgb(64 64 64);
+}
+.wrap-kv {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.key,.val {
+    display: inline-block;
+    padding: 4px;
+}
+.key {
+    width: 6em;
+    white-space: pre;
+    text-align: right;
+    text-overflow: clip;
+    user-select: none;
+}
+#imageContainer {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.loading-a {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.loading-b {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+.loading-c {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 6px;
+    border-color: rgb(85 85 85);
+}
+.hidden {
+    display: none;
+}
+img {
+    min-height: 0;
+    flex-shrink: 1;
+    object-fit: scale-down;
+}
+body.dark img {
+    filter: invert();
+}
+.en {
+    font-family: Consolas, 'Courier New', monospace;
+}

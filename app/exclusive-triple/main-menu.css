@@ -1,0 +1,114 @@
+@charset "utf-8";
+a {
+    color: #000000;
+    text-decoration: none;
+}
+.hidden {
+    display: none !important;
+}
+html {
+    font-family: 'Times New Roman', 'Microsoft YaHei', monospace;
+    font-size: 17px;
+}
+main {
+    margin: auto;
+    max-width: 1000px;
+}
+main>header {
+    background-color: aquamarine;
+    text-align: center;
+}
+section>header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+}
+.card {
+    display: block;
+    position: relative;
+    margin: 12px;
+    padding: 20px;
+    min-height: 96px;
+    border-radius: 16px;
+    box-shadow: 0 0 7px rgb(60 60 60);
+    transition-duration: 0.5s;
+    background-color: rgb(249 249 249);
+    overflow: hidden;
+}
+.card:hover {
+    box-shadow: 0 0 17px rgb(60 60 60);
+}
+.card>.title {
+    font-size: large;
+    font-weight: bold;
+}
+.card>.outline {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+    outline-offset: -1px;
+    outline: 2px solid rgb(47 47 47);
+    pointer-events: none;
+}
+.button {
+    display: inline-block;
+    font-size: 16px;
+    user-select: none;
+    cursor: pointer;
+}
+.button.invertible {
+    margin: 5px 2px;
+    width: fit-content;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 14px;
+    border: 2px solid rgb(30 30 30);
+    padding: 0px 12px;
+}
+.button.invertible:hover {
+    background-color: rgb(30 30 30);
+    color: #ffffff;
+}
+#shadowToggle {
+    position: fixed;
+    display: block;
+    left: 20px;
+    bottom: -20px;
+    transition-property: bottom;
+    transition-duration: 0.5s;
+}
+#shadowToggle:hover {
+    bottom: 0px;
+}
+#shadowToggle>svg {
+    display: block;
+    cursor: pointer;
+    pointer-events: none;
+}
+#shadowScope {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    outline-width: calc(100vw + 100vh);
+    outline-style: solid;
+    outline-color: rgb(0 0 0/0.9);
+    box-shadow: 0 0 30px rgb(0 0 0/0.9) inset;
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    opacity: 0;
+    transform: scale(1.5);
+    pointer-events: none;
+}
+#shadowScope.active {
+    opacity: 1;
+    transform: none;
+}

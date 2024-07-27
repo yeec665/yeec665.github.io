@@ -1,0 +1,20 @@
+@charset "utf-8";
+main {
+    margin: auto;
+    width: fit-content;
+}
+.check-infinity {
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+    user-select: none;
+    cursor: pointer;
+}
+.check-infinity::before {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}

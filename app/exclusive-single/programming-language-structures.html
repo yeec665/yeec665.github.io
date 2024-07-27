@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="qsq">
+    <meta name="keywords" content="programming,language,library">
+    <title>编程语言标准库数据结构</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th,td {
+            border: 1px solid gray;
+            padding: 1px 7px;
+        }
+        td {
+            font-family: Consolas, Courier, monospace;
+        }
+    </style>
+    <script>
+        document.addEventListener("readystatechange", () => {
+            if (document.readyState !== "interactive") {
+                return;
+            }
+            document.querySelectorAll("a").forEach(a => {
+                a.setAttribute("target", "_blank");
+                a.setAttribute("rel", "noreferrer");
+                a.setAttribute("referrerpolicy", "no-referrer");
+            });
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <caption>列表</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Java <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html">ArrayList</a></th>
+                <th>Kotlin</th>
+                <th>Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></th>
+                <th>Python <a href="https://docs.python.org/3/library/stdtypes.html#lists">list</a></th>
+            </tr>
+            <tr>
+                <th>元素数量</th>
+                <td>list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#size()">size</a>()</td>
+                <td></td>
+                <td></td>
+                <td>len(list)</td>
+            </tr>
+            <tr>
+                <th>迭代器</th>
+                <td>
+                    <div>list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#iterator()">iterator</a>()</div>
+                    <div>list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#listIterator()">listIterator</a>()</div>
+                    <div>list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#listIterator(int)">listIterator</a>(index)</div>
+                </td>
+                <td></td>
+                <td>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.iterator">[Symbol.iterator]</a>()</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>for遍历</th>
+                <td>for (item : list) {}</td>
+                <td></td>
+                <td>
+                    <div>for (stringIndex in array) {}</div>
+                    <div>for (item of array) {}</div>
+                </td>
+                <td>for item in list:</td>
+            </tr>
+            <tr>
+                <th>不中止遍历</th>
+                <td>list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#forEach(java.util.function.Consumer)">forEach</a>(item -> {})</td>
+                <td></td>
+                <td>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a>(item => {})</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>真中止遍历</th>
+                <td class="none"></td>
+                <td></td>
+                <td>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some">some</a>(item => false)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>假中止遍历</th>
+                <td class="none"></td>
+                <td></td>
+                <td>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every">every</a>(item => true)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>按下标读</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <div>value = array[2]</div>
+                    <div>value = array.at(2)</div>
+                </td>
+                <td>value = list[2]</td>
+            </tr>
+            <tr>
+                <th>按下标写</th>
+                <td></td>
+                <td></td>
+                <td>array[2] = value</td>
+                <td>list[2] = value</td>
+            </tr>
+            <tr>
+                <th>按下标区间读</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <div>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">slice</a>()</div>
+                    <div>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">slice</a>(3)</div>
+                    <div>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">slice</a>(3, 5)</div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>按下标区间写</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>末尾添加</th>
+                <td>list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#add(E)">add</a>(item)</td>
+                <td></td>
+                <td class="varargs">newLength = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push">push</a>(item)</td>
+                <td>list.append(2)</td>
+            </tr>
+                <th>开头添加</th>
+                <td class="none"></td>
+                <td></td>
+                <td class="varargs">newLength = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift">unshift</a>(item)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>末尾移除</th>
+                <td>removedItem = list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#removeLast()">removeLast</a>()</td>
+                <td></td>
+                <td>removedItem = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">pop</a>()</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>开头移除</th>
+                <td>removedItem = list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#removeFirst()">removeFirst</a>()</td>
+                <td></td>
+                <td>removedItem = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift">shift</a>()</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>中间插入</th>
+                <td>list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#add(int,java.lang.Object)">add</a>(index, item)</td>
+                <td></td>
+                <td class="varargs">array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">splice</a>(index, 0, item)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>中间移除</th>
+                <td>
+                    <div>removedItem = list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#remove(int)">remove</a>(index)</div>
+                    <div>list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#removeRange(int,int)">remove</a>(<span title="inclusive">fromIndex</span>, <span title="exclusive">toIndex</span>)</div>
+                    <div>success = list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#remove(java.lang.Object)">remove</a>(item)</div>
+                </td>
+                <td></td>
+                <td>removedItems = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">splice</a>(index, count)</td>
+                <td>del list[index]</td>
+            </tr>
+        </thead>
+    </table>
+    <table>
+        <caption>集合</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Java <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html">HashSet</a></th>
+                <th>Kotlin</th>
+                <th>Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a></th>
+                <th>Python <a href="https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset">set</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>创建空集</th>
+                <td>
+                    <div>set = new HashSet()</div>
+                    <div>set = HashSet.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html#newHashSet(int)">newHashSet</a>(capacity)</div>
+                </td>
+                <td></td>
+                <td></td>
+                <td>s = set()</td>
+            </tr>
+            <tr>
+                <th>根据迭代器创建集合</th>
+                <td>set = new HashSet(collection)</td>
+                <td></td>
+                <td></td>
+                <td>s = set(iterable)</td>
+            </tr>
+            <tr>
+                <th>复制集合</th>
+                <td>set.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html#clone()">clone</a>()</td>
+                <td></td>
+                <td></td>
+                <td>s.copy()</td>
+            </tr>
+            <tr>
+                <th>元素数量</th>
+                <td>set.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html#size()">size</a>()</td>
+                <td></td>
+                <td>set.size</td>
+                <td>len(s)</td>
+            </tr>
+            <tr>
+                <th>判断空集</th>
+                <td>set.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html#isEmpty()">isEmpty</a>()</td>
+                <td></td>
+                <td>set.size == 0</td>
+                <td>len(s) == 0</td>
+            </tr>
+            <tr>
+                <th>转化为数组</th>
+                <td>
+                    <div>set.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html#toArray()">toArray</a>()</div>
+                    <div>set.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html#toArray(java.lang.Object[])">toArray</a>(array)</div>
+                </td>
+                <td></td>
+                <td></td>
+                <td>a = list(s)</td>
+            </tr>
+            <tr>
+                <th>迭代器</th>
+                <td>set.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html#iterator()">iterator</a>()</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>for遍历</th>
+                <td>for (x : set) {}</td>
+                <td></td>
+                <td></td>
+                <td>for x in s:</td>
+            </tr>
+            <tr>
+                <th>不中止遍历</th>
+                <td>set.forEach(x -> {})</td>
+                <td></td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach"></a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>清空</th>
+                <td>set.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html#clear()">clear</a>()</td>
+                <td></td>
+                <td>set.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/clear">clear</a>()</td>
+                <td>s.clear()</td>
+            </tr>
+            <tr>
+                <th>加入元素</th>
+                <td>success = set.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html#add(E)">add</a>(x)</td>
+                <td></td>
+                <td>set.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/add">add</a>(x)</td>
+                <td>s.add(x)</td>
+            </tr>
+            <tr>
+                <th>移除元素</th>
+                <td>success = set.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html#remove(java.lang.Object)">remove</a>(x)</td>
+                <td></td>
+                <td>set.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/delete">selete</a>(x)</td>
+                <td>
+                    <div title="元素不存在时会出错">s.remove(x)</div>
+                    <div>s.discard(x)</div>
+                    <div title="任意移除一个元素">s.pop()</div>
+                </td>
+            </tr>
+            <tr>
+                <th>测试元素</th>
+                <td>set.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html#contains(java.lang.Object)">contains</a>(x)</td>
+                <td></td>
+                <td>set.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/has">has</a>(x)</td>
+                <td>
+                    <div>x in s</div>
+                    <div>x not in s</div>
+                </td>
+            </tr>
+            <tr>
+                <th>测试子集</th>
+                <td>superSet.containsAll(subSet)</td>
+                <td></td>
+                <td></td>
+                <td>subSet &lt;= superSet</td>
+            </tr>
+            <tr>
+                <th>测试真子集</th>
+                <td class="none"></td>
+                <td></td>
+                <td></td>
+                <td>subSet &lt; superSet</td>
+            </tr>
+            <tr>
+                <th>自交集</th>
+                <td>set.retainAll(other)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>自并集</th>
+                <td>set.addAll(other)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>自差集</th>
+                <td>set.removeAll(other)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>交集</th>
+                <td>setA.clone().retainAll(setB)</td>
+                <td></td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/intersection"></a></td>
+                <td>s & r</td>
+            </tr>
+            <tr>
+                <th>并集</th>
+                <td>setA.clone().addAll(setB)</td>
+                <td></td>
+                <td></td>
+                <td>s | r</td>
+            </tr>
+            <tr>
+                <th>差集</th>
+                <td>setA.clone().removeAll(setB)</td>
+                <td></td>
+                <td>setA.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/difference">difference</a>(setB)</td>
+                <td>s - r</td>
+            </tr>
+            <tr>
+                <th>异或集</th>
+                <td class="none"></td>
+                <td></td>
+                <td class="none"></td>
+                <td>s ^ r</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <caption>映射</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Java <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html">HashMap</a></th>
+                <th>Kotlin</th>
+                <th>Javascript <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html">Map</a></th>
+                <th>Python <a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></th>
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>

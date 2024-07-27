@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="color-scheme" content="light">
+    <title>对象浏览器</title>
+    <link rel="icon" type="image/svg+xml" href="../image/favicon.svg">
+    <link rel="stylesheet" href="object-explorer.css">
+    <script src="object-explorer.js"></script>
+</head>
+<body>
+    <header></header>
+    <table>
+        <thead>
+            <tr>
+                <th title="Object.keys()">
+                    <div class="name">
+                        <div class="zh">键</div>
+                        <div class="en">key</div>
+                    </div>
+                    <div class="sort">&#x25ac;</div>
+                </th>
+                <th title="Object.prototype.hasOwnProperty(), Object.hasOwn()">
+                    <div class="name">
+                        <div class="zh">自身拥有</div>
+                        <div class="en">hasOwn</div>
+                    </div>
+                    <div class="sort">&#x25ac;</div>
+                </th>
+                <th title="Object.getOwnPropertyDescriptor().writable">
+                    <div class="name">
+                        <div class="zh">可写</div>
+                        <div class="en">writable</div>
+                    </div>
+                    <div class="sort">&#x25ac;</div>
+                </th>
+                <th title="Object.getOwnPropertyDescriptor().enumerable">
+                    <div class="name">
+                        <div class="zh">可枚举</div>
+                        <div class="en">enumerable</div>
+                    </div>
+                    <div class="sort">&#x25ac;</div>
+                </th>
+                <th title="Object.getOwnPropertyDescriptor().configurable">
+                    <div class="name">
+                        <div class="zh">可配置</div>
+                        <div class="en">configurable</div>
+                    </div>
+                    <div class="sort">&#x25ac;</div>
+                </th>
+                <th title="typeof(object[key])">
+                    <div class="name">
+                        <div class="zh">值</div>
+                        <div class="en">value</div>
+                    </div>
+                    <div class="sort">&#x25ac;</div>
+                </th>
+                <th title="Object.getOwnPropertyDescriptor().set.name">
+                    <div class="name">
+                        <div class="zh">写函数</div>
+                        <div class="en">setter</div>
+                    </div>
+                    <div class="sort">&#x25ac;</div>
+                </th>
+                <th title="Object.getOwnPropertyDescriptor().get.name">
+                    <div class="name">
+                        <div class="zh">读函数</div>
+                        <div class="en">getter</div>
+                    </div>
+                    <div class="sort">&#x25ac;</div>
+                </th>
+                <th title="object[key].constructor.name">
+                    <div class="name">
+                        <div class="zh">构造器</div>
+                        <div class="en">constructor</div>
+                    </div>
+                    <div class="sort">&#x25ac;</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+    <section></section>
+</body>
+</html>

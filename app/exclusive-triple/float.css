@@ -1,0 +1,128 @@
+@charset "utf-8";
+body {
+    margin: 20px;
+    --data-bit: #95d1e4;
+    --sign-bit: #e48dc2;
+    --exp-bit: #dab36d;
+}
+.card {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #e2e2e2;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    opacity: 0;
+}
+.card.opaque {
+    opacity: 1;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.options.row>* {
+    min-width: 200px;
+}
+.split {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.split>:last-child {
+    flex-grow: 1;
+}
+.input {
+    position: relative;
+}
+.popup-menu {
+    position: absolute;
+    border: 1px solid #7f7f7f;
+}
+.menu-item {
+    border: 1px none #7f7f7f;
+    padding: 2px 12px;
+    background-color: #fcfcfc;
+}
+.menu-item:not(:first-child) {
+    border-top-style: solid;
+}
+.menu-item:hover {
+    background-color: #eeeeee;
+}
+span.number {
+    margin: 0 0.125em;
+    font-size: 1.125em;
+}
+.menu-item,.button {
+    user-select: none;
+    font-family: Courier, monospace;
+}
+.button {
+    font-weight: bold;
+}
+input[type="text"] {
+    width: 20em;
+    border-style: none;
+    outline-style: none;
+}
+.button,input[type="text"] {
+    display: inline-block;
+    margin: 4px;
+    padding: 2px 12px;
+    font-size: 20px;
+    vertical-align: middle;
+    background-color: #ededed;
+}
+.button,input[type="text"],.output {
+    border-radius: 6px;
+    line-height: 24px;
+}
+.button:hover,input:focus {
+    background-color: #dfdfdf;
+}
+.output {
+    font-size: 16px;
+}
+.output:not(:empty) {
+    margin: 4px;
+    padding: 2px 12px;
+}
+.output.error {
+    background-color: #e7b0a9;
+}
+.output.warn {
+    background-color: #e0d995;
+}
+.data-types {
+    margin-left: 12px;
+}
+fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.bit {
+    margin: 2px;
+    width: 12px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--data-bit);
+}
+.bit:nth-child(8n+1) {
+    margin-right: 6px;
+}
+.float32>.bit:nth-child(-n+10),.float64>.bit:nth-child(-n+13) {
+    background-color: var(--exp-bit);
+}
+:is(.int32,.int64,.float32,.float64)>.bit:nth-child(2) {
+    background-color: var(--sign-bit);
+}

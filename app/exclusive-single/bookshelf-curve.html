@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>bookshelf-curve</title>
+    <style>
+        article {
+            margin: auto;
+            max-width: 640px;
+        }
+        canvas {
+            margin: auto;
+            display: block;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", () => {
+            const N = 42;
+            for (let i = 1; i <= 5; i++) {
+                const cv = document.getElementById("cv" + i);
+                const cx = cv.getContext("2d");
+                cx.lineWidth = 3.0;
+                cx.lineCap = "butt";
+                cx.strokeStyle = "teal";
+                cx.beginPath();
+                cx.moveTo(0, 10);
+                cx.lineTo(10, 10);
+                cx.lineTo(10, 140);
+                if (i < 5) {
+                    cx.lineTo(490, 140);
+                    cx.lineTo(490, 10);
+                    cx.lineTo(500, 10);
+                } else {
+                    cx.lineTo(500, 140);
+                }
+                cx.stroke();
+                if (i < 2) {
+                    continue;
+                }
+                cx.globalAlpha = 0.75;
+                cx.lineCap = "round";
+                cx.strokeStyle = "black";
+                const d = 480 / N;
+                if (i < 3) {
+                    for (let j = 0; j <= N; j++) {
+                        let x3 = 10 + d * j;
+                        cx.beginPath();
+                        cx.moveTo(x3, 140);
+                        cx.lineTo(x3, 20);
+                        cx.stroke();
+                    }
+                    continue;
+                }
+                let n = N;
+                if (i == 5) {
+                    n *= 2;
+                }
+                let x1 = 10;
+                let y1 = 140;
+                let x2 = 10;
+                let y2 = 20;
+                for (let j = 0; j <= n; j++) {
+                    const x3 = 10 + d * j;
+                    const k = (x2 - x1) / (y2 - y1);
+                    const y4 = y1 - (Math.sqrt((d * k) ** 2 - (1 + k * k) * (d * d - 130 * 130)) - d * k) / (1 + k * k);
+                    const x4 = x1 - k * (y1 - y4);
+                    cx.strokeStyle = "black";
+                    cx.beginPath();
+                    cx.moveTo(x3, y1);
+                    cx.lineTo(x4, y4);
+                    cx.stroke();
+                    if (i >= 4) {
+                        cx.strokeStyle = "red";
+                        cx.beginPath();
+                        cx.moveTo(x2, y2);
+                        cx.lineTo(x4, y4);
+                        cx.stroke();
+                    }
+                    x1 = x3;
+                    x2 = x4;
+                    y2 = y4;
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <article>
+        <canvas id="cv1" width="500" height="150"></canvas>
+        <p>一个书架。</p>
+        <canvas id="cv2" width="500" height="150"></canvas>
+        <p>等间距摆放一些同样高的书。书抽象成长度为 h 的线段，相邻两本书的底端间距为 d 。</p>
+        <canvas id="cv3" width="500" height="150"></canvas>
+        <p>书都以底端为转轴倒向左边。</p>
+        <canvas id="cv4" width="500" height="150"></canvas>
+        <p>书的顶端连线即为摆书线。</p>
+        <canvas id="cv5" width="500" height="150"></canvas>
+        <p>书架可以向右边无限延伸，摆书线也变得无限长。</p>
+    </article>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="qsq-psp">
+    <link rel="shortcut icon" href="../favicon.png">
+    <title>默认样式</title>
+    <link rel="stylesheet" type="text/css" href="default-style.css"/>
+    <script type="text/javascript" src="default-style.js"></script>
+</head>
+<body class="light">
+    <div id="topFixedBar">
+        <div class="input-row">
+            <input id="inputTextFilter" class="input-text" type="text" placeholder="property pattern" title="属性过滤器" spellcheck="false">
+            <div id="toggleCaseSensitive" class="input-button" title="大小写敏感">
+                <div class="icon">&#xe6c2;</div>
+            </div>
+            <div id="toggleRegex" class="input-button" title="使用正则表达式（暂未实现）">
+                <div class="icon">&#xe875;</div>
+            </div>
+            <div id="toggleRevert" class="input-button" title="反转结果">
+                <div class="icon">&#xe8a0;</div>
+            </div>
+            <div id="actionClear" class="input-button" title="清空过滤器">
+                <div class="icon">&#xe73c;</div>
+            </div>
+        </div>
+        <div class="input-row">
+            <div id="chooseThemeLight" class="input-button selected" title="浅色背景">
+                <div class="icon">&#xe7d7;</div>
+            </div>
+            <div id="chooseThemeDark" class="input-button" title="深色背景">
+                <div class="icon">&#xe7d6;</div>
+            </div>
+        </div>
+        <div class="input-row">
+            <div id="actionRefresh" class="input-button" title="刷新">
+                <div class="icon rotate">&#xe874;</div>
+            </div>
+            <div id="actionTop" class="input-button" title="回到顶部">
+                <div class="icon">&#xe637;</div>
+            </div>
+        </div>
+    </div>
+    <div id="topFixedBarPlacebo"></div>
+    <h1 id="titleMain">HTML标签默认样式</h1>
+    <table id="tableMain">
+        <thead>
+            <tr>
+                <th>标签</th>
+                <th>样式</th>
+                <th id="thDisplay">展示</th>
+            </tr>
+        </thead>
+        <tbody id="tbodyMain"></tbody>
+    </table>
+</body>
+</html>

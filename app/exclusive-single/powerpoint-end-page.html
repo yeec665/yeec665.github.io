@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="office,powerpoint,fullscreen">
+    <meta name="color-scheme" content="dark">
+    <title>PowerPoint幻灯片放映</title>
+    <link rel="shortcut icon" href="../image/favicon-crown.png">
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            background-color: black;
+            color: white;
+            font-family: '宋体', serif;
+            font-weight: bold;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+        p {
+            margin: 16px;
+        }
+        svg {
+            border: 2px solid #6d6d6d;
+            border-radius: 50%;
+            padding: 3px;
+        }
+        svg:hover {
+            border-color: #ededed;
+        }
+        svg:hover path {
+            fill: #ededed;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", () => {
+            const actions = document.getElementById("actions");
+            const delay = 2000;
+            let due = null;
+            function update() {
+                if (due == null) {
+                    return;
+                }
+                const remain = due - Date.now();
+                if (remain <= 0) {
+                    due = null;
+                    actions.style.display = "none";
+                } else {
+                    window.setTimeout(update, remain);
+                }
+            }
+            document.body.addEventListener("mousemove", () => {
+                const old = due;
+                due = Date.now() + delay;
+                if (old != null) {
+                    return;
+                }
+                actions.style.display = "block";
+                window.setTimeout(update, delay);
+            });
+        });
+    </script>
+</head>
+<body>
+    <p style="text-align: center;">放映结束，单击鼠标退出。</p>
+    <p id="actions" style="text-align: left; display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="20px" height="20px" viewBox="0 0 1024 1024"><path fill="#6d6d6d" d="M341.333333 512l256-256v512z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="20px" height="20px" viewBox="0 0 1024 1024"><path fill="#6d6d6d" d="M682.666667 512l-256 256V256z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="20px" height="20px" viewBox="0 0 1024 1024"><path fill="#6d6d6d" d="M550.4 292.608l180.992 181.034667L308.992 896H128v-181.034667l422.4-422.4z m60.330667-60.330667l90.496-90.538666a42.666667 42.666667 0 0 1 60.330666 0l120.704 120.704a42.666667 42.666667 0 0 1 0 60.330666l-90.538666 90.496-180.992-180.992z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="20px" height="20px" viewBox="0 0 1024 1024"><path fill="#6d6d6d" d="M896 128a42.666667 42.666667 0 0 1 42.666667 42.666667v682.666666a42.666667 42.666667 0 0 1-42.666667 42.666667H128a42.666667 42.666667 0 0 1-42.666667-42.666667V170.666667a42.666667 42.666667 0 0 1 42.666667-42.666667h768zM469.333333 554.666667H170.666667v256h298.666666v-256z m384 0h-298.666666v256h298.666666v-256z m-384-341.333334H170.666667v256h298.666666V213.333333z m384 0h-298.666666v256h298.666666V213.333333z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="20px" height="20px" viewBox="0 0 1024 1024"><path fill="#6d6d6d" d="M405.333333 128A277.333333 277.333333 0 0 1 682.666667 405.333333c0 68.693333-25.173333 131.84-66.56 180.48l11.52 11.52h33.706666l213.333334 213.333334-64 64-213.333334-213.333334v-33.706666l-11.52-11.52A278.016 278.016 0 0 1 405.333333 682.666667 277.333333 277.333333 0 0 1 128 405.333333 277.333333 277.333333 0 0 1 405.333333 128m0 85.333333C298.666667 213.333333 213.333333 298.666667 213.333333 405.333333S298.666667 597.333333 405.333333 597.333333 597.333333 512 597.333333 405.333333 512 213.333333 405.333333 213.333333z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="20px" height="20px" viewBox="0 0 1024 1024"><path fill="#6d6d6d" d="M682.666667 512a85.333333 85.333333 0 0 1 85.333333-85.333333 85.333333 85.333333 0 0 1 85.333333 85.333333 85.333333 85.333333 0 0 1-85.333333 85.333333 85.333333 85.333333 0 0 1-85.333333-85.333333m-256 0a85.333333 85.333333 0 0 1 85.333333-85.333333 85.333333 85.333333 0 0 1 85.333333 85.333333 85.333333 85.333333 0 0 1-85.333333 85.333333 85.333333 85.333333 0 0 1-85.333333-85.333333m-256 0a85.333333 85.333333 0 0 1 85.333333-85.333333 85.333333 85.333333 0 0 1 85.333333 85.333333 85.333333 85.333333 0 0 1-85.333333 85.333333 85.333333 85.333333 0 0 1-85.333333-85.333333z"/></svg>
+    </p>
+</body>
+</html>

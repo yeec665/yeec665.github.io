@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>114514</title>
+    <style>
+        body {
+            background-color: #114514;
+            color: white;
+            text-align: center;
+            font-size: 40px;
+            font-family: Consolas, Courier, monospace;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", () => {
+            document.querySelector("#rgb").textContent = getComputedStyle(document.body).backgroundColor;
+        });
+    </script>
+</head>
+<body>
+    <p>#114514</p>
+    <p id="rgb"></p>
+</body>
+</html>

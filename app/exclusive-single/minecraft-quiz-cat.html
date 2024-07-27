@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>我的世界测试题（本期主题：猫）</title>
+    <style>
+        article {
+            margin: auto;
+            max-width: 1220px;
+            font-size: 22px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .paragraph {
+            padding: 10px;
+        }
+        .question {
+            counter-increment: question;
+        }
+        .question::before {
+            content: counter(question) ". ";
+        }
+        .choices {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .choice {
+            counter-increment: choice;
+        }
+        .choice::before {
+            content: counter(choice, upper-latin) ". ";
+        }
+        .reveal .answer {
+            font-weight: bold;
+            color: brown;
+        }
+        .comment {
+            display: none;
+        }
+        .reveal .comment {
+            display: block;
+        }
+    </style>
+    <script>
+        window.answer = "BCADC" + "DDBDD";
+    </script>
+</head>
+<body>
+    <article>
+        <h1>MC 测试题（本期主题：猫）</h1>
+        <div class="paragraph question">猫死可以复活吗？</div>
+        <div class="paragraph choices">
+            <div class="choice">可以</div>
+            <div class="choice answer">不可以</div>
+            <div class="choice">除极限模式外可以</div>
+            <div class="choice">只有旁观模式可以</div>
+        </div>
+        <div class="comment">猫没有九条命，猫死不能复活，一旦你失去了它，你就永远失去了它。</div>
+        <div class="paragraph question">能够对猫使用的物品有几种？</div>
+        <div class="paragraph choices">
+            <div class="choice">2</div>
+            <div class="choice">3</div>
+            <div class="choice answer">4</div>
+            <div class="choice">5</div>
+        </div>
+        <div class="comment">生鳕鱼、生鲑鱼、栓绳、命名牌。</div>
+        <div class="paragraph question">11种外观的猫中，轴对称的有几种？</div>
+        <div class="paragraph choices">
+            <div class="choice answer">0</div>
+            <div class="choice">1</div>
+            <div class="choice">2</div>
+            <div class="choice">3</div>
+        </div>
+        <div class="comment">MC 是 3D 游戏，这里问的是 3D 的猫，而不是2D的贴图。要求形状和颜色都是轴对称的，但首先形状都没有轴对称，所以不用看颜色了，没有一种猫是轴对称的。注意区分三维空间的轴对称（又叫 180 度旋转对称）和镜像对称（又叫面对称、空间反演对称）。</div>
+        <div class="paragraph question">猫不能做的动作是？</div>
+        <div class="paragraph choices">
+            <div class="choice">坐下</div>
+            <div class="choice">躺下</div>
+            <div class="choice">潜行</div>
+            <div class="choice answer">滑翔</div>
+        </div>
+        <div class="comment">猫可以手动坐在地上；自动坐在箱子、床、熔炉上；躺在床上。流浪猫会寻找并攻击 15 格内的鸡 [仅 Java 版] 、兔子和幼年海龟。在发动攻击之前，它们会先以潜行姿态接近猎物。</div>
+        <div class="paragraph question">把两条鱼给两只成年猫以换取一只幼年猫的行为叫做？</div>
+        <div class="paragraph choices">
+            <div class="choice">交易</div>
+            <div class="choice">以物易物</div>
+            <div class="choice answer">繁殖</div>
+            <div class="choice">抽奖</div>
+        </div>
+        <div class="paragraph question">已驯服的猫的实体数据中会记录哪一项？</div>
+        <div class="paragraph choices">
+            <div class="choice">出生地</div>
+            <div class="choice">出生时刻</div>
+            <div class="choice">驯服时刻</div>
+            <div class="choice answer">主人的 UUID</div>
+        </div>
+        <div class="comment">MC 中没有生物会记录自己的出生时刻和驯服时刻，只有海龟会记录自己的出生地，所有驯服的生物都会记录自己主人的 UUID 。只有当猫是玩家第一个驯服的生物时，驯服时刻才会记录到进度中，但不是实体数据中。现实世界的猫也不会记得日期之类的东西，所以铲屎官们一定要记好主子来到这个世界的日期以及签订契约的日期。但是猫会永远记得自己的主人。</div>
+        <div class="paragraph question">哪一项和猫具有相同的命名空间 ID ？</div>
+        <div class="paragraph choices">
+            <div class="choice">豹猫</div>
+            <div class="choice">猫刷怪蛋</div>
+            <div class="choice">音乐唱片 cat</div>
+            <div class="choice answer">以上都不是</div>
+        </div>
+        <div class="comment">猫的命名空间 ID 是 cat ，豹猫的命名空间ID是 ocelot ，猫刷怪蛋的命名空间 ID 是 cat_spawn_egg ，音乐唱片 cat 的命名空间 ID 是 music_disc_cat 。其实不用查资料，既然它是 ID ，那么当然就是独一无二的。</div>
+        <div class="paragraph question">村庄中生成猫的最低条件是？</div>
+        <div class="paragraph choices">
+            <div class="choice">1个渔夫</div>
+            <div class="choice answer">1个村民和4张床</div>
+            <div class="choice">2个箱子和2张床</div>
+            <div class="choice">1个钟</div>
+        </div>
+        <div class="comment">未驯服的猫会在至少有 1 个村民和 4 张床的村庄中生成。每 4 张有效床生成 1 只猫，最多可生成 10 只猫。</div>
+        <div class="paragraph question">以下哪一项是玩家睡觉后猫可能给予的礼物？</div>
+        <div class="paragraph choices">
+            <div class="choice">龙蛋</div>
+            <div class="choice">下界之星</div>
+            <div class="choice">附魔金苹果</div>
+            <div class="choice answer">腐肉</div>
+        </div>
+        <div class="comment">猫的礼物包括：兔子脚、兔子皮、线、腐肉、羽毛、生鸡肉、幻翼膜。</div>
+        <div class="paragraph question">猫不可能受到哪一种伤害？</div>
+        <div class="paragraph choices">
+            <div class="choice">挤压伤害</div>
+            <div class="choice">来自溺尸的伤害</div>
+            <div class="choice">苦力怕的爆炸伤害</div>
+            <div class="choice answer">潮涌核心的魔法伤害</div>
+        </div>
+        <div class="comment">溺尸的三叉戟会扔偏，即使没有仇恨也能造成伤害；猫只是能够驱离苦力怕，它并不免疫苦力怕的伤害；潮涌核心仅对敌对生物造成伤害。</div>
+    </article>
+</body>
+</html>
