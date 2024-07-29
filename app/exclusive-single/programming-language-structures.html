@@ -73,21 +73,21 @@
                 <th>不中止遍历</th>
                 <td>list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#forEach(java.util.function.Consumer)">forEach</a>(item -> {})</td>
                 <td></td>
-                <td>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a>(item => {})</td>
+                <td>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a>((item, index, array) => {})</td>
                 <td></td>
             </tr>
             <tr>
                 <th>真中止遍历</th>
                 <td class="none"></td>
                 <td></td>
-                <td>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some">some</a>(item => false)</td>
+                <td>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some">some</a>((item, index, array) => false)</td>
                 <td></td>
             </tr>
             <tr>
                 <th>假中止遍历</th>
                 <td class="none"></td>
                 <td></td>
-                <td>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every">every</a>(item => true)</td>
+                <td>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every">every</a>((item, index, array) => true)</td>
                 <td></td>
             </tr>
             <tr>
@@ -96,7 +96,7 @@
                 <td></td>
                 <td>
                     <div>value = array[2]</div>
-                    <div>value = array.at(2)</div>
+                    <div>value = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at">at</a>(2)</div>
                 </td>
                 <td>value = list[2]</td>
             </tr>
@@ -104,7 +104,10 @@
                 <th>按下标写</th>
                 <td></td>
                 <td></td>
-                <td>array[2] = value</td>
+                <td>
+                    <div>array[index] = item</div>
+                    <div>newArray = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/with">with</a>(index, item)</div>
+                </td>
                 <td>list[2] = value</td>
             </tr>
             <tr>
@@ -120,7 +123,6 @@
             </tr>
             <tr>
                 <th>按下标区间写</th>
-                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -168,8 +170,69 @@
                     <div>success = list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#remove(java.lang.Object)">remove</a>(item)</div>
                 </td>
                 <td></td>
-                <td>removedItems = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">splice</a>(index, count)</td>
+                <td>
+                    <div>removedItems = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">splice</a>(index, count)</div>
+                    <div>newArray = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced">toSpliced</a>(index, count)</div>
+                </td>
                 <td>del list[index]</td>
+            </tr>
+            <tr>
+                <th>排序</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <div>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">sort</a>((a, b) => 0)</div>
+                    <div>sortedArray = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted">toSorted</a>((a, b) => compareResult)</div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>倒转</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <div>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse">reverse</a>()</div>
+                    <div>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toReversed">reverse</a>()</div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>映射</th>
+                <td></td>
+                <td></td>
+                <td>newArray = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">map</a>(item => newItem)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>归约</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <div><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">reduce</a>((accumulator, currentValue, currentIndex, array) => reducedValue, initialValue)</div>
+                    <div><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight">reduce</a>((accumulator, currentValue, currentIndex, array) => reducedValue, initialValue)</div>
+                    </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>平展</th>
+                <td></td>
+                <td></td>
+                <td>newArray = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat">flat</a>(depth)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>正向搜索</th>
+                <td></td>
+                <td></td>
+                <td>index = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf">indexOf</a>(value)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>反向搜索</th>
+                <td></td>
+                <td></td>
+                <td>index = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf">lastIndexOf</a>(value)</td>
+                <td></td>
             </tr>
         </thead>
     </table>
@@ -361,8 +424,74 @@
                 <th></th>
                 <th>Java <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html">HashMap</a></th>
                 <th>Kotlin</th>
-                <th>Javascript <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html">Map</a></th>
+                <th>Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></th>
                 <th>Python <a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></th>
+            </tr>
+            <tr>
+                <th>创建空映射</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>映射大小</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>键值对迭代器</th>
+                <td></td>
+                <td></td>
+                <td>map.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/Symbol.iterator">[Symbol.iterator]</a>()</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>键迭代器</th>
+                <td></td>
+                <td></td>
+                <td>map.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/keys">keys</a>()[Symbol.iterator]()</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>值迭代器</th>
+                <td></td>
+                <td></td>
+                <td>map.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values">values</a>()[Symbol.iterator]()</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>for遍历键值对</th>
+                <td>for (Map.Entry&lt;K, V&gt; entry : map.entrySet()) {}</td>
+                <td></td>
+                <td>
+                    <div>for (const entry of map) {}</div>
+                    <div>for (const [key, value] of map) {}</div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>for遍历键集合</th>
+                <td>for (K key : map.keySet()) {}</td>
+                <td></td>
+                <td>for (const key of map.keys()) {}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>for遍历值</th>
+                <td>for (V value : map.values()) {}</td>
+                <td></td>
+                <td>for (const value of map.values()) {}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>不中止遍历</th>
+                <td></td>
+                <td></td>
+                <td>map.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach">forEach</a>((value, key, map) => {})</td>
+                <td></td>
             </tr>
         </thead>
     </table>

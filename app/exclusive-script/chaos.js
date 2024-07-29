@@ -1,5 +1,5 @@
 document.addEventListener("readystatechange", () => {
-    if (document.readyState != "interactive") {
+    if (document.readyState !== "interactive") {
         return;
     }
     /** @type {HTMLCanvasElement} */
@@ -34,7 +34,7 @@ document.addEventListener("readystatechange", () => {
             ctx.fillStyle = "rgb(0 0 0/0.03125)";
             ctx.fillRect(0, 0, width, height);
         }
-        ctx.lineWidth = 3;
+        ctx.lineWidth = 3.0;
         if (z >= 10) {
             ctx.strokeStyle = "rgb(" + Math.min(20 * (z - 10), 255) + " 220 0/0.75)";
         } else {
@@ -42,12 +42,12 @@ document.addEventListener("readystatechange", () => {
         }
         ctx.beginPath();
         ctx.moveTo(0.5 * width + mag * x, 0.5 * height + mag * y);
-        for (let j = 0; j < 10; j++) {
+        for (let i = 0; i < 10; i++) {
             let r = Math.hypot(x - mx, my - y);
             r = 24 / (1 + r * r);
-            let dx = 8 * (y - x) + r * (x - mx);
-            let dy = x * (16 + 4 * Math.sin(t / 800)) - 0.25 * y - x * z + r * (y - my);
-            let dz = x * y - 1.75 * z;
+            const dx = 8 * (y - x) + r * (x - mx);
+            const dy = x * (16 + 4 * Math.sin(t / 800)) - 0.25 * y - x * z + r * (y - my);
+            const dz = x * y - 1.75 * z;
             x += dx * dt;
             y += dy * dt;
             z += dz * dt;
