@@ -13,16 +13,25 @@ class DefaultStyle {
     ];
     constructor() {
         const doc = document;
+        /** @type {HTMLInputElement} */
         this.inputTextFilter = doc.getElementById("inputTextFilter");
         this.inputTextFilter.value = "";
+        /** @type {HTMLElement} */
         this.actionRefresh = doc.getElementById("actionRefresh");
+        /** @type {HTMLElement} */
         this.tbodyMain = doc.getElementById("tbodyMain");
+        /** @type {string} */
         this.filter = "";
+        /** @type {boolean} */
         this.caseSensitive = false;
+        /** @type {boolean} */
         this.revert = false;
         this.init(doc);
         this.refresh();
     }
+    /**
+     * @param {Document} doc
+     */
     init(doc) {
         this.inputTextFilter.addEventListener("input", this.throttle.bind(this));
         const toggleCaseSensitive = doc.getElementById("toggleCaseSensitive");
@@ -292,6 +301,8 @@ class DefaultStyle {
         }
     }
 }
-window.addEventListener("load", () => {
-    window.app = new DefaultStyle();
+document.addEventListener("readystatechange", () => {
+    if (document.readyState === "interactive") {
+        window.app = new DefaultStyle();
+    }
 });

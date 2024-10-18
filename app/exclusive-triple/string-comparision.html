@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="qsq-psp">
+    <title>字符串比较</title>
+    <link rel="stylesheet" href="string-comparision.css">
+    <script src="string-comparision.js"></script>
+</head>
+<body>
+    <main class="loading">
+        <div class="toggle-row">
+            <input id="inputRadioLCS" name="radioMode" type="radio" hidden checked>
+            <label for="inputRadioLCS" class="toggle">最长公共子序列</label>
+            <input id="inputRadioED" name="radioMode" type="radio" hidden>
+            <label for="inputRadioED" class="toggle">编辑距离</label>
+        </div>
+        <div>
+            <div class="input-row">
+                <label for="inputTextA" title="横向">字符串A：</label>
+                <input id="inputTextA" type="text" value="但凡这句话有一点用的话" spellcheck="false">
+            </div>
+            <div class="input-row">
+                <label for="inputTextB" title="纵向">字符串B：</label>
+                <input id="inputTextB" type="text" value="这句话也不至于一点用没有" spellcheck="false">
+            </div>
+        </div>
+        <div class="loading-a">
+            <div class="loading-b">
+                <div class="loading-c">
+                    <div class="loading-d"></div>
+                </div>
+            </div>
+        </div>
+        <table>
+            <tbody></tbody>
+        </table>
+    </main>
+</body>
+</html>

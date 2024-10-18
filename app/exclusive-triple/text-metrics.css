@@ -1,0 +1,53 @@
+@charset "utf-8";
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+header {
+    position: fixed;
+}
+#headerShadow {
+    height: 120px;
+}
+table {
+    margin: 10px auto;
+}
+thead {
+    position: relative;
+    background-color: white;
+    outline: 2px solid gray;
+    user-select: none;
+}
+tbody>tr:nth-child(2n) {
+    background-color: white;
+}
+tbody>tr:nth-child(2n+1) {
+    background-color: rgb(238, 238, 238);
+}
+tbody>tr:target {
+    background-color: rgb(231, 225, 195);
+}
+th,td {
+    padding: 2px 10px;
+    text-align: center;
+}
+th>.name {
+    display: inline-block;
+    vertical-align: middle;
+}
+th>.sort {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+#glyphCompareTbody td:first-child::before {
+    content: "U+";
+}
+td:last-child::after {
+    content: "%";
+}
+td.family {
+    cursor: pointer;
+}
+td.family:hover {
+    text-decoration: underline;
+}

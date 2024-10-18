@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>编程语言语法</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th,td {
+            border: 1px solid gray;
+            padding: 1px 7px;
+        }
+        td {
+            font-family: Consolas, Courier, monospace;
+        }
+    </style>
+    <script>
+        document.addEventListener("readystatechange", () => {
+            if (document.readyState !== "interactive") {
+                return;
+            }
+            document.querySelectorAll("a").forEach(a => {
+                a.setAttribute("target", "_blank");
+                a.setAttribute("rel", "noreferrer");
+                a.setAttribute("referrerpolicy", "no-referrer");
+            });
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <caption>流程控制</caption>
+        <thead></thead>
+        <tbody>
+            <tr>
+                <th>二分支</th>
+            </tr>
+            <tr>
+                <th>多分支</th>
+            </tr>
+            <tr>
+                <th>首循环</th>
+            </tr>
+            <tr>
+                <th>尾循环</th>
+            </tr>
+            <tr>
+                <th>下标迭代循环</th>
+            </tr>
+            <tr>
+                <th>迭代循环</th>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <caption>函数</caption>
+        <thead></thead>
+        <tbody>
+            <tr>
+                <th>无返回值</th>
+            </tr>
+            <tr>
+                <th>永不返回</th>
+            </tr>
+            <tr>
+                <th>返回值类型</th>
+            </tr>
+            <tr>
+                <th>变长参数</th>
+            </tr>
+            <tr>
+                <th>默认参数</th>
+            </tr>
+            <tr>
+                <th>键值参数</th>
+            </tr>
+            <tr>
+                <th>反射调用</th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

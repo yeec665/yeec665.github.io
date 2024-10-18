@@ -12,7 +12,10 @@ window.addEventListener("drop", event => {
     event.preventDefault();
     convertFiles(event.dataTransfer.files);
 });
-window.addEventListener("load", () => {
+document.addEventListener("readystatechange", () => {
+    if (document.readyState !== "interactive") {
+        return;
+    }
     setupToggles(document.querySelectorAll(".toggle.format"));
     setupToggles(document.querySelectorAll(".toggle.mark-position"));
     setupToggles(document.querySelectorAll(".toggle.mark-content"));
@@ -131,12 +134,16 @@ function convertNext(files, index) {
     });
     src.src = URL.createObjectURL(files[index]);
 }
+/**
+ * @return {string}
+ */
 function getFormat() {
     return document.querySelector(".toggle.format.selected")?.dataset?.mime || "image/png";
 }
 /**
  * @param {HTMLImageElement} src
  * @param {HTMLCanvasElement} canvas
+ * @return {HTMLCanvasElement}
  */
 function setSize(src, canvas) {
     const selectedSize = document.querySelector(".toggle.size.selected");
@@ -158,21 +165,30 @@ function setSize(src, canvas) {
     }
     canvas.width = width;
     canvas.height = height;
+    return canvas;
 }
 /**
  * @param {HTMLImageElement} src
  * @param {HTMLCanvasElement} canvas
  * @param {CanvasRenderingContext2D} context
  * @param {number} factor
+ * @return {CanvasRenderingContext2D}
  */
 function drawImage(src, canvas, context, factor) {
-    context.drawImage(src, 0.5 * (canvas.width - factor * src.width), 0.5 * (canvas.height - factor * src.height), factor * src.width, factor * src.height);
+    context.drawImage(src,
+        0.5 * (canvas.width - factor * src.width),
+        0.5 * (canvas.height - factor * src.height),
+        factor * src.width,
+        factor * src.height
+    );
+    return context;
 }
 /**
  * @param {File} file
  * @param {HTMLImageElement} src
  * @param {HTMLCanvasElement} canvas
  * @param {CanvasRenderingContext2D} context
+ * @return {CanvasRenderingContext2D}
  */
 function drawMark(file, src, canvas, context) {
     const selectedContent = document.querySelector(".toggle.mark-content.selected")?.dataset?.content;
@@ -197,7 +213,7 @@ function drawMark(file, src, canvas, context) {
             text = document.getElementById("inputTextMarkContent").value;
             break;
     }
-    if (text == null || text == "") {
+    if (text == null || text.length == 0) {
         return;
     }
     const selectedPosition = document.querySelector(".toggle.mark-position.selected");
@@ -234,4 +250,5 @@ function drawMark(file, src, canvas, context) {
     if (x != null && y != null) {
         context.fillText(text, x, y);
     }
+    return context;
 }

@@ -1,0 +1,105 @@
+@charset "utf-8";
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+body {
+    font-size: 20px;
+}
+main {
+    margin: auto;
+    max-width: 1200px;
+}
+table {
+    font-size: 17px;
+    display: none;
+    margin: auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+main.loaded table {
+    display: table;
+}
+td {
+    min-width: 25px;
+    border: 1px solid darkgray;
+    padding: 1px 4px;
+}
+.toggle-row {
+    text-align: center;
+}
+.toggle {
+    display: inline-block;
+    margin: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: orange;
+    padding: 4px 20px;
+    color: orange;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+}
+input:checked+.toggle {
+    background-color: orange;
+    color: white;
+}
+.input-row {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+input[type="text"] {
+    flex-grow: 1;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: gray;
+    padding: 2px 4px;
+    font-size: 20px;
+}
+input::selection {
+    background-color: rgba(255, 166, 0, 0.5);
+}
+.loading-a {
+    height: 50vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main.loading .loading-a {
+    display: flex;
+}
+.loading-b {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.loading-c {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+.loading-d {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 6px;
+    border-color: orange;
+}

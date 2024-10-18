@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="qsq-psp">
+    <meta name="color-scheme" content="light">
+    <title>字符度量</title>
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="text-metrics.css">
+    <script src="text-metrics.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <label for="contentTextInput">文字内容：</label>
+            <input id="contentTextInput" type="text" value="我能吞下玻璃而不伤身体。">
+            <input id="inputCheckboxAutoUpdate" type="checkbox">
+            <label for="inputCheckboxAutoUpdate">自动更新</label>
+            <input id="fillAnalysisCheckboxInput" type="checkbox" checked>
+            <label for="fillAnalysisCheckboxInput">计算填充</label>
+            <input id="updateButton" type="button" value="更新" title="Enter">
+            <input id="backButton" type="button" value="返回" title="Enter">
+        </div>
+        <div>
+            <label for="fontFamilyInput">字体名称：</label>
+            <input id="fontFamilyInput" type="text" value="Consolas">
+            <input id="addFontButton" type="button" value="添加" title="Enter">
+            <input id="queryFontButton" type="button" value="从系统字体库添加..." title="Enter">
+        </div>
+    </header>
+    <div id="headerShadow"></div>
+    <main>
+        <table id="fontCompareTable" class="none">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="name">
+                            <div class="zh">字体名称</div>
+                            <div class="en">Font family</div>
+                        </div>
+                        <div class="sort" as="text">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name">
+                            <div class="zh">别名</div>
+                            <div class="en">Alias</div>
+                        </div>
+                        <div class="sort" as="text">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name">
+                            <div class="zh">展示</div>
+                            <div class="en">Display</div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="name" title="textMetrics.width">
+                            <div class="zh">占位宽度</div>
+                            <div class="en">Width</div>
+                        </div>
+                        <div class="sort" as="float">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name" title="textMetrics.fontBoundingBoxAscent + textMetrics.fontBoundingBoxDescent">
+                            <div class="zh">占位高度</div>
+                            <div class="en">Height</div>
+                        </div>
+                        <div class="sort" as="float">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name" title="textMetrics.fontBoundingBoxAscent">
+                            <div class="zh">上边距</div>
+                            <div class="en">Ascent</div>
+                        </div>
+                        <div class="sort" as="float">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name" title="textMetrics.fontBoundingBoxDescent">
+                            <div class="zh">下边距</div>
+                            <div class="en">Descent</div>
+                        </div>
+                        <div class="sort" as="float">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name" title="textMetrics.actualBoundingBoxLeft + textMetrics.actualBoundingBoxRight">
+                            <div class="zh">包围盒宽度</div>
+                            <div class="en">Box width</div>
+                        </div>
+                        <div class="sort" as="float">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name" title="textMetrics.actualBoundingBoxAscent + textMetrics.actualBoundingBoxDescent">
+                            <div class="zh">包围盒高度</div>
+                            <div class="en">Box height</div>
+                        </div>
+                        <div class="sort" as="float">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name">
+                            <div class="zh">填充面积</div>
+                            <div class="en">Fill area</div>
+                        </div>
+                        <div class="sort" as="float">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name">
+                            <div class="zh">填充面积百分比</div>
+                            <div class="en">Fill percent</div>
+                        </div>
+                        <div class="sort" as="float">&#x25ac;</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="fontCompareTbody"></tbody>
+        </table>
+        <table id="glyphCompareTable" class="none">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="name" title="string.codePointAt()">
+                            <div class="zh">字符编码</div>
+                            <div class="en">Code point</div>
+                        </div>
+                        <div class="sort" as="hex">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name" title="string.fromCodePoint()">
+                            <div class="zh">字符</div>
+                            <div class="en">Character</div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="name" title="textMetrics.width">
+                            <div class="zh">占位宽度</div>
+                            <div class="en">Width</div>
+                        </div>
+                        <div class="sort" as="float">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name" title="textMetrics.actualBoundingBoxLeft + textMetrics.actualBoundingBoxRight">
+                            <div class="zh">包围盒宽度</div>
+                            <div class="en">Box width</div>
+                        </div>
+                        <div class="sort" as="float">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name" title="textMetrics.actualBoundingBoxAscent + textMetrics.actualBoundingBoxDescent">
+                            <div class="zh">包围盒高度</div>
+                            <div class="en">Box height</div>
+                        </div>
+                        <div class="sort" as="float">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name">
+                            <div class="zh">填充面积</div>
+                            <div class="en">Fill area</div>
+                        </div>
+                        <div class="sort" as="float">&#x25ac;</div>
+                    </th>
+                    <th>
+                        <div class="name">
+                            <div class="zh">填充面积百分比</div>
+                            <div class="en">Fill percent</div>
+                        </div>
+                        <div class="sort" as="float">&#x25ac;</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="glyphCompareTbody">
+                <tr id="averageRow">
+                    <td></td>
+                    <td>平均值</td>
+                    <td></td><td></td><td></td><td></td><td></td> <!-- td * 5 -->
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

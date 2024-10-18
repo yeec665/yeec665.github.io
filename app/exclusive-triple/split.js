@@ -255,7 +255,7 @@ class Split {
 }
 document.addEventListener("readystatechange", () => {
     const doc = document;
-    if (doc.readyState != "interactive") {
+    if (doc.readyState !== "interactive") {
         return;
     }
     const params = new URLSearchParams(location.search);

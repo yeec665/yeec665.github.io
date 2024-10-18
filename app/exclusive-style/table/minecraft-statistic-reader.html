@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>我的世界统计信息阅读器</title>
+    <link rel="stylesheet" href="minecraft-statistic-reader.css">
+    <script src="minecraft-statistic-reader.js"></script>
+</head>
+<body>
+    <main>
+        <section id="fileInputSection">
+            <p>本阅读器可以打开如下文件：</p>
+            <p class="file-path">.minecraft/versions/版本号/saves/世界名称/stats/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.json</p>
+            <p>如果开启了版本隔离：</p>
+            <p class="file-path">.minecraft/saves/世界名称/stats/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.json</p>
+            <p>可以把文件拖入此页面，也可以点击下面的按钮</p>
+            <p><input id="chooseFileInput" type="file"></p>
+        </section>
+        <section id="itemSection">
+            <table data-column-count="6">
+                <caption>物品与方块部分</caption>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th id="minecraft_dropped">
+                            <div class="zh">丢弃</div>
+                            <div class="en">dropped</div>
+                        </th>
+                        <th id="minecraft_picked_up">
+                            <div class="zh">捡起</div>
+                            <div class="en">picked up</div>
+                        </th>
+                        <th id="minecraft_mined">
+                            <div class="zh">破坏</div>
+                            <div class="en">mined</div>
+                        </th>
+                        <th id="minecraft_crafted">
+                            <div class="zh">合成</div>
+                            <div class="en">crafted</div>
+                        </th>
+                        <th id="minecraft_used">
+                            <div class="zh">使用</div>
+                            <div class="en">used</div>
+                        </th>
+                        <th id="minecraft_broken">
+                            <div class="zh">损坏</div>
+                            <div class="en">broken</div>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+        <section id="mobSection">
+            <table data-column-count="2">
+                <caption>生物部分</caption>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th id="minecraft_killed">
+                            <div class="zh">杀死</div>
+                            <div class="en">killed</div>
+                        </th>
+                        <th id="minecraft_killed_by">
+                            <div class="zh">被杀死</div>
+                            <div class="en">killed by</div>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

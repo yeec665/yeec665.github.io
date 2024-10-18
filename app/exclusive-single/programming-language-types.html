@@ -680,27 +680,36 @@
             </tr>
             <tr>
                 <th>判断无穷</th>
-                <td></td>
-                <td></td>
                 <td>
-                    <div>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-finite.html">isFinite</a>(3)</div>
-                    <div>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-infinite.html">isInfinite</a>(3)</div>
+                    <div>Float.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Float.html#isFinite(float)">isFinite</a>(3)</div>
+                    <div>Float.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Float.html#isInfinite(float)">isInfinite</a>(3)</div>
+                </td>
+                <td>
+                    <div>Double.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#isFinite(double)">isFinite</a>(3)</div>
+                    <div>Double.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#isInfinite(double)">isInfinite</a>(3)</div>
                 </td>
                 <td>
                     <div>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-finite.html">isFinite</a>(3)</div>
+                    <div>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-infinite.html">isInfinite</a>(3)</div>
+                </td>
+                <td>
+                    <div>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-finite.html">isFinite</a>(3)</div>
                     <div>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-infinite.html">isInfinite</a>(3)</div>
                 </td>
                 <td>
                     <div><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isFinite">isFinite</a>(3)</div>
                     <div>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite">isFinite</a>(3)</div>
                 </td>
-                <td></td>
+                <td>
+                    <div>math.<a href="https://docs.python.org/3/library/math.html#math.isfinite">isfinite</a>(3)</div>
+                    <div>math.<a href="https://docs.python.org/3/library/math.html#math.isinf">isinf</a>(3)</div>
+                </td>
                 <td></td>
             </tr>
             <tr>
                 <th>判断非数</th>
-                <td></td>
-                <td></td>
+                <td>Float.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Float.html#isNaN(double)">isNaN</a>(3)</td>
+                <td>Double.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#isNaN(double)">isNaN</a>(3)</td>
                 <td>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-na-n.html">isNaN</a>(3)</td>
                 <td>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/is-na-n.html">isNaN</a>(3)</td>
                 <td>
@@ -712,8 +721,8 @@
             </tr>
             <tr>
                 <th>符号函数</th>
-                <td></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#signum(float)">sign</a>(3f)</td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#signum(double)">sign</a>(3.0)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sign.html">sign</a>(3f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sign.html">sign</a>(3.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign">sign</a>(3)</td>
@@ -722,8 +731,8 @@
             </tr>
             <tr>
                 <th>绝对值</th>
-                <td></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#abs(float)">abs</a>(3f)</td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#abs(double)">abs</a>(3.0)</td>
                 <td>
                     <div><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/abs.html#kotlin.math$abs(kotlin.Double)">abs</a>(3f)</div>
                     <div>x.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/absolute-value.html">absoluteValue</a></div>
@@ -733,13 +742,13 @@
                     <div>x.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/absolute-value.html">absoluteValue</a></div>
                 </td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs">abs</a>(3)</td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.fabs">fabs</a>(3)</td>
                 <td></td>
             </tr>
             <tr>
                 <th>向下取整</th>
-                <td></td>
-                <td></td>
+                <td class="none"></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#floor(double)">floor</a>(3.0)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/floor.html">floor</a>(3f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/floor.html">floor</a>(3.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor">floor</a>(3)</td>
@@ -748,8 +757,8 @@
             </tr>
             <tr>
                 <th>向上取整</th>
-                <td></td>
-                <td></td>
+                <td class="none"></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#ceil(double)">ceil</a>(3.0)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/ceil.html">ceil</a>(3f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/ceil.html">ceil</a>(3.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil">ceil</a>(3)</td>
@@ -761,31 +770,43 @@
             </tr>
             <tr>
                 <th>向零取整</th>
-                <td></td>
-                <td></td>
+                <td>
+                    <div>(int) 3f</div>
+                    <div>(long) 3f</div>
+                </td>
+                <td>
+                    <div>(int) 3.0</div>
+                    <div>(long) 3.0</div>
+                </td>
                 <td></td>
                 <td></td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc">trunc</a>(3)</td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.trunc">trunc</a>(3)</td>
                 <td></td>
             </tr>
             <tr>
                 <th>非数</th>
-                <td></td>
-                <td></td>
+                <td>Float.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Float.html#NaN">NaN</a></td>
+                <td>Double.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#NaN">NaN</a></td>
                 <td>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/-na-n.html">NaN</a></td>
                 <td>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/-na-n.html">NaN</a></td>
                 <td>
                     <div><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN">NaN</a></div>
                     <div>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NaN">NaN</a></div>
                 </td>
-                <td></td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.nan">nan</a></td>
+                <td class="none"></td>
             </tr>
             <tr>
                 <th>无穷</th>
-                <td></td>
-                <td></td>
+                <td>
+                    <div>Float.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Float.html#POSITIVE_INFINITY">POSITIVE_INFINITY</a></div>
+                    <div>Float.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Float.html#NEGATIVE_INFINITY">NEGATIVE_INFINITY</a></div>
+                </td>
+                <td>
+                    <div>Double.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#POSITIVE_INFINITY">POSITIVE_INFINITY</a></div>
+                    <div>Double.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#NEGATIVE_INFINITY">NEGATIVE_INFINITY</a></div>
+                </td>
                 <td>
                     <div>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/-p-o-s-i-t-i-v-e_-i-n-f-i-n-i-t-y.html">POSITIVE_INFINITY</a></div>
                     <div>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/-n-e-g-a-t-i-v-e_-i-n-f-i-n-i-t-y.html">NEGATIVE_INFINITY</a></div>
@@ -799,13 +820,13 @@
                     <div>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/POSITIVE_INFINITY">POSITIVE_INFINITY</a></div>
                     <div>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NEGATIVE_INFINITY">NEGATIVE_INFINITY</a></div>
                 </td>
-                <td></td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.inf">inf</a></td>
+                <td class="none"></td>
             </tr>
             <tr>
                 <th>除负无穷外的最小值</th>
-                <td></td>
-                <td></td>
+                <td>Float.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Float.html#MIN_VALUE">MIN_VALUE</a></td>
+                <td>Double.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#MIN_VALUE">MIN_VALUE</a></td>
                 <td>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/-m-i-n_-v-a-l-u-e.html">MIN_VALUE</a></td>
                 <td>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/-m-i-n_-v-a-l-u-e.html">MIN_VALUE</a></td>
                 <td>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_VALUE">MIN_VALUE</a></td>
@@ -814,8 +835,8 @@
             </tr>
             <tr>
                 <th>除正无穷外的最大值</th>
-                <td></td>
-                <td></td>
+                <td>Float.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Float.html#MAX_VALUE">MAX_VALUE</a></td>
+                <td>Double.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#MAX_VALUE">MAX_VALUE</a></td>
                 <td>Float.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/-m-a-x_-v-a-l-u-e.html">MAX_VALUE</a></td>
                 <td>Double.<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/-m-a-x_-v-a-l-u-e.html">MAX_VALUE</a></td>
                 <td>Number.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_VALUE">MAX_VALUE</a></td>
@@ -825,27 +846,27 @@
             <tr>
                 <th>平方根</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#sqrt(double)">sqrt</a>(20)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sqrt.html">sqrt</a>(20f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sqrt.html">sqrt</a>(20.0)</td>
-                <td></td>
-                <td></td>
+                <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt">sqrt</a>(20)</td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.sqrt">sqrt</a>(20)</td>
                 <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_sqrt">SQRT</a>(20)</td>
             </tr>
             <tr>
                 <th>立方根</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#cbrt(double)">cbrt</a>(2)</td>
                 <td class="none"></td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/cbrt.html">cbrt</a>(2f)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cbrt">cbrt</a>(2)</td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.cbrt">cbrt</a>(3)</td>
                 <td class="none"></td>
             </tr>
             <tr>
                 <th>乘方</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#pow(double,double)">pow</a>(3, 5)</td>
                 <td>
                     <div>(3f).<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/pow.html">pow</a>(5)</div>
                     <div>(3f).<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/pow.html">pow</a>(5f)</div>
@@ -861,21 +882,21 @@
             <tr>
                 <th>指数函数</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#exp(double)">exp</a>(2)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/exp.html">exp</a>(2f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/exp.html">exp</a>(2.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/exp">exp</a>(2)</td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.exp">exp</a>(2)</td>
                 <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_exp">EXP</a>(2)</td>
             </tr>
             <tr>
                 <th>自然对数</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#log(double)">log</a>(2)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/ln.html">ln</a>(2f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/ln.html">ln</a>(2.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log">log</a>(2)</td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.log">log</a>(2)</td>
                 <td>
                     <div><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_ln">LN</a>(2)</div>
                     <div><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_log">LOG</a>(2)</div>
@@ -884,57 +905,57 @@
             <tr>
                 <th>常用对数</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#log10(double)">log10</a>(2)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/log10.html">log10</a>(2f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/log10.html">log10</a>(2.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log10">log10</a>(2)</td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.log10">log10</a>(2)</td>
                 <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_log10">LOG10</a>(2)</td>
             </tr>
             <tr>
                 <th>任意底对数</th>
                 <td class="none"></td>
-                <td></td>
+                <td class="none"></td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/log.html">log</a>(x, base)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/log.html">log</a>(x, base)</td>
                 <td class="none"></td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.log">log</a>(x, base)</td>
                 <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_log">LOG</a>(2, 65536)</td>
             </tr>
             <tr>
                 <th>正弦函数</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#sin(double)">sin</a>(3)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sin.html">sin</a>(3f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sin.html">sin</a>(3.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sin">sin</a>(3)</td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.sin">sin</a>(3)</td>
                 <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_sin">SIN</a>(1)</td>
             </tr>
             <tr>
                 <th>余弦函数</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#cos(double)">cos</a>(3)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/cos.html">cos</a>(3f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/cos.html">cos</a>(3.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cos">cos</a>(3)</td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.cos">cos</a>(3)</td>
                 <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_cos">COS</a>(1)</td>
             </tr>
             <tr>
                 <th>正切函数</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#tan(double)">tan</a>(3)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/tan.html">tan</a>(3f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/tan.html">tan</a>(3.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tan">tan</a>(3)</td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.tan">tan</a>(3)</td>
                 <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_tan">TAN</a>(1)</td>
             </tr>
             <tr>
                 <th>双曲正弦函数</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#sinh(double)">sinh</a>(3)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sinh.html">sinh</a>(3f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sinh.html">sinh</a>(3.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sinh">sinh</a>(3)</td>
@@ -944,7 +965,7 @@
             <tr>
                 <th>双曲余弦函数</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#cosh(double)">cosh</a>(3)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/cosh.html">cosh</a>(3f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/cosh.html">cosh</a>(3.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cosh">cosh</a>(3)</td>
@@ -954,7 +975,7 @@
             <tr>
                 <th>双曲正切函数</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#tanh(double)">tanh</a>(3)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/tanh.html">tanh</a>(3f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/tanh.html">tanh</a>(3.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tanh">tanh</a>(3)</td>
@@ -963,8 +984,8 @@
             </tr>
             <tr>
                 <th>反正弦函数</th>
-                <td></td>
-                <td></td>
+                <td class="none"></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#asin(double)">asin</a>(0.2)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/asin.html">asin</a>(0.2f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/asin.html">asin</a>(0.2)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/asin">asin</a>(0.2)</td>
@@ -973,8 +994,8 @@
             </tr>
             <tr>
                 <th>反余弦函数</th>
-                <td></td>
-                <td></td>
+                <td class="none"></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#acos(double)">acos</a>(0.2)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/acos.html">acos</a>(0.2f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/acos.html">acos</a>(0.2)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/acos">acos</a>(0.2)</td>
@@ -983,8 +1004,8 @@
             </tr>
             <tr>
                 <th>反正切函数</th>
-                <td></td>
-                <td></td>
+                <td class="none"></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#atan(double)">atan</a>(0.2)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/atan.html">atan</a>(2f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/atan.html">atan</a>(2.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atan">atan</a>(2)</td>
@@ -994,7 +1015,7 @@
             <tr>
                 <th>双参数反正切函数</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#atan2(double,double)">atan2</a>(y, x)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/atan2.html">atan2</a>(y, x)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/atan2.html">atan2</a>(y, x)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atan2">atan2</a>(y, x)</td>
@@ -1007,31 +1028,41 @@
             <tr>
                 <th>直角三角形斜边函数</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#hypot(double,double)">hypot</a>(3, 4)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/hypot.html">hypot</a>(3f, 4f)</td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/hypot.html">hypot</a>(3.0, 4.0)</td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/hypot">hypot</a>(3, 4)</td>
-                <td></td>
+                <td class="varargs">math.<a href="https://docs.python.org/3/library/math.html#math.hypot">hypot</a>(3, 4)</td>
                 <td class="none"></td>
             </tr>
             <tr>
                 <th>圆周率</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#PI">PI</a></td>
                 <td class="none"></td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/-p-i.html">PI</a></td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI">PI</a></td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.pi">pi</a></td>
                 <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_pi">PI</a>()</td>
+            </tr>
+            <tr>
+                <th>两倍圆周率</th>
+                <td class="none"></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#TAU">TAU</a></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.tau">tau</a></td>
+                <td class="none"></td>
             </tr>
             <tr>
                 <th>自然对数的底</th>
                 <td class="none"></td>
-                <td></td>
+                <td>Math.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#E">E</a></td>
                 <td class="none"></td>
                 <td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/-e.html">E</a></td>
                 <td>Math.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/E">E</a></td>
-                <td></td>
+                <td>math.<a href="https://docs.python.org/3/library/math.html#math.e">e</a></td>
                 <td><a href="https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_exp">EXP</a>(1)</td>
             </tr>
         </tbody>
@@ -1138,18 +1169,18 @@
             </tr>
             <tr>
                 <th>双引号</th>
-                <td>"\""</td>
+                <td><span class="string">"<span class="kernel escape">\"</span>"</span></td>
                 <td></td>
                 <td>
-                    <div>'"'</div>
-                    <div>"\""</div>
-                    <div>`"`</div>
+                    <div><span class="string">'<span class="kernel">"</span>'</span></div>
+                    <div><span class="string">"<span class="kernel escape">\"</span>"</span></div>
+                    <div><span class="string">`<span class="kernel">"</span>`</span></div>
                 </td>
                 <td>
-                    <div>'"'</div>
-                    <div>"\""</div>
-                    <div>'''"'''</div>
-                    <div>"""\""""</div>
+                    <div><span class="string">'<span class="kernel">"</span>'</span></div>
+                    <div><span class="string">"<span class="kernel escape">\"</span>"</span></div>
+                    <div><span class="string">'''<span class="kernel">"</span>'''</span></div>
+                    <div><span class="string">"""<span class="kernel escape">\"</span>"""</span></div>
                 </td>
                 <td></td>
             </tr>
@@ -1158,15 +1189,15 @@
                 <td>"`"</td>
                 <td></td>
                 <td>
-                    <div>"`"</div>
-                    <div>'`'</div>
-                    <div>`\``</div>
+                    <div><span class="string">'<span class="kernel">`</span>'</span></div>
+                    <div><span class="string">"<span class="kernel">`</span>"</span></div>
+                    <div><span class="string">`<span class="kernel escape">\`</span>`</span></div>
                 </td>
                 <td>
-                    <div>"`"</div>
-                    <div>'`'</div>
-                    <div>"""`"""</div>
-                    <div>'''`'''</div>
+                    <div><span class="string">'<span class="kernel">`</span>'</span></div>
+                    <div><span class="string">"<span class="kernel">`</span>"</span></div>
+                    <div><span class="string">'''<span class="kernel">`</span>'''</span></div>
+                    <div><span class="string">"""<span class="kernel">`</span>"""</span></div>
                 </td>
                 <td></td>
             </tr>
@@ -1199,7 +1230,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td><span class="string">"<span class="kernel">The sum of 1 + 2 is {0}</span>"</span>.<a href="https://docs.python.org/3/library/stdtypes.html#str.format">format</a>(1 + 2)</td>
                 <td></td>
             </tr>
             <tr>
@@ -1342,6 +1373,46 @@
                 <td></td>
                 <td><span class="string">"<span class="kernel">string</span>"</span>.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith">endsWith</a>(<span class="string">"<span class="kernel">suffix</span>"</span>)</td>
                 <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>正向搜索</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div>firstIndex = <span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a>(<span class="string">"<span class="kernel">substring</span>"</span>)</div>
+                    <div>firstIndex = <span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a>(<span class="string">"<span class="kernel">substring</span>"</span>, startIndex)</div>
+                    <div>firstIndex = <span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a>(<span class="string">"<span class="kernel">substring</span>"</span>, startIndex, endIndex)</div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>反向搜索</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>判断子串</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><span class="string">"<span class="kernel">substring</span>"</span> in <span class="string">"<span class="kernel">string</span>"</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>计数</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div>count = <span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.python.org/3/library/stdtypes.html#str.count">count</a>(<span class="string">"<span class="kernel">substring</span>"</span>)</div>
+                    <div>count = <span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.python.org/3/library/stdtypes.html#str.count">count</a>(<span class="string">"<span class="kernel">substring</span>"</span>, startIndex)</div>
+                    <div>count = <span class="string">"<span class="kernel">string</span>"</span>.<a href="https://docs.python.org/3/library/stdtypes.html#str.count">count</a>(<span class="string">"<span class="kernel">substring</span>"</span>, startIndex, endIndex)</div>
+                </td>
                 <td></td>
             </tr>
             <tr>
