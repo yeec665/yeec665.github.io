@@ -95,7 +95,7 @@ class DayProgress {
     }
 }
 document.addEventListener("readystatechange", () => {
-    if (document.readyState == "interactive") {
+    if (document.readyState === "interactive") {
         window.app = new DayProgress();
     }
 });

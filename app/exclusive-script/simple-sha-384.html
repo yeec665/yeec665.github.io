@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SHA384</title>
+    <style>
+        main {
+            width: fit-content;
+            margin: auto;
+        }
+        span {
+            margin: 0 1em;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 1em auto;
+        }
+        th,td {
+            border: 1px solid gray;
+            padding: 2px 9px;
+        }
+        td.hex {
+            line-break: loose;
+            word-wrap: break-word;
+            word-break: break-all;
+            font-family: Courier, monospace;
+        }
+        td.error {
+            color: tomato;
+        }
+    </style>
+    <script src="simple-sha-384.js"></script>
+</head>
+<body>
+    <main>
+        <h2>SHA384 calculator for small files (less than 1MiB)</h2>
+        <div><input id="fileInput" type="file"></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Size</th>
+                    <th>Result (hex)</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </main>
+</body>
+</html>

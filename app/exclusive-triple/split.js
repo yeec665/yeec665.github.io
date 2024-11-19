@@ -50,6 +50,7 @@ class Split {
     }
     /**
      * @param {string | object} item
+     * @return {HTMLElement}
      */
     append(item) {
         const self = this;
@@ -114,6 +115,7 @@ class Split {
     }
     /**
      * @param {string} className
+     * @return {HTMLElement}
      */
     appendBar(className) {
         const bar = document.createElement("div");
@@ -224,6 +226,7 @@ class Split {
     }
     /**
      * @param {MouseEvent} event
+     * @return {boolean}
      */
     keydown(event) {
         if (event.key != "Escape") {

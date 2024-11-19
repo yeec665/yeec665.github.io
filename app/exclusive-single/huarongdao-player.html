@@ -53,7 +53,10 @@
 </head>
 <body>
     <script>
-        window.addEventListener("load", () => {
+        document.addEventListener("readystatechange", () => {
+            if (document.readyState !== "interactive") {
+                return;
+            }
             const main = document.createElement("main");
             const tbody = document.createElement("tbody");
             const size = 60;

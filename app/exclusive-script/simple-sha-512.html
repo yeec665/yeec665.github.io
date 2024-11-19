@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SHA512</title>
+    <style>
+        main {
+            width: fit-content;
+            margin: auto;
+        }
+        table {
+            margin: 1em auto;
+            border-collapse: collapse;
+        }
+        th,td {
+            border: 1px solid gray;
+            padding: 2px 9px;
+        }
+        td.hex {
+            font-family: Courier, monospace;
+            word-wrap: break-word;
+            word-break: break-all;
+            line-break: loose;
+        }
+        td.error {
+            color: tomato;
+        }
+        span {
+            margin: 0 1em;
+        }
+    </style>
+    <script src="simple-sha-512.js"></script><!-- page parallel implementation -->
+</head>
+<body>
+    <main>
+        <h2>SHA512 calculator for small files (less than 1MiB)</h2>
+        <div><input id="fileInput" type="file"></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>File name</th>
+                    <th title="bytes">File size</th>
+                    <th title="hex">SHA512</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </main>
+</body>
+</html>

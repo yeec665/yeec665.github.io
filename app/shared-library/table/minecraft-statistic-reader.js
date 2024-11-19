@@ -93,7 +93,12 @@ function parseFile(string) {
                         rowHead.parentNode.append(cell);
                     }
                 }
-                cell.textContent = columnObject[rowKey];
+                let value = parseInt(cell.textContent);
+                if (Number.isNaN(value)) {
+                    value = 0;
+                }
+                value += columnObject[rowKey];
+                cell.textContent = value;
             }
         }
     } catch (e) {

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SHA256</title>
+    <style>
+        main {
+            width: fit-content;
+            margin: auto;
+        }
+        span {
+            margin: 0 1em;
+        }
+        table {
+            margin: 1em auto;
+            border-collapse: collapse;
+        }
+        th,td {
+            border: 1px solid gray;
+            padding: 2px 9px;
+        }
+        td.hex {
+            font-family: Courier, monospace;
+        }
+        td.error {
+            color: rgb(212, 32, 0);
+        }
+    </style>
+    <script src="simple-sha-256.js"></script><!-- drag parallel implementation -->
+</head>
+<body>
+    <main>
+        <h2>SHA256 calculator for small files (less than 1MiB)</h2>
+        <div><input id="fileInput" type="file"><span>or drag file here</span></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Size (bytes)</th>
+                    <th>Digest (hex)</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </main>
+</body>
+</html>

@@ -1,8 +1,8 @@
 class ChromeLogo {
     static #EDGES = [
-        "#e63e31",
-        "#fbc422",
-        "#299b49"
+        ["#dc3327", "#ea4335"],
+        ["#fcbe03", "#fbbc04"],
+        ["#20903e", "#34a853"]
     ];
     static #FILL = "#2d7cee";
     static #STROKE = "#ffffff";
@@ -93,26 +93,35 @@ class ChromeLogo {
         this.context.setTransform(1, 0, 0, 1, 0.5 * w, 0.5 * h);
     }
     paintEdge() {
-        const count = ChromeLogo.#EDGES.length;
-        const a = 2 * Math.PI / count;
-        const r1 = this.r * this.r0;
+        const regions = ChromeLogo.#EDGES.length;
+        const a = 2 * Math.PI / regions;
+        const r0 = this.r0;
+        const r1 = this.r * r0;
         let a0 = this.a0;
         let a1 = this.a1;
         let a2;
-        for (let index = 0; index < count; index++) {
-            this.context.fillStyle = ChromeLogo.#EDGES[index];
+        for (let index = 0; index < regions; index++) {
             this.context.beginPath();
             this.context.moveTo(
                 r1 * Math.cos(a1),
                 r1 * Math.sin(a1)
             );
             a2 = a0 + a;
-            this.context.arc(0, 0, this.r0, a0, a2, false);
+            const gradient = this.context.createLinearGradient(
+                r0 * Math.cos(a0),
+                r0 * Math.sin(a0),
+                r0 * Math.cos(a2),
+                r0 * Math.sin(a2)
+            );
+            this.context.arc(0, 0, r0, a0, a2, false);
             a1 += a;
             this.context.lineTo(
                 r1 * Math.cos(a1),
                 r1 * Math.sin(a1)
             );
+            gradient.addColorStop(0, ChromeLogo.#EDGES[index][0]);
+            gradient.addColorStop(1, ChromeLogo.#EDGES[index][1]);
+            this.context.fillStyle = gradient;
             this.context.fill();
             a0 = a2;
         }
@@ -129,7 +138,7 @@ class ChromeLogo {
     }
 }
 document.addEventListener("readystatechange", () => {
-    if (document.readyState == "interactive") {
+    if (document.readyState === "interactive") {
         window.app = new ChromeLogo();
     }
 });

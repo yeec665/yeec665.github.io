@@ -5,10 +5,22 @@
     <meta name="keywords" content="table">
     <meta name="color-scheme" content="light">
     <title>地质时期</title>
-    <link rel="shortcut icon" href="../image/favicon-crown.png">
+    <link rel="shortcut icon" href="../image/favicon.svg">
     <style>
         table {
+            margin: auto;
             border-collapse: collapse;
+        }
+        caption {
+            font-weight: bold;
+            font-size: large;
+        }
+        thead {
+            position: relative;
+            background-color: white;
+            outline: 3px solid gray;
+            outline-offset: -1px;
+            user-select: none;
         }
         th,td {
             border: 1px solid gray;
@@ -18,6 +30,7 @@
 </head>
 <body>
     <table>
+        <caption>地质时期</caption>
         <thead>
             <tr>
                 <th>
@@ -821,5 +834,13 @@
             </tr>
         </tbody>
     </table>
+    <script>
+        const scroll = document.scrollingElement;
+        const table = document.querySelector("table");
+        const thead = document.querySelector("thead");
+        window.addEventListener("scroll", () => {
+            thead.style.top = Math.max(0, scroll.scrollTop - table.offsetTop) + "px";
+        }, {passive: true});
+    </script>
 </body>
 </html>

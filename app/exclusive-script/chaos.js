@@ -26,7 +26,7 @@ document.addEventListener("readystatechange", () => {
     cv.addEventListener("mousemove", (event) => {
         mx = (event.layerX - 0.5 * width) / mag;
         my = (event.layerY - 0.5 * height) / mag;
-    });
+    }, {passive: true});
     function step() {
         /** @type {CanvasRenderingContext2D} */
         const ctx = cv.getContext("2d");
