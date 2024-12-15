@@ -1,0 +1,89 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+.board {
+    padding: 4px;
+    background-color: rgb(252, 252, 252);
+}
+.gap {
+    margin: 7px;
+    height: 3px;
+    background-color: rgb(241, 241, 241);
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.power.border,.power.holes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.power.border {
+    font-family: Courier, monospace;
+    font-weight: bold;
+}
+.power.group {
+    margin: 0 9px;
+    display: grid;
+    grid-template-columns: repeat(5, 18px);
+    grid-template-rows: repeat(2, 18px);
+}
+.center,.hr {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+.hr {
+    border-width: 2px;
+    border-color: currentColor;
+    border-style: none;
+    border-top-style: solid;
+}
+.sign {
+    padding: 0 4px;
+}
+.negative.power {
+    color: rgb(81, 176, 231);
+}
+.positive.power {
+    color: rgb(231, 28, 79);
+}
+.logic.holes {
+    margin: 0 auto;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(5, 18px);
+    grid-template-rows: repeat(5, 18px);
+}
+.hole {
+    margin: 5px;
+    border: 1px solid currentColor;
+    border-top-color: rgb(235, 235, 235);
+    border-left-color: rgb(235, 235, 235);
+    border-bottom-color: rgb(207, 207, 207);
+    border-right-color: rgb(207, 207, 207);
+    background-color: rgb(184, 184, 184);
+}
+.hole:hover {
+    outline: 2px solid rgb(112, 214, 112);
+    outline-offset: 3px;
+}
+.center {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+table {
+    margin: 1em auto;
+    border-collapse: collapse;
+}
+th,td {
+    border: 1px solid rgb(80, 80, 80);
+    padding: 2px 8px;
+    text-align: center;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>面包板</title>
+    <link rel="stylesheet" href="breadboard.css">
+    <script src="breadboard.js"></script>
+</head>
+<body>
+    <div class="header board">
+        <div class="power area">
+            <div class="negative power border"><span class="sign">-</span><span class="hr"></span><span class="sign">-</span></div>
+            <div class="power holes"></div>
+            <div class="positive power border"><span class="sign">+</span><span class="hr"></span><span class="sign">+</span></div>
+        </div>
+        <div class="gap"></div>
+        <div class="logic area">
+            <div class="label border"></div>
+            <div class="logic holes"></div>
+        </div>
+    </div>
+    <div class="center">
+        <table>
+            <caption>USB Micro-A Plug Pin Assignments</caption>
+            <thead>
+                <tr>
+                    <th>Contact Number</th>
+                    <th>Signal Name</th>
+                    <th>Typical Wiring Assignment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>VBUS</td>
+                    <td>Red</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>D-</td>
+                    <td>White</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>D+</td>
+                    <td>Green</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>ID</td>
+                    <td>less than Ra_PLUG_ID</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>GND</td>
+                    <td>Black</td>
+                </tr>
+                <tr>
+                    <td>Shell</td>
+                    <td>Shield</td>
+                    <td>Drain Wire</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <caption>USB Type-C Receptacle Interface Pin Assignments</caption>
+            <thead>
+                <tr>
+                    <th>Pin</th>
+                    <th>Signal Name</th>
+                    <th>Description</th>
+                    <th>Pin</th>
+                    <th>Signal Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td mating="first">A1</td>
+                    <td>GND</td>
+                    <td>Ground return</td>
+                    <td class="vd" mating="first">B12</td>
+                    <td>GND</td>
+                    <td>Ground return</td>
+                </tr>
+                <tr>
+                    <td mating="second">A2</td>
+                    <td>TXp1</td>
+                    <td>Positive half of first TX differential pair</td>
+                    <td class="vd" mating="second">B11</td>
+                    <td>RXp1</td>
+                    <td>Positive half of first RX differential pair</td>
+                </tr>
+                <tr>
+                    <td mating="second">A3</td>
+                    <td>TXn1</td>
+                    <td>Negative half of first TX differential pair</td>
+                    <td class="vd" mating="second">B10</td>
+                    <td>RXn1</td>
+                    <td>Negative half of first RX differential pair</td>
+                </tr>
+                <tr>
+                    <td mating="first">A4</td>
+                    <td>VBUS</td>
+                    <td>Bus Power</td>
+                    <td class="vd" mating="first">B9</td>
+                    <td>VBUS</td>
+                    <td>Bus Power</td>
+                </tr>
+                <tr>
+                    <td mating="second">A5</td>
+                    <td>CC1</td>
+                    <td>Configuration Channel</td>
+                    <td class="vd" mating="second">B8</td>
+                    <td>SBU2</td>
+                    <td>Sideband Use</td>
+                </tr>
+                <tr>
+                    <td mating="second">A6</td>
+                    <td>Dp1 (D+)</td>
+                    <td>Positive half of the USB 2.0 differential pair - Position 1</td>
+                    <td class="vd" mating="second">B7</td>
+                    <td>Dn2 (D-)</td>
+                    <td>Negative half of the USB 2.0 differential pair - Position 2</td>
+                </tr>
+                <tr>
+                    <td mating="second">A7</td>
+                    <td>Dn1 (D-)</td>
+                    <td>Negative half of the USB 2.0 differential pair - Position 1</td>
+                    <td class="vd" mating="second">B6</td>
+                    <td>Dp2 (D+)</td>
+                    <td>Positive half of the USB 2.0 differential pair - Position 2</td>
+                </tr>
+                <tr>
+                    <td mating="second">A8</td>
+                    <td>SBU1</td>
+                    <td>Sideband Use</td>
+                    <td class="vd" mating="second">B5</td>
+                    <td>CC2</td>
+                    <td>Configuration Channel</td>
+                </tr>
+                <tr>
+                    <td mating="first">A9</td>
+                    <td>VBUS</td>
+                    <td>Bus Power</td>
+                    <td class="vd" mating="first">B4</td>
+                    <td>VBUS</td>
+                    <td>Bus Power</td>
+                </tr>
+                <tr>
+                    <td mating="second">A10</td>
+                    <td>RXn2</td>
+                    <td>Negative half of first RX differential pair</td>
+                    <td class="vd" mating="second">B3</td>
+                    <td>TXn2</td>
+                    <td>Negative half of first TX differential pair</td>
+                </tr>
+                <tr>
+                    <td mating="second">A11</td>
+                    <td>RXp2</td>
+                    <td>Positive half of first RX differential pair</td>
+                    <td class="vd" mating="second">B2</td>
+                    <td>TXp2</td>
+                    <td>Positive half of first TX differential pair</td>
+                </tr>
+                <tr>
+                    <td mating="first">A12</td>
+                    <td>GND</td>
+                    <td>Ground return</td>
+                    <td class="vd" mating="first">B1</td>
+                    <td>GND</td>
+                    <td>Ground return</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="footer board">
+        <div class="logic area">
+            <div class="logic holes"></div>
+            <div class="label border"></div>
+        </div>
+        <div class="gap"></div>
+        <div class="power area">
+            <div class="negative power border"><span class="sign">-</span><span class="hr"></span><span class="sign">-</span></div>
+            <div class="power holes"></div>
+            <div class="positive power border"><span class="sign">+</span><span class="hr"></span><span class="sign">+</span></div>
+        </div>
+    </div>
+</body>
+</html>

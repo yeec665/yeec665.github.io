@@ -260,7 +260,7 @@ class SHA384 {
     toString() {
         const parts = [];
         for (let index = 0; index < 6; index++) {
-            parts.push(this.out[index].toString(16).padStart(16, ''));
+            parts.push(this.out[index].toString(16).padStart(16, '0'));
         }
         return parts.join('');
     }

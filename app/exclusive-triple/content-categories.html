@@ -5,11 +5,13 @@
     <meta name="color-scheme" content="light">
     <title>HTML标签分类</title>
     <link rel="icon" type="image/svg+xml" href="../image/favicon.svg">
+    <link rel="stylesheet" href="content-categories.css">
     <script src="content-categories.js"></script>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Content_categories -->
+    <!-- https://developer.mozilla.org/en-US/docs/Web/SVG/Element -->
 </head>
 <body>
-    <ul data-name="metadata">
+    <ul data-section="metadata">
         <li class="tag">base</li>
         <li class="tag">link</li>
         <li class="tag">meta</li>
@@ -18,7 +20,7 @@
         <li class="tag">style</li>
         <li class="tag">title</li>
     </ul>
-    <ul data-name="flow">
+    <ul data-section="flow">
         <li class="tag">a</li>
         <li class="tag">abbr</li>
         <li class="tag">address</li>
@@ -107,13 +109,13 @@
         <li class="tag">video</li>
         <li class="tag">wbr</li>
     </ul>
-    <ul data-name="sectioning">
+    <ul data-section="sectioning">
         <li class="tag">article</li>
         <li class="tag">aside</li>
         <li class="tag">nav</li>
         <li class="tag">section</li>
     </ul>
-    <ul data-name="heading">
+    <ul data-section="heading">
         <li class="tag">h1</li>
         <li class="tag">h2</li>
         <li class="tag">h3</li>
@@ -122,7 +124,7 @@
         <li class="tag">h6</li>
         <li class="tag">hgroup</li>
     </ul>
-    <ul data-name="phrasing">
+    <ul data-section="phrasing">
         <li class="tag conditional">a</li>
         <li class="tag">abbr</li>
         <li class="tag conditional">area</li>
@@ -180,7 +182,7 @@
         <li class="tag">video</li>
         <li class="tag">wbr</li>
     </ul>
-    <ul data-name="embedded">
+    <ul data-section="embedded">
         <li class="tag">audio</li>
         <li class="tag">canvas</li>
         <li class="tag">embed</li>
@@ -192,7 +194,7 @@
         <li class="tag">svg</li>
         <li class="tag">video</li>
     </ul>
-    <ul data-name="interactive">
+    <ul data-section="interactive">
         <li class="tag conditional">a</li>
         <li class="tag conditional">audio</li>
         <li class="tag">button</li>
@@ -207,7 +209,7 @@
         <li class="tag">textarea</li>
         <li class="tag conditional">video</li>
     </ul>
-    <ul data-name="palpable">
+    <ul data-section="palpable">
         <li class="tag">a</li>
         <li class="tag">abbr</li>
         <li class="tag">address</li>
@@ -273,7 +275,7 @@
         <li class="tag">var</li>
         <li class="tag">video</li>
     </ul>
-    <ul data-name="form-associated">
+    <ul data-section="form-associated">
         <li class="tag">button</li>
         <li class="tag">fieldset</li>
         <li class="tag">input</li>
@@ -285,7 +287,7 @@
         <li class="tag">select</li>
         <li class="tag">textarea</li>
     </ul>
-    <ul data-name="listed">
+    <ul data-section="listed">
         <li class="tag">button</li>
         <li class="tag">fieldset</li>
         <li class="tag">input</li>
@@ -294,7 +296,7 @@
         <li class="tag">select</li>
         <li class="tag">textarea</li>
     </ul>
-    <ul data-name="labelable">
+    <ul data-section="labelable">
         <li class="tag">button</li>
         <li class="tag">input</li>
         <li class="tag">meter</li>
@@ -303,37 +305,60 @@
         <li class="tag">select</li>
         <li class="tag">textarea</li>
     </ul>
-    <ul data-name="submittable">
+    <ul data-section="submittable">
         <li class="tag">button</li>
         <li class="tag">input</li>
         <li class="tag">object</li>
         <li class="tag">select</li>
         <li class="tag">textarea</li>
     </ul>
-    <ul data-name="resettable">
+    <ul data-section="resettable">
         <li class="tag">input</li>
         <li class="tag">output</li>
         <li class="tag">select</li>
         <li class="tag">textarea</li>
     </ul>
-    <ul data-name="script-supporting">
+    <ul data-section="script-supporting">
         <li class="tag">script</li>
         <li class="tag">template</li>
     </ul>
-    <ul data-name="transparent">
+    <ul data-section="transparent">
         <li class="tag">ins</li>
         <li class="tag">del</li>
     </ul>
-    <ul data-name="svg">
-        <li class="tag svg">a</li>
+    <ul class="svg-all" data-section="svg-animation">
         <li class="tag svg">animate</li>
         <li class="tag svg">animateMotion</li>
         <li class="tag svg">animateTransform</li>
+        <li class="tag svg">mpath</li>
+        <li class="tag svg">set</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-basic-shapes">
         <li class="tag svg">circle</li>
-        <li class="tag svg">clipPath</li>
-        <li class="tag svg">defs</li>
-        <li class="tag svg">desc</li>
         <li class="tag svg">ellipse</li>
+        <li class="tag svg">line</li>
+        <li class="tag svg">polygon</li>
+        <li class="tag svg">polyline</li>
+        <li class="tag svg">rect</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-container">
+        <li class="tag svg">a</li>
+        <li class="tag svg">defs</li>
+        <li class="tag svg">g</li>
+        <li class="tag svg">marker</li>
+        <li class="tag svg">mask</li>
+        <li class="tag svg">missing-glyph</li>
+        <li class="tag svg">pattern</li>
+        <li class="tag svg">svg</li>
+        <li class="tag svg">switch</li>
+        <li class="tag svg">symbol</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-descriptive">
+        <li class="tag svg">desc</li>
+        <li class="tag svg">metadata</li>
+        <li class="tag svg">title</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-filter-primitive">
         <li class="tag svg">feBlend</li>
         <li class="tag svg">feColorMatrix</li>
         <li class="tag svg">feComponentTransfer</li>
@@ -359,26 +384,73 @@
         <li class="tag svg">feSpotLight</li>
         <li class="tag svg">feTile</li>
         <li class="tag svg">feTurbulence</li>
-        <li class="tag svg">filter</li>
-        <li class="tag svg">foreignObject</li>
-        <li class="tag svg">g</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-font">
+        <li class="tag svg">font</li>
+        <li class="tag svg">font-face</li>
+        <li class="tag svg">font-face-format</li>
+        <li class="tag svg">font-face-name</li>
+        <li class="tag svg">font-face-src</li>
+        <li class="tag svg">font-face-uri</li>
+        <li class="tag svg">hkern</li>
+        <li class="tag svg">vkern</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-gradient">
+        <li class="tag svg">linearGradient</li>
+        <li class="tag svg">radialGradient</li>
+        <li class="tag svg">stop</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-graphics">
+        <li class="tag svg">circle</li>
+        <li class="tag svg">ellipse</li>
         <li class="tag svg">image</li>
         <li class="tag svg">line</li>
+        <li class="tag svg">path</li>
+        <li class="tag svg">polygon</li>
+        <li class="tag svg">polyline</li>
+        <li class="tag svg">rect</li>
+        <li class="tag svg">text</li>
+        <li class="tag svg">use</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-graphics-referencing">
+        <li class="tag svg">use</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-light-source">
+        <li class="tag svg">feDistantLight</li>
+        <li class="tag svg">fePointLight</li>
+        <li class="tag svg">feSpotLight</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-never-rendered">
+        <li class="tag svg">clipPath</li>
+        <li class="tag svg">defs</li>
         <li class="tag svg">linearGradient</li>
         <li class="tag svg">marker</li>
         <li class="tag svg">mask</li>
         <li class="tag svg">metadata</li>
-        <li class="tag svg">mpath</li>
-        <li class="tag svg">path</li>
         <li class="tag svg">pattern</li>
+        <li class="tag svg">radialGradient</li>
+        <li class="tag svg">script</li>
+        <li class="tag svg">style</li>
+        <li class="tag svg">symbol</li>
+        <li class="tag svg">title</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-paint-server">
+        <li class="tag svg">linearGradient</li>
+        <li class="tag svg">pattern</li>
+        <li class="tag svg">radialGradient</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-renderable">
+        <li class="tag svg">a</li>
+        <li class="tag svg">circle</li>
+        <li class="tag svg">ellipse</li>
+        <li class="tag svg">foreignObject</li>
+        <li class="tag svg">g</li>
+        <li class="tag svg">image</li>
+        <li class="tag svg">line</li>
+        <li class="tag svg">path</li>
         <li class="tag svg">polygon</li>
         <li class="tag svg">polyline</li>
-        <li class="tag svg">radialGradient</li>
         <li class="tag svg">rect</li>
-        <li class="tag svg">script</li>
-        <li class="tag svg">set</li>
-        <li class="tag svg">stop</li>
-        <li class="tag svg">style</li>
         <li class="tag svg">svg</li>
         <li class="tag svg">switch</li>
         <li class="tag svg">symbol</li>
@@ -386,9 +458,46 @@
         <li class="tag svg">textPath</li>
         <li class="tag svg">tspan</li>
         <li class="tag svg">use</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-shape">
+        <li class="tag svg">circle</li>
+        <li class="tag svg">ellipse</li>
+        <li class="tag svg">line</li>
+        <li class="tag svg">path</li>
+        <li class="tag svg">polygon</li>
+        <li class="tag svg">polyline</li>
+        <li class="tag svg">rect</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-structural">
+        <li class="tag svg">defs</li>
+        <li class="tag svg">g</li>
+        <li class="tag svg">svg</li>
+        <li class="tag svg">symbol</li>
+        <li class="tag svg">use</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-text-content">
+        <li class="tag svg">glyph</li>
+        <li class="tag svg">glyphRef</li>
+        <li class="tag svg">textPath</li>
+        <li class="tag svg">text</li>
+        <li class="tag svg">tref</li>
+        <li class="tag svg">tspan</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-text-content-child">
+        <li class="tag svg">textPath</li>
+        <li class="tag svg">tref</li>
+        <li class="tag svg">tspan</li>
+    </ul>
+    <ul class="svg-all" data-section="svg-uncategorized">
+        <li class="tag svg">clipPath</li>
+        <li class="tag svg">cursor</li>
+        <li class="tag svg">filter</li>
+        <li class="tag svg">foreignObject</li>
+        <li class="tag svg">script</li>
+        <li class="tag svg">style</li>
         <li class="tag svg">view</li>
     </ul>
-    <ul data-name="deprecated">
+    <ul data-section="deprecated">
         <li class="tag">acronym</li>
         <li class="tag">big</li>
         <li class="tag">center</li>
@@ -420,7 +529,7 @@
         <li class="tag svg">vkern</li>
         <li class="tag">xmp</li>
     </ul>
-    <ul data-name="other">
+    <ul data-section="other">
         <li class="tag">body</li>
         <li class="tag">caption</li>
         <li class="tag">col</li>

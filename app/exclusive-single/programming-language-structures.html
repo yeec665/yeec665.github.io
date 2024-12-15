@@ -16,6 +16,9 @@
         td {
             font-family: Consolas, Courier, monospace;
         }
+        a {
+            color: currentColor;
+        }
     </style>
     <script>
         document.addEventListener("readystatechange", () => {
@@ -92,7 +95,7 @@
             </tr>
             <tr>
                 <th>按下标读</th>
-                <td></td>
+                <td>value = list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#get(int)">get</a>(2)</td>
                 <td></td>
                 <td>
                     <div>value = array[2]</div>
@@ -102,7 +105,7 @@
             </tr>
             <tr>
                 <th>按下标写</th>
-                <td></td>
+                <td>oldValue = list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#set(int,E)">set</a>(index, newValue)</td>
                 <td></td>
                 <td>
                     <div>array[index] = item</div>
@@ -112,7 +115,7 @@
             </tr>
             <tr>
                 <th>按下标区间读</th>
-                <td></td>
+                <td>subList = list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#subList(int,int)">subList</a>(3, 5)</td>
                 <td></td>
                 <td>
                     <div>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">slice</a>()</div>
@@ -178,7 +181,7 @@
             </tr>
             <tr>
                 <th>排序</th>
-                <td></td>
+                <td>list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html#sort(java.util.Comparator)">sort</a>(comparator)</td>
                 <td></td>
                 <td>
                     <div>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">sort</a>((a, b) => 0)</div>
@@ -215,7 +218,7 @@
             </tr>
             <tr>
                 <th>平展</th>
-                <td></td>
+                <td class="none"></td>
                 <td></td>
                 <td>newArray = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat">flat</a>(depth)</td>
                 <td></td>

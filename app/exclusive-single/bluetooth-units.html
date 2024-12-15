@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>蓝牙协议中使用的单位</title>
+    <style>
+        table {
+            margin: auto;
+        }
+        th,td {
+            padding: 2px 9px;
+            background-color: hsl(0, 0%, 99%);
+        }
+        tr:nth-child(odd)>td {
+            background-color: hsl(0, 0%, 93%);
+        }
+        .sign {
+            font-family: 'Cambria Math', Georgia, Times, 'Times New Roman', serif;
+            user-select: none;
+        }
+        .hex,.dec {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: small;
+        }
+        .hex::before {
+            content: "0x";
+        }
+        ::selection {
+            background-color: hsl(200, 77%, 71%);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>代号</th>
+                <th>名称</th>
+                <th>单位</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td title="org.bluetooth.unit.length.metre">
+                    <div class="hex">2701</div>
+                    <div class="dec">9985</div>
+                </td>
+                <td>
+                    <div class="zh">长度</div>
+                    <div class="en">length</div>
+                    <div class="sign">l</div>
+                </td>
+                <td>
+                    <div class="zh">米</div>
+                    <div class="en">metre</div>
+                    <div class="sign">m</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.mass.kilogram">
+                    <div class="hex">2702</div>
+                    <div class="dec">9986</div>
+                </td>
+                <td>
+                    <div class="zh">质量</div>
+                    <div class="en">mass</div>
+                    <div class="sign">m</div>
+                </td>
+                <td>
+                    <div class="zh">千克</div>
+                    <div class="en">kilogram</div>
+                    <div class="sign">kg</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.time.second">
+                    <div class="hex">2703</div>
+                    <div class="dec">9987</div>
+                </td>
+                <td>
+                    <div class="zh">时间</div>
+                    <div class="en">time</div>
+                    <div class="sign">t</div>
+                </td>
+                <td>
+                    <div class="zh">秒</div>
+                    <div class="en">second</div>
+                    <div class="sign">s</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.electric_current.ampere">
+                    <div class="hex">2704</div>
+                    <div class="dec">9988</div>
+                </td>
+                <td>
+                    <div class="zh">电流</div>
+                    <div class="en">electric current</div>
+                    <div class="sign">I</div>
+                </td>
+                <td>
+                    <div class="zh">安培</div>
+                    <div class="en">ampere</div>
+                    <div class="sign">A</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.thermodynamic_temperature.kelvin">
+                    <div class="hex">2705</div>
+                    <div class="dec">9989</div>
+                </td>
+                <td>
+                    <div class="zh">热力学温度</div>
+                    <div class="en">thermodynamic temperature</div>
+                    <div class="sign">T</div>
+                </td>
+                <td>
+                    <div class="zh">开尔文</div>
+                    <div class="en">kelvin</div>
+                    <div class="sign">K</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.amount_of_substance.mole">
+                    <div class="hex">2706</div>
+                    <div class="dec">9990</div>
+                </td>
+                <td>
+                    <div class="zh">物质的量</div>
+                    <div class="en">amount of substance</div>
+                    <div class="sign">n</div>
+                </td>
+                <td>
+                    <div class="zh">摩尔</div>
+                    <div class="en">mole</div>
+                    <div class="sign">mol</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.luminous_intensity.candela">
+                    <div class="hex">2707</div>
+                    <div class="dec">9991</div>
+                </td>
+                <td>
+                    <div class="zh">发光强度，光强，光度</div>
+                    <div class="en">luminous intensity</div>
+                    <div class="sign">I</div>
+                </td>
+                <td>
+                    <div class="zh">坎德拉</div>
+                    <div class="en">candela</div>
+                    <div class="sign">cd</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.area.square_metres">
+                    <div class="hex">2710</div>
+                    <div class="dec">10000</div>
+                </td>
+                <td>
+                    <div class="zh">面积</div>
+                    <div class="en">area</div>
+                    <div class="sign">S</div>
+                </td>
+                <td>
+                    <div class="zh">平方米</div>
+                    <div class="en">square metres</div>
+                    <div class="sign">m<sup>2</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.volume.cubic_metres">
+                    <div class="hex">2711</div>
+                    <div class="dec">10001</div>
+                </td>
+                <td>
+                    <div class="zh">体积</div>
+                    <div class="en">volume</div>
+                    <div class="sign">V</div>
+                </td>
+                <td>
+                    <div class="zh">立方米</div>
+                    <div class="en">cubic metres</div>
+                    <div class="sign">m<sup>3</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.velocity.metres_per_second">
+                    <div class="hex">2712</div>
+                    <div class="dec">10002</div>
+                </td>
+                <td>
+                    <div class="zh">速度</div>
+                    <div class="en">velocity</div>
+                    <div class="sign">v</div>
+                </td>
+                <td>
+                    <div class="zh">米每秒</div>
+                    <div class="en">metres per second</div>
+                    <div class="sign">m/s</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.acceleration.metres_per_second_squared">
+                    <div class="hex">2713</div>
+                    <div class="dec">10003</div>
+                </td>
+                <td>
+                    <div class="zh">加速度</div>
+                    <div class="en">acceleration</div>
+                    <div class="sign">a</div>
+                </td>
+                <td>
+                    <div class="zh">米每二次方秒</div>
+                    <div class="en">metres per second squared</div>
+                    <div class="sign">m/s<sup>2</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.wavenumber.reciprocal_metre">
+                    <div class="hex">2714</div>
+                    <div class="dec">10004</div>
+                </td>
+                <td>
+                    <div class="zh">波数</div>
+                    <div class="en">wavenumber</div>
+                </td>
+                <td>
+                    <div class="zh">米的倒数</div>
+                    <div class="en">reciprocal metre</div>
+                    <div class="sign">m<sup>-1</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.density.kilogram_per_cubic_metre">
+                    <div class="hex">2715</div>
+                    <div class="dec">10005</div>
+                </td>
+                <td>
+                    <div class="zh">质量密度</div>
+                    <div class="en">density</div>
+                    <div class="sign">ρ</div>
+                </td>
+                <td>
+                    <div class="zh">千克每立方米</div>
+                    <div class="en">kilogram per cubic metre</div>
+                    <div class="sign">kg/m<sup>3</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.surface_density.kilogram_per_square_metre">
+                    <div class="hex">2716</div>
+                    <div class="dec">10006</div>
+                </td>
+                <td>
+                    <div class="zh">质量面密度</div>
+                    <div class="en">surface density</div>
+                </td>
+                <td>
+                    <div class="zh">千克每平方米</div>
+                    <div class="en">kilogram per square metre</div>
+                    <div class="sign">kg/m<sup>2</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.specific_volume.cubic_metre_per_kilogram">
+                    <div class="hex">2717</div>
+                    <div class="dec">10007</div>
+                </td>
+                <td>
+                    <div class="zh">比容</div>
+                    <div class="en">specific volume</div>
+                    <div class="sign">ν</div>
+                </td>
+                <td>
+                    <div class="zh">立方米每千克</div>
+                    <div class="en">cubic metre per kilogram</div>
+                    <div class="sign">m<sup>3</sup>/kg</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.current_density.ampere_per_square_metre">
+                    <div class="hex">2718</div>
+                    <div class="dec">10008</div>
+                </td>
+                <td>
+                    <div class="zh">电流密度</div>
+                    <div class="en">current density</div>
+                    <div class="sign">J</div>
+                </td>
+                <td>
+                    <div class="zh">安培每平方米</div>
+                    <div class="en">ampere per square metre</div>
+                    <div class="sign">A/m<sup>2</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.magnetic_field_strength.ampere_per_metre">
+                    <div class="hex">2719</div>
+                    <div class="dec">10009</div>
+                </td>
+                <td>
+                    <div class="zh">磁场强度</div>
+                    <div class="en">magnetic field strength</div>
+                    <div class="sign">H</div>
+                </td>
+                <td>
+                    <div class="zh">安培每米</div>
+                    <div class="en">ampere per metre</div>
+                    <div class="sign">A/m</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.amount_concentration.mole_per_cubic_metre">
+                    <div class="hex">271a</div>
+                    <div class="dec">10010</div>
+                </td>
+                <td>
+                    <div class="zh">物质的量浓度</div>
+                    <div class="en">amount concentration</div>
+                    <div class="sign">c</div>
+                </td>
+                <td>
+                    <div class="zh">摩尔每立方米</div>
+                    <div class="en">mole per cubic metre</div>
+                    <div class="sign">mol/m<sup>3</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.mass_concentration.kilogram_per_cubic_metre">
+                    <div class="hex">271b</div>
+                    <div class="dec">10011</div>
+                </td>
+                <td>
+                    <div class="zh">质量浓度</div>
+                    <div class="en">mass concentration</div>
+                </td>
+                <td>
+                    <div class="zh">千克每立方米</div>
+                    <div class="en">kilogram per cubic metre</div>
+                    <div class="sign">kg/m<sup>3</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.luminance.candela_per_square_metre">
+                    <div class="hex">271c</div>
+                    <div class="dec">10012</div>
+                </td>
+                <td>
+                    <div class="zh">光亮度，发光率</div>
+                    <div class="en">luminance</div>
+                    <div class="sign">L</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">candela per square metre</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.plane_angle.radian">
+                    <div class="hex">2720</div>
+                    <div class="dec">10016</div>
+                </td>
+                <td>
+                    <div class="zh">平面角</div>
+                    <div class="en">plane angle</div>
+                    <div class="sign">θ</div>
+                </td>
+                <td>
+                    <div class="zh">弧度</div>
+                    <div class="en">radian</div>
+                    <div class="sign">rad</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.solid_angle.steradian">
+                    <div class="hex">2721</div>
+                    <div class="dec">10017</div>
+                </td>
+                <td>
+                    <div class="zh">立体角</div>
+                    <div class="en">solid angle</div>
+                    <div class="sign">Ω</div>
+                </td>
+                <td>
+                    <div class="zh">球面度</div>
+                    <div class="en">steradian</div>
+                    <div class="sign">sr</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.frequency.hertz">
+                    <div class="hex">2722</div>
+                    <div class="dec">10018</div>
+                </td>
+                <td>
+                    <div class="zh">频率</div>
+                    <div class="en">frequency</div>
+                    <div class="sign">f</div>
+                </td>
+                <td>
+                    <div class="zh">赫兹</div>
+                    <div class="en">hertz</div>
+                    <div class="sign">Hz</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.force.newton">
+                    <div class="hex">2723</div>
+                    <div class="dec">10019</div>
+                </td>
+                <td>
+                    <div class="zh">力</div>
+                    <div class="en">force</div>
+                    <div class="sign">F</div>
+                </td>
+                <td>
+                    <div class="zh">牛顿</div>
+                    <div class="en">newton</div>
+                    <div class="sign">N</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.pressure.pascal">
+                    <div class="hex">2724</div>
+                    <div class="dec">10020</div>
+                </td>
+                <td>
+                    <div class="zh">压强</div>
+                    <div class="en">pressure</div>
+                    <div class="sign">p</div>
+                </td>
+                <td>
+                    <div class="zh">帕斯卡</div>
+                    <div class="en">pascal</div>
+                    <div class="sign">Pa</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.energy.joule">
+                    <div class="hex">2725</div>
+                    <div class="dec">10021</div>
+                </td>
+                <td>
+                    <div class="zh">能量</div>
+                    <div class="en">energy</div>
+                    <div class="sign">E</div>
+                </td>
+                <td>
+                    <div class="zh">焦耳</div>
+                    <div class="en">joule</div>
+                    <div class="sign">J</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.power.watt">
+                    <div class="hex">2726</div>
+                    <div class="dec">10022</div>
+                </td>
+                <td>
+                    <div class="zh">功率</div>
+                    <div class="en">power</div>
+                    <div class="sign">P</div>
+                </td>
+                <td>
+                    <div class="zh">瓦特</div>
+                    <div class="en">watt</div>
+                    <div class="sign">W</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.electric_charge.coulomb">
+                    <div class="hex">2727</div>
+                    <div class="dec">10023</div>
+                </td>
+                <td>
+                    <div class="zh">电荷量</div>
+                    <div class="en">electric charge</div>
+                    <div class="sign">C</div>
+                </td>
+                <td>
+                    <div class="zh">库仑</div>
+                    <div class="en">coulomb</div>
+                    <div class="sign">Q</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.electric_potential_difference.volt">
+                    <div class="hex">2728</div>
+                    <div class="dec">10024</div>
+                </td>
+                <td>
+                    <div class="zh">电压</div>
+                    <div class="en">electric potential difference</div>
+                    <div class="sign">U</div>
+                </td>
+                <td>
+                    <div class="zh">伏特</div>
+                    <div class="en">volt</div>
+                    <div class="sign">V</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.capacitance.farad">
+                    <div class="hex">2729</div>
+                    <div class="dec">10025</div>
+                </td>
+                <td>
+                    <div class="zh">电容</div>
+                    <div class="en">capacitance</div>
+                    <div class="sign">C</div>
+                </td>
+                <td>
+                    <div class="zh">法拉</div>
+                    <div class="en">farad</div>
+                    <div class="sign">F</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.electric_resistance.ohm">
+                    <div class="hex">272a</div>
+                    <div class="dec">10026</div>
+                </td>
+                <td>
+                    <div class="zh">电阻</div>
+                    <div class="en">electric resistance</div>
+                    <div class="sign">R</div>
+                </td>
+                <td>
+                    <div class="zh">欧姆</div>
+                    <div class="en">ohm</div>
+                    <div class="sign">Ω</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.electric_conductance.siemens">
+                    <div class="hex">272b</div>
+                    <div class="dec">10027</div>
+                </td>
+                <td>
+                    <div class="zh">电导</div>
+                    <div class="en">electric conductance</div>
+                    <div class="sign">G</div>
+                </td>
+                <td>
+                    <div class="zh">西门子</div>
+                    <div class="en">siemens</div>
+                    <div class="sign">S</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.magnetic_flux.weber">
+                    <div class="hex">272c</div>
+                    <div class="dec">10028</div>
+                </td>
+                <td>
+                    <div class="zh">磁通量</div>
+                    <div class="en">magnetic flux</div>
+                    <div class="sign">Φ</div>
+                </td>
+                <td>
+                    <div class="zh">韦伯</div>
+                    <div class="en">weber</div>
+                    <div class="sign">Wb</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.magnetic_flux_density.tesla">
+                    <div class="hex">272d</div>
+                    <div class="dec">10029</div>
+                </td>
+                <td>
+                    <div class="zh">磁通量密度，磁通密度，磁感应强度</div>
+                    <div class="en">magnetic flux density</div>
+                    <div class="sign">B</div>
+                </td>
+                <td>
+                    <div class="zh">特斯拉</div>
+                    <div class="en">tesla</div>
+                    <div class="sign">T</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.inductance.henry">
+                    <div class="hex">272e</div>
+                    <div class="dec">10030</div>
+                </td>
+                <td>
+                    <div class="zh">电感</div>
+                    <div class="en">inductance</div>
+                    <div class="sign">L</div>
+                </td>
+                <td>
+                    <div class="zh">亨利</div>
+                    <div class="en">henry</div>
+                    <div class="sign">H</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.thermodynamic_temperature.degree_celsius">
+                    <div class="hex">272f</div>
+                    <div class="dec">10031</div>
+                </td>
+                <td>
+                    <div class="zh">摄氏温度</div>
+                    <div class="en">Celsius temperature</div>
+                    <div class="sign">T</div>
+                </td>
+                <td>
+                    <div class="zh">摄氏度</div>
+                    <div class="en">degree Celsius</div>
+                    <div class="sign">℃</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.luminous_flux.lumen">
+                    <div class="hex">2730</div>
+                    <div class="dec">10032</div>
+                </td>
+                <td>
+                    <div class="zh">光通量</div>
+                    <div class="en">luminous flux</div>
+                    <div class="sign">Φ</div>
+                </td>
+                <td>
+                    <div class="zh">流明</div>
+                    <div class="en">lumen</div>
+                    <div class="sign">lm</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.illuminance.lux">
+                    <div class="hex">2731</div>
+                    <div class="dec">10033</div>
+                </td>
+                <td>
+                    <div class="zh">光照强度，照度</div>
+                    <div class="en">illuminance</div>
+                    <div class="sign">E</div>
+                </td>
+                <td>
+                    <div class="zh">勒克斯</div>
+                    <div class="en">lux</div>
+                    <div class="sign">lx</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.activity_referred_to_a_radionuclide.becquerel">
+                    <div class="hex">2732</div>
+                    <div class="dec">10034</div>
+                </td>
+                <td>
+                    <div class="zh">放射性活度</div>
+                    <div class="en">activity referred to a radionuclide</div>
+                    <div class="sign">A</div>
+                </td>
+                <td>
+                    <div class="zh">贝克勒尔</div>
+                    <div class="en">becquerel</div>
+                    <div class="sign">Bq</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.absorbed_dose.gray">
+                    <div class="hex">2733</div>
+                    <div class="dec">10035</div>
+                </td>
+                <td>
+                    <div class="zh">吸收剂量</div>
+                    <div class="en">absorbed dose</div>
+                    <div class="sign">D</div>
+                </td>
+                <td>
+                    <div class="zh">戈瑞</div>
+                    <div class="en">gray</div>
+                    <div class="sign">Gy</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.dose_equivalent.sievert">
+                    <div class="hex">2734</div>
+                    <div class="dec">10036</div>
+                </td>
+                <td>
+                    <div class="zh">剂量当量</div>
+                    <div class="en">dose equivalent</div>
+                </td>
+                <td>
+                    <div class="zh">希沃特</div>
+                    <div class="en">sievert</div>
+                    <div class="sign">Sv</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.catalytic_activity.katal">
+                    <div class="hex">2735</div>
+                    <div class="dec">10037</div>
+                </td>
+                <td>
+                    <div class="zh">催化活性</div>
+                    <div class="en">catalytic activity</div>
+                </td>
+                <td>
+                    <div class="zh">开特</div>
+                    <div class="en">katal</div>
+                    <div class="sign">kat</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.dynamic_viscosity.pascal_second">
+                    <div class="hex">2740</div>
+                    <div class="dec">10048</div>
+                </td>
+                <td>
+                    <div class="zh">动力粘度</div>
+                    <div class="en">dynamic viscosity</div>
+                    <div class="sign">μ</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">pascal second</div>
+                    <div class="sign">Pa·s</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.moment_of_force.newton_metre">
+                    <div class="hex">2741</div>
+                    <div class="dec">10049</div>
+                </td>
+                <td>
+                    <div class="zh">力矩</div>
+                    <div class="en">moment of force</div>
+                </td>
+                <td>
+                    <div class="zh">牛米</div>
+                    <div class="en">newton metre</div>
+                    <div class="sign">N·m</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.surface_tension.newton_per_metre">
+                    <div class="hex">2742</div>
+                    <div class="dec">10050</div>
+                </td>
+                <td>
+                    <div class="zh">表面张力</div>
+                    <div class="en">surface tension</div>
+                </td>
+                <td>
+                    <div class="zh">牛顿每米</div>
+                    <div class="en">newton per metre</div>
+                    <div class="sign">N/m</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.angular_velocity.radian_per_second">
+                    <div class="hex">2743</div>
+                    <div class="dec">10051</div>
+                </td>
+                <td>
+                    <div class="zh">角速度</div>
+                    <div class="en">angular velocity</div>
+                    <div class="sign">ω</div>
+                </td>
+                <td>
+                    <div class="zh">弧度每秒</div>
+                    <div class="en">radian per second</div>
+                    <div class="sign">rad/s</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.angular_acceleration.radian_per_second_squared">
+                    <div class="hex">2744</div>
+                    <div class="dec">10052</div>
+                </td>
+                <td>
+                    <div class="zh">角加速度</div>
+                    <div class="en">angular acceleration</div>
+                    <div class="sign">α</div>
+                </td>
+                <td>
+                    <div class="zh">弧度每二次方秒</div>
+                    <div class="en">radian per second squared</div>
+                    <div class="sign">rad/s<sup>2</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.heat_flux_density.watt_per_square_metre">
+                    <div class="hex">2745</div>
+                    <div class="dec">10053</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">heat flux density</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">watt per square metre</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.heat_capacity.joule_per_kelvin">
+                    <div class="hex">2746</div>
+                    <div class="dec">10054</div>
+                </td>
+                <td>
+                    <div class="zh">热容</div>
+                    <div class="en">heat capacity</div>
+                </td>
+                <td>
+                    <div class="zh">焦耳每开尔文</div>
+                    <div class="en">joule per kelvin</div>
+                    <div class="sign">J/K</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.specific_heat_capacity.joule_per_kilogram_kelvin">
+                    <div class="hex">2747</div>
+                    <div class="dec">10055</div>
+                </td>
+                <td>
+                    <div class="zh">比热容</div>
+                    <div class="en">specific heat capacity</div>
+                    <div class="sign">c</div>
+                </td>
+                <td>
+                    <div class="zh">焦耳每千克开尔文</div>
+                    <div class="en">joule per kilogram kelvin</div>
+                    <div class="sign">J/kg·K</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.specific_energy.joule_per_kilogram">
+                    <div class="hex">2748</div>
+                    <div class="dec">10056</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">specific energy</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">joule per kilogram</div>
+                    <div class="sign">J/kg</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.thermal_conductivity.watt_per_metre_kelvin">
+                    <div class="hex">2749</div>
+                    <div class="dec">10057</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">thermal conductivity</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">watt per metre kelvin</div>
+                    <div class="sign">W/m·K</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.energy_density.joule_per_cubic_metre">
+                    <div class="hex">274a</div>
+                    <div class="dec">10058</div>
+                </td>
+                <td>
+                    <div class="zh">能量密度</div>
+                    <div class="en">energy density</div>
+                </td>
+                <td>
+                    <div class="zh">焦耳每立方米</div>
+                    <div class="en">joule per cubic metre</div>
+                    <div class="sign">J/m<sup>3</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.electric_field_strength.volt_per_metre">
+                    <div class="hex">274b</div>
+                    <div class="dec">10059</div>
+                </td>
+                <td>
+                    <div class="zh">电场强度</div>
+                    <div class="en">electric field strength</div>
+                    <div class="sign">E</div>
+                </td>
+                <td>
+                    <div class="zh">伏特每米</div>
+                    <div class="en">volt per metre</div>
+                    <div class="sign">V/m</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.electric_charge_density.coulomb_per_cubic_metre">
+                    <div class="hex">274c</div>
+                    <div class="dec">10060</div>
+                </td>
+                <td>
+                    <div class="zh">电荷密度</div>
+                    <div class="en">electric charge density</div>
+                </td>
+                <td>
+                    <div class="zh">库仑每立方米</div>
+                    <div class="en">coulomb per cubic metre</div>
+                    <div class="sign">C/m<sup>3</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.surface_charge_density.coulomb_per_square_metre">
+                    <div class="hex">274d</div>
+                    <div class="dec">10061</div>
+                </td>
+                <td>
+                    <div class="zh">电荷面密度</div>
+                    <div class="en">surface charge density</div>
+                    <div class="sign">ρ</div>
+                </td>
+                <td>
+                    <div class="zh">库仑每平方米</div>
+                    <div class="en">coulomb per square metre</div>
+                    <div class="sign">C/m<sup>2</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.electric_flux_density.coulomb_per_square_metre">
+                    <div class="hex">274e</div>
+                    <div class="dec">10062</div>
+                </td>
+                <td>
+                    <div class="zh">电通量密度，电位移矢量，电感应强度矢量</div>
+                    <div class="en">electric flux density</div>
+                    <div class="sign">D</div>
+                </td>
+                <td>
+                    <div class="zh">库仑每平方米</div>
+                    <div class="en">coulomb per square metre</div>
+                    <div class="sign">C/m<sup>2</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.permittivity.farad_per_metre">
+                    <div class="hex">274f</div>
+                    <div class="dec">10063</div>
+                </td>
+                <td>
+                    <div class="zh">介电常数</div>
+                    <div class="en">permittivity</div>
+                    <div class="sign">ε</div>
+                </td>
+                <td>
+                    <div class="zh">法拉每米</div>
+                    <div class="en">farad per metre</div>
+                    <div class="sign">F/m</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.permeability.henry_per_metre">
+                    <div class="hex">2750</div>
+                    <div class="dec">10064</div>
+                </td>
+                <td>
+                    <div class="zh">磁导率</div>
+                    <div class="en">permeability</div>
+                    <div class="sign">μ</div>
+                </td>
+                <td>
+                    <div class="zh">亨利每米</div>
+                    <div class="en">henry per metre</div>
+                    <div class="sign">H/m</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.molar_energy.joule_per_mole">
+                    <div class="hex">2751</div>
+                    <div class="dec">10065</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">molar energy</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">joule per mole</div>
+                    <div class="sign">J/mol</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.molar_entropy.joule_per_mole_kelvin">
+                    <div class="hex">2752</div>
+                    <div class="dec">10066</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">molar entropy</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">joule per mole kelvin</div>
+                    <div class="sign">J/mol·K</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.exposure.coulomb_per_kilogram">
+                    <div class="hex">2753</div>
+                    <div class="dec">10067</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">exposure</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">coulomb per kilogram</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.absorbed_dose_rate.gray_per_second">
+                    <div class="hex">2754</div>
+                    <div class="dec">10068</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">absorbed dose rate</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">gray per second</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.radiant_intensity.watt_per_steradian">
+                    <div class="hex">2755</div>
+                    <div class="dec">10069</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">radiant intensity</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">watt per steradian</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.radiance.watt_per_square_metre_steradian">
+                    <div class="hex">2756</div>
+                    <div class="dec">10070</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">radiance</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">watt per square metre steradian</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.catalytic_activity_concentration.katal_per_cubic_metre">
+                    <div class="hex">2757</div>
+                    <div class="dec">10071</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">catalytic activity concentration</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">katal per cubic metre</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.time.minute">
+                    <div class="hex">2760</div>
+                    <div class="dec">10080</div>
+                </td>
+                <td>
+                    <div class="zh">时间</div>
+                    <div class="en">time</div>
+                    <div class="sign">t</div>
+                </td>
+                <td>
+                    <div class="zh">分钟</div>
+                    <div class="en">minute</div>
+                    <div class="sign">min</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.time.hour">
+                    <div class="hex">2761</div>
+                    <div class="dec">10081</div>
+                </td>
+                <td>
+                    <div class="zh">时间</div>
+                    <div class="en">time</div>
+                    <div class="sign">t</div>
+                </td>
+                <td>
+                    <div class="zh">小时</div>
+                    <div class="en">hour</div>
+                    <div class="sign">h</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.time.day">
+                    <div class="hex">2762</div>
+                    <div class="dec">10082</div>
+                </td>
+                <td>
+                    <div class="zh">时间</div>
+                    <div class="en">time</div>
+                    <div class="sign">t</div>
+                </td>
+                <td>
+                    <div class="zh">天</div>
+                    <div class="en">day</div>
+                    <div class="sign">d</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.plane_angle.degree">
+                    <div class="hex">2763</div>
+                    <div class="dec">10083</div>
+                </td>
+                <td>
+                    <div class="zh">平面角</div>
+                    <div class="en">plane angle</div>
+                    <div class="sign">θ</div>
+                </td>
+                <td>
+                    <div class="zh">度</div>
+                    <div class="en">degree</div>
+                    <div class="sign">°</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.plane_angle.minute">
+                    <div class="hex">2764</div>
+                    <div class="dec">10084</div>
+                </td>
+                <td>
+                    <div class="zh">平面角</div>
+                    <div class="en">plane angle</div>
+                    <div class="sign">θ</div>
+                </td>
+                <td>
+                    <div class="zh">分</div>
+                    <div class="en">minute</div>
+                    <div class="sign">′</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.plane_angle.second">
+                    <div class="hex">2765</div>
+                    <div class="dec">10085</div>
+                </td>
+                <td>
+                    <div class="zh">平面角</div>
+                    <div class="en">plane angle</div>
+                    <div class="sign">θ</div>
+                </td>
+                <td>
+                    <div class="zh">秒</div>
+                    <div class="en">second</div>
+                    <div class="sign">″</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.area.hectare">
+                    <div class="hex">2766</div>
+                    <div class="dec">10086</div>
+                </td>
+                <td>
+                    <div class="zh">面积</div>
+                    <div class="en">area</div>
+                    <div class="sign">S</div>
+                </td>
+                <td>
+                    <div class="zh">公顷</div>
+                    <div class="en">hectare</div>
+                    <div class="sign">ha</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.volume.litre">
+                    <div class="hex">2767</div>
+                    <div class="dec">10087</div>
+                </td>
+                <td>
+                    <div class="zh">体积</div>
+                    <div class="en">volume</div>
+                    <div class="sign">V</div>
+                </td>
+                <td>
+                    <div class="zh">升</div>
+                    <div class="en">litre</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.mass.tonne">
+                    <div class="hex">2768</div>
+                    <div class="dec">10088</div>
+                </td>
+                <td>
+                    <div class="zh">质量</div>
+                    <div class="en">mass</div>
+                    <div class="sign">m</div>
+                </td>
+                <td>
+                    <div class="zh">吨</div>
+                    <div class="en">tonne</div>
+                    <div class="sign">t</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.pressure.bar">
+                    <div class="hex">2780</div>
+                    <div class="dec">10112</div>
+                </td>
+                <td>
+                    <div class="zh">压强</div>
+                    <div class="en">pressure</div>
+                    <div class="sign">p</div>
+                </td>
+                <td>
+                    <div class="zh">巴</div>
+                    <div class="en">bar</div>
+                    <div class="sign">bar</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.pressure.millimetre_of_mercury">
+                    <div class="hex">2781</div>
+                    <div class="dec">10113</div>
+                </td>
+                <td>
+                    <div class="zh">压强</div>
+                    <div class="en">pressure</div>
+                    <div class="sign">p</div>
+                </td>
+                <td>
+                    <div class="zh">毫米汞柱</div>
+                    <div class="en">millimetre of mercury</div>
+                    <div class="sign">mmHg</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.length.ångström">
+                    <div class="hex">2782</div>
+                    <div class="dec">10114</div>
+                </td>
+                <td>
+                    <div class="zh">长度</div>
+                    <div class="en">length</div>
+                    <div class="sign">l</div>
+                </td>
+                <td>
+                    <div class="zh">埃</div>
+                    <div class="en">ångström</div>
+                    <div class="sign">Å</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.length.nautical_mile">
+                    <div class="hex">2783</div>
+                    <div class="dec">10115</div>
+                </td>
+                <td>
+                    <div class="zh">长度</div>
+                    <div class="en">length</div>
+                    <div class="sign">l</div>
+                </td>
+                <td>
+                    <div class="zh">海里</div>
+                    <div class="en">nautical mile</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.area.barn">
+                    <div class="hex">2784</div>
+                    <div class="dec">10116</div>
+                </td>
+                <td>
+                    <div class="zh">面积</div>
+                    <div class="en">area</div>
+                    <div class="sign">S</div>
+                </td>
+                <td>
+                    <div class="zh">靶[恩]</div>
+                    <div class="en">barn</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.velocity.knot">
+                    <div class="hex">2785</div>
+                    <div class="dec">10117</div>
+                </td>
+                <td>
+                    <div class="zh">速度</div>
+                    <div class="en">velocity</div>
+                    <div class="sign">v</div>
+                </td>
+                <td>
+                    <div class="zh">节</div>
+                    <div class="en">knot</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.logarithmic_radio_quantity.neper">
+                    <div class="hex">2786</div>
+                    <div class="dec">10118</div>
+                </td>
+                <td>
+                    <div class="zh">对数幅度衰减</div>
+                    <div class="en">logarithmic radio quantity</div>
+                </td>
+                <td>
+                    <div class="zh">奈培</div>
+                    <div class="en">neper</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.logarithmic_radio_quantity.bel">
+                    <div class="hex">2787</div>
+                    <div class="dec">10119</div>
+                </td>
+                <td>
+                    <div class="zh">对数幅度衰减</div>
+                    <div class="en">logarithmic radio quantity</div>
+                </td>
+                <td>
+                    <div class="zh">贝尔</div>
+                    <div class="en">bel</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.length.yard">
+                    <div class="hex">27a0</div>
+                    <div class="dec">10144</div>
+                </td>
+                <td>
+                    <div class="zh">长度</div>
+                    <div class="en">length</div>
+                    <div class="sign">l</div>
+                </td>
+                <td>
+                    <div class="zh">码</div>
+                    <div class="en">yard</div>
+                    <div class="sign">yd</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.length.parsec">
+                    <div class="hex">27a1</div>
+                    <div class="dec">10145</div>
+                </td>
+                <td>
+                    <div class="zh">长度</div>
+                    <div class="en">length</div>
+                    <div class="sign">l</div>
+                </td>
+                <td>
+                    <div class="zh">秒差距</div>
+                    <div class="en">parsec</div>
+                    <div class="sign">pc</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.length.inch">
+                    <div class="hex">27a2</div>
+                    <div class="dec">10146</div>
+                </td>
+                <td>
+                    <div class="zh">长度</div>
+                    <div class="en">length</div>
+                    <div class="sign">l</div>
+                </td>
+                <td>
+                    <div class="zh">英寸</div>
+                    <div class="en">inch</div>
+                    <div class="sign">in</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.length.foot">
+                    <div class="hex">27a3</div>
+                    <div class="dec">10147</div>
+                </td>
+                <td>
+                    <div class="zh">长度</div>
+                    <div class="en">length</div>
+                    <div class="sign">l</div>
+                </td>
+                <td>
+                    <div class="zh">英尺</div>
+                    <div class="en">foot</div>
+                    <div class="sign">ft</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.length.mile">
+                    <div class="hex">27a4</div>
+                    <div class="dec">10148</div>
+                </td>
+                <td>
+                    <div class="zh">长度</div>
+                    <div class="en">length</div>
+                    <div class="sign">l</div>
+                </td>
+                <td>
+                    <div class="zh">英里</div>
+                    <div class="en">mile</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.pressure.pound_force_per_square_inch">
+                    <div class="hex">27a5</div>
+                    <div class="dec">10149</div>
+                </td>
+                <td>
+                    <div class="zh">压强</div>
+                    <div class="en">pressure</div>
+                    <div class="sign">p</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">pound-force per square inch</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.velocity.kilometre_per_hour">
+                    <div class="hex">27a6</div>
+                    <div class="dec">10150</div>
+                </td>
+                <td>
+                    <div class="zh">速度</div>
+                    <div class="en">velocity</div>
+                    <div class="sign">v</div>
+                </td>
+                <td>
+                    <div class="zh">千米每小时</div>
+                    <div class="en">kilometre per hour</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.velocity.mile_per_hour">
+                    <div class="hex">27a7</div>
+                    <div class="dec">10151</div>
+                </td>
+                <td>
+                    <div class="zh">速度</div>
+                    <div class="en">velocity</div>
+                </td>
+                <td>
+                    <div class="zh">英里每小时</div>
+                    <div class="en">mile per hour</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.angular_velocity.revolution_per_minute">
+                    <div class="hex">27a8</div>
+                    <div class="dec">10152</div>
+                </td>
+                <td>
+                    <div class="zh">角速度</div>
+                    <div class="en">angular velocity</div>
+                    <div class="sign">ω</div>
+                </td>
+                <td>
+                    <div class="zh">转每分</div>
+                    <div class="en">revolution per minute</div>
+                    <div class="sign">rpm</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.energy.gram_calorie">
+                    <div class="hex">27a9</div>
+                    <div class="dec">10153</div>
+                </td>
+                <td>
+                    <div class="zh">能量</div>
+                    <div class="en">energy</div>
+                    <div class="sign">E</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">gram calorie</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.energy.kilogram_calorie">
+                    <div class="hex">27aa</div>
+                    <div class="dec">10154</div>
+                </td>
+                <td>
+                    <div class="zh">能量</div>
+                    <div class="en">energy</div>
+                    <div class="sign">E</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">kilogram calorie</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.energy.kilowatt_hour">
+                    <div class="hex">27ab</div>
+                    <div class="dec">10155</div>
+                </td>
+                <td>
+                    <div class="zh">能量</div>
+                    <div class="en">energy</div>
+                    <div class="sign">E</div>
+                </td>
+                <td>
+                    <div class="zh">千瓦时</div>
+                    <div class="en">kilowatt hour</div>
+                    <div class="sign">kWh</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.thermodynamic_temperature.degree_fahrenheit">
+                    <div class="hex">27ac</div>
+                    <div class="dec">10156</div>
+                </td>
+                <td>
+                    <div class="zh">热力学温度</div>
+                    <div class="en">thermodynamic temperature</div>
+                    <div class="sign">T</div>
+                </td>
+                <td>
+                    <div class="zh">华氏度</div>
+                    <div class="en">degree Fahrenheit</div>
+                    <div class="sign">℉</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.period.beats_per_minute">
+                    <div class="hex">27af</div>
+                    <div class="dec">10159</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">period</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">beats per minute</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.electric_charge.ampere_hours">
+                    <div class="hex">27b0</div>
+                    <div class="dec">10160</div>
+                </td>
+                <td>
+                    <div class="zh">电荷量</div>
+                    <div class="en">electric charge</div>
+                    <div class="sign">C</div>
+                </td>
+                <td>
+                    <div class="zh">安培小时</div>
+                    <div class="en">ampere hours</div>
+                    <div class="sign">Ah</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.mass_density.milligram_per_decilitre">
+                    <div class="hex">27b1</div>
+                    <div class="dec">10161</div>
+                </td>
+                <td>
+                    <div class="zh">质量密度</div>
+                    <div class="en">mass density</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">milligram per decilitre</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.mass_density.millimole_per_litre">
+                    <div class="hex">27b2</div>
+                    <div class="dec">10162</div>
+                </td>
+                <td>
+                    <div class="zh">质量密度</div>
+                    <div class="en">mass density</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">millimole per litre</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.time.year">
+                    <div class="hex">27b3</div>
+                    <div class="dec">10163</div>
+                </td>
+                <td>
+                    <div class="zh">时间</div>
+                    <div class="en">time</div>
+                    <div class="sign">t</div>
+                </td>
+                <td>
+                    <div class="zh">年</div>
+                    <div class="en">year</div>
+                    <div class="sign">yr</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.time.month">
+                    <div class="hex">27b4</div>
+                    <div class="dec">10164</div>
+                </td>
+                <td>
+                    <div class="zh">时间</div>
+                    <div class="en">time</div>
+                    <div class="sign">t</div>
+                </td>
+                <td>
+                    <div class="zh">月</div>
+                    <div class="en">month</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.concentration.count_per_cubic_metre">
+                    <div class="hex">27b5</div>
+                    <div class="dec">10165</div>
+                </td>
+                <td>
+                    <div class="zh">浓度</div>
+                    <div class="en">concentration</div>
+                    <div class="sign">c</div>
+                </td>
+                <td>
+                    <div class="zh">个每立方米</div>
+                    <div class="en">count per cubic metre</div>
+                    <div class="sign">m<sup>-3</sup></div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.irradiance.watt_per_square_metre">
+                    <div class="hex">27b6</div>
+                    <div class="dec">10166</div>
+                </td>
+                <td>
+                    <div class="zh">辐照度</div>
+                    <div class="en">irradiance</div>
+                </td>
+                <td>
+                    <div class="zh">瓦每平方米</div>
+                    <div class="en">watt per square metre</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.transfer_rate.milliliter_per_kilogram_per_minute">
+                    <div class="hex">27b7</div>
+                    <div class="dec">10167</div>
+                </td>
+                <td>
+                    <div class="zh">用药量</div>
+                    <div class="en">milliliter</div>
+                </td>
+                <td>
+                    <div class="zh">毫升每千克体重每分钟</div>
+                    <div class="en">per kilogram per minute</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.mass.pound">
+                    <div class="hex">27b8</div>
+                    <div class="dec">10168</div>
+                </td>
+                <td>
+                    <div class="zh">质量</div>
+                    <div class="en">mass</div>
+                    <div class="sign">m</div>
+                </td>
+                <td>
+                    <div class="zh">磅</div>
+                    <div class="en">pound</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.step_per_minute">
+                    <div class="hex">27ba</div>
+                    <div class="dec">10170</div>
+                </td>
+                <td>
+                    <div class="zh">步行频率</div>
+                    <div class="en">step</div>
+                </td>
+                <td>
+                    <div class="zh">步每分钟</div>
+                    <div class="en">per minute</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.stroke_per_minute">
+                    <div class="hex">27bc</div>
+                    <div class="dec">10172</div>
+                </td>
+                <td>
+                    <div class="zh">划船频率</div>
+                    <div class="en">stroke</div>
+                </td>
+                <td>
+                    <div class="zh">次数每分钟</div>
+                    <div class="en">per minute</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.velocity.kilometer_per_minute">
+                    <div class="hex">27bd</div>
+                    <div class="dec">10173</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">pace</div>
+                </td>
+                <td>
+                    <div class="zh">千米每分钟</div>
+                    <div class="en">kilometre per minute</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.luminous_efficacy.lumen_per_watt">
+                    <div class="hex">27be</div>
+                    <div class="dec">10174</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">luminous efficacy</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">lumen per watt</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.luminous_energy.lumen_hour">
+                    <div class="hex">27bf</div>
+                    <div class="dec">10175</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">luminous energy</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">lumen hour</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.luminous_exposure.lux_hour">
+                    <div class="hex">27c0</div>
+                    <div class="dec">10176</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">luminous exposure</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">lux hour</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.mass_flow.gram_per_second">
+                    <div class="hex">27c1</div>
+                    <div class="dec">10177</div>
+                </td>
+                <td>
+                    <div class="zh">质量流</div>
+                    <div class="en">mass flow</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">gram per second</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.volume_flow.litre_per_second">
+                    <div class="hex">27c2</div>
+                    <div class="dec">10178</div>
+                </td>
+                <td>
+                    <div class="zh">体积流</div>
+                    <div class="en">volume flow</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">litre per second</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.sound_pressure.decibel_spl">
+                    <div class="hex">27c3</div>
+                    <div class="dec">10179</div>
+                </td>
+                <td>
+                    <div class="zh">声压</div>
+                    <div class="en">sound pressure</div>
+                </td>
+                <td>
+                    <div class="zh">分贝</div>
+                    <div class="en">decibel</div>
+                    <div class="sign">dB</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.mass_density_rate.milligram_per_decilitre_per_minute">
+                    <div class="hex">27c6</div>
+                    <div class="dec">10182</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">mass density rate</div>
+                </td>
+                <td>
+                    <div class="zh"></div>
+                    <div class="en">(milligram per decilitre) per minute</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.energy.kilovolt_ampere_hour">
+                    <div class="hex">27c7</div>
+                    <div class="dec">10183</div>
+                </td>
+                <td>
+                    <div class="zh">视在电能</div>
+                    <div class="en">Electrical Apparent Energy</div>
+                    <div class="sign">E</div>
+                </td>
+                <td>
+                    <div class="zh">千伏安小时</div>
+                    <div class="en">kilovolt ampere hour</div>
+                    <div class="sign">kVAh</div>
+                </td>
+            </tr>
+            <tr>
+                <td title="org.bluetooth.unit.power.volt_ampere">
+                    <div class="hex">27c8</div>
+                    <div class="dec">10184</div>
+                </td>
+                <td>
+                    <div class="zh">视在功率</div>
+                    <div class="en">Electrical Apparent Power</div>
+                    <div class="sign">P</div>
+                </td>
+                <td>
+                    <div class="zh">伏安</div>
+                    <div class="en">volt ampere</div>
+                    <div class="sign">VA</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

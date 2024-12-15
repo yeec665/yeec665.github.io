@@ -1,0 +1,2861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: auto;
+        }
+        th,td {
+            padding: 2px 9px;
+            background-color: hsl(0, 0%, 99%);
+        }
+        tr:nth-child(odd)>td {
+            background-color: hsl(0, 0%, 93%);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>十六进制</th>
+                <th>十进制</th>
+                <th>英文</th>
+                <th>中文</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr title="org.bluetooth.characteristic.gap.device_name">
+                <td>0x2a00</td>
+                <td>10752</td>
+                <td>Device Name</td>
+                <td>设备名称</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.gap.appearance">
+                <td>0x2a01</td>
+                <td>10753</td>
+                <td>Appearance</td>
+                <td>外观</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.gap.peripheral_privacy_flag">
+                <td>0x2a02</td>
+                <td>10754</td>
+                <td>Peripheral Privacy Flag</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.gap.reconnection_address">
+                <td>0x2a03</td>
+                <td>10755</td>
+                <td>Reconnection Address</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.gap.peripheral_preferred_connection_parameters">
+                <td>0x2a04</td>
+                <td>10756</td>
+                <td>Peripheral Preferred Connection Parameters</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.gatt.service_changed">
+                <td>0x2a05</td>
+                <td>10757</td>
+                <td>Service Changed</td>
+                <td>服务变更</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.alert_level">
+                <td>0x2a06</td>
+                <td>10758</td>
+                <td>Alert Level</td>
+                <td>警报等级</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.tx_power_level">
+                <td>0x2a07</td>
+                <td>10759</td>
+                <td>Tx Power Level</td>
+                <td>发射功率等级</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.date_time">
+                <td>0x2a08</td>
+                <td>10760</td>
+                <td>Date Time</td>
+                <td>日期时间</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.day_of_week">
+                <td>0x2a09</td>
+                <td>10761</td>
+                <td>Day of Week</td>
+                <td>星期</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.day_date_time">
+                <td>0x2a0a</td>
+                <td>10762</td>
+                <td>Day Date Time</td>
+                <td>星期和日期时间</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.exact_time_256">
+                <td>0x2a0c</td>
+                <td>10764</td>
+                <td>Exact Time 256</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.dst_offset">
+                <td>0x2a0d</td>
+                <td>10765</td>
+                <td>DST Offset</td>
+                <td>夏令时偏移量</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_zone">
+                <td>0x2a0e</td>
+                <td>10766</td>
+                <td>Time Zone</td>
+                <td>时区</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.local_time_information">
+                <td>0x2a0f</td>
+                <td>10767</td>
+                <td>Local Time Information</td>
+                <td>本地时间信息</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_with_dst">
+                <td>0x2a11</td>
+                <td>10769</td>
+                <td>Time with DST</td>
+                <td>带夏令时的时间</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_accuracy">
+                <td>0x2a12</td>
+                <td>10770</td>
+                <td>Time Accuracy</td>
+                <td>时间准确度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_source">
+                <td>0x2a13</td>
+                <td>10771</td>
+                <td>Time Source</td>
+                <td>时钟源</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.reference_time_information">
+                <td>0x2a14</td>
+                <td>10772</td>
+                <td>Reference Time Information</td>
+                <td>参考时间信息</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_update_control_point">
+                <td>0x2a16</td>
+                <td>10774</td>
+                <td>Time Update Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_update_state">
+                <td>0x2a17</td>
+                <td>10775</td>
+                <td>Time Update State</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.glucose_measurement">
+                <td>0x2a18</td>
+                <td>10776</td>
+                <td>Glucose Measurement</td>
+                <td>血糖测量</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.battery_level">
+                <td>0x2a19</td>
+                <td>10777</td>
+                <td>Battery Level</td>
+                <td>电池电量</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.temperature_measurement">
+                <td>0x2a1c</td>
+                <td>10780</td>
+                <td>Temperature Measurement</td>
+                <td>温度测量</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.temperature_type">
+                <td>0x2a1d</td>
+                <td>10781</td>
+                <td>Temperature Type</td>
+                <td>温度类型</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.intermediate_temperature">
+                <td>0x2a1e</td>
+                <td>10782</td>
+                <td>Intermediate Temperature</td>
+                <td>间接温度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.measurement_interval">
+                <td>0x2a21</td>
+                <td>10785</td>
+                <td>Measurement Interval</td>
+                <td>测量间隔</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.boot_keyboard_input_report">
+                <td>0x2a22</td>
+                <td>10786</td>
+                <td>Boot Keyboard Input Report</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.system_id">
+                <td>0x2a23</td>
+                <td>10787</td>
+                <td>System ID</td>
+                <td>系统标识符</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.model_number_string">
+                <td>0x2a24</td>
+                <td>10788</td>
+                <td>Model Number String</td>
+                <td>型号字符串</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.serial_number_string">
+                <td>0x2a25</td>
+                <td>10789</td>
+                <td>Serial Number String</td>
+                <td>序列号字符串</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.firmware_revision_string">
+                <td>0x2a26</td>
+                <td>10790</td>
+                <td>Firmware Revision String</td>
+                <td>固件版本字符串</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.hardware_revision_string">
+                <td>0x2a27</td>
+                <td>10791</td>
+                <td>Hardware Revision String</td>
+                <td>硬件版本字符串</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.software_revision_string">
+                <td>0x2a28</td>
+                <td>10792</td>
+                <td>Software Revision String</td>
+                <td>软件版本字符串</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.manufacturer_name_string">
+                <td>0x2a29</td>
+                <td>10793</td>
+                <td>Manufacturer Name String</td>
+                <td>生产商名称字符串</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ieee_11073-20601_regulatory_certification_data_list">
+                <td>0x2a2a</td>
+                <td>10794</td>
+                <td>IEEE 11073-20601 Regulatory Certification Data List</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.current_time">
+                <td>0x2a2b</td>
+                <td>10795</td>
+                <td>Current Time</td>
+                <td>当前时间</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.magnetic_declination">
+                <td>0x2a2c</td>
+                <td>10796</td>
+                <td>Magnetic Declination</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.scan_refresh">
+                <td>0x2a31</td>
+                <td>10801</td>
+                <td>Scan Refresh</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.boot_keyboard_output_report">
+                <td>0x2a32</td>
+                <td>10802</td>
+                <td>Boot Keyboard Output Report</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.boot_mouse_input_report">
+                <td>0x2a33</td>
+                <td>10803</td>
+                <td>Boot Mouse Input Report</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.glucose_measurement_context">
+                <td>0x2a34</td>
+                <td>10804</td>
+                <td>Glucose Measurement Context</td>
+                <td>血糖测量上下文</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.blood_pressure_measurement">
+                <td>0x2a35</td>
+                <td>10805</td>
+                <td>Blood Pressure Measurement</td>
+                <td>血压测量</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.intermediate_cuff_pressure">
+                <td>0x2a36</td>
+                <td>10806</td>
+                <td>Intermediate Cuff Pressure</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.heart_rate_measurement">
+                <td>0x2a37</td>
+                <td>10807</td>
+                <td>Heart Rate Measurement</td>
+                <td>心率测量</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.body_sensor_location">
+                <td>0x2a38</td>
+                <td>10808</td>
+                <td>Body Sensor Location</td>
+                <td>身体传感器位置</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.heart_rate_control_point">
+                <td>0x2a39</td>
+                <td>10809</td>
+                <td>Heart Rate Control Point</td>
+                <td>心率控制点</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.alert_status">
+                <td>0x2a3f</td>
+                <td>10815</td>
+                <td>Alert Status</td>
+                <td>警报状态</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ringer_control_point">
+                <td>0x2a40</td>
+                <td>10816</td>
+                <td>Ringer Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ringer_setting">
+                <td>0x2a41</td>
+                <td>10817</td>
+                <td>Ringer Setting</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.alert_category_id_bit_mask">
+                <td>0x2a42</td>
+                <td>10818</td>
+                <td>Alert Category ID Bit Mask</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.alert_category_id">
+                <td>0x2a43</td>
+                <td>10819</td>
+                <td>Alert Category ID</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.alert_notification_control_point">
+                <td>0x2a44</td>
+                <td>10820</td>
+                <td>Alert Notification Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.unread_alert_status">
+                <td>0x2a45</td>
+                <td>10821</td>
+                <td>Unread Alert Status</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.new_alert">
+                <td>0x2a46</td>
+                <td>10822</td>
+                <td>New Alert</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.supported_new_alert_category">
+                <td>0x2a47</td>
+                <td>10823</td>
+                <td>Supported New Alert Category</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.supported_unread_alert_category">
+                <td>0x2a48</td>
+                <td>10824</td>
+                <td>Supported Unread Alert Category</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.blood_pressure_feature">
+                <td>0x2a49</td>
+                <td>10825</td>
+                <td>Blood Pressure Feature</td>
+                <td>血压特性</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.hid_information">
+                <td>0x2a4a</td>
+                <td>10826</td>
+                <td>HID Information</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.report_map">
+                <td>0x2a4b</td>
+                <td>10827</td>
+                <td>Report Map</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.hid_control_point">
+                <td>0x2a4c</td>
+                <td>10828</td>
+                <td>HID Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.report">
+                <td>0x2a4d</td>
+                <td>10829</td>
+                <td>Report</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.protocol_mode">
+                <td>0x2a4e</td>
+                <td>10830</td>
+                <td>Protocol Mode</td>
+                <td>协议模式</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.scan_interval_window">
+                <td>0x2a4f</td>
+                <td>10831</td>
+                <td>Scan Interval Window</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.pnp_id">
+                <td>0x2a50</td>
+                <td>10832</td>
+                <td>PnP ID</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.glucose_feature">
+                <td>0x2a51</td>
+                <td>10833</td>
+                <td>Glucose Feature</td>
+                <td>血糖特性</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.record_access_control_point">
+                <td>0x2a52</td>
+                <td>10834</td>
+                <td>Record Access Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.rsc_measurement">
+                <td>0x2a53</td>
+                <td>10835</td>
+                <td>RSC Measurement</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.rsc_feature">
+                <td>0x2a54</td>
+                <td>10836</td>
+                <td>RSC Feature</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.sc_control_point">
+                <td>0x2a55</td>
+                <td>10837</td>
+                <td>SC Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.aggregate">
+                <td>0x2a5a</td>
+                <td>10842</td>
+                <td>Aggregate</td>
+                <td>聚合</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.csc_measurement">
+                <td>0x2a5b</td>
+                <td>10843</td>
+                <td>CSC Measurement</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.csc_feature">
+                <td>0x2a5c</td>
+                <td>10844</td>
+                <td>CSC Feature</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.sensor_location">
+                <td>0x2a5d</td>
+                <td>10845</td>
+                <td>Sensor Location</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.plx_spot_check_measurement">
+                <td>0x2a5e</td>
+                <td>10846</td>
+                <td>PLX Spot-Check Measurement</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.plx_continuous_measurement">
+                <td>0x2a5f</td>
+                <td>10847</td>
+                <td>PLX Continuous Measurement</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.plx_features">
+                <td>0x2a60</td>
+                <td>10848</td>
+                <td>PLX Features</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cycling_power_measurement">
+                <td>0x2a63</td>
+                <td>10851</td>
+                <td>Cycling Power Measurement</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cycling_power_vector">
+                <td>0x2a64</td>
+                <td>10852</td>
+                <td>Cycling Power Vector</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cycling_power_feature">
+                <td>0x2a65</td>
+                <td>10853</td>
+                <td>Cycling Power Feature</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cycling_power_control_point">
+                <td>0x2a66</td>
+                <td>10854</td>
+                <td>Cycling Power Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.location_and_speed">
+                <td>0x2a67</td>
+                <td>10855</td>
+                <td>Location and Speed</td>
+                <td>位置与速度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.navigation">
+                <td>0x2a68</td>
+                <td>10856</td>
+                <td>Navigation</td>
+                <td>导航</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.position_quality">
+                <td>0x2a69</td>
+                <td>10857</td>
+                <td>Position Quality</td>
+                <td>位置质量</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ln_feature">
+                <td>0x2a6a</td>
+                <td>10858</td>
+                <td>LN Feature</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ln_control_point">
+                <td>0x2a6b</td>
+                <td>10859</td>
+                <td>LN Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.elevation">
+                <td>0x2a6c</td>
+                <td>10860</td>
+                <td>Elevation</td>
+                <td>高程</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.pressure">
+                <td>0x2a6d</td>
+                <td>10861</td>
+                <td>Pressure</td>
+                <td>压强</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.temperature">
+                <td>0x2a6e</td>
+                <td>10862</td>
+                <td>Temperature</td>
+                <td>温度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.humidity">
+                <td>0x2a6f</td>
+                <td>10863</td>
+                <td>Humidity</td>
+                <td>湿度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.true_wind_speed">
+                <td>0x2a70</td>
+                <td>10864</td>
+                <td>True Wind Speed</td>
+                <td>真风速</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.true_wind_direction">
+                <td>0x2a71</td>
+                <td>10865</td>
+                <td>True Wind Direction</td>
+                <td>真风向</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.apparent_wind_speed">
+                <td>0x2a72</td>
+                <td>10866</td>
+                <td>Apparent Wind Speed</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.apparent_wind_direction">
+                <td>0x2a73</td>
+                <td>10867</td>
+                <td>Apparent Wind Direction</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.gust_factor">
+                <td>0x2a74</td>
+                <td>10868</td>
+                <td>Gust Factor</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.pollen_concentration">
+                <td>0x2a75</td>
+                <td>10869</td>
+                <td>Pollen Concentration</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.uv_index">
+                <td>0x2a76</td>
+                <td>10870</td>
+                <td>UV Index</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.irradiance">
+                <td>0x2a77</td>
+                <td>10871</td>
+                <td>Irradiance</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.rainfall">
+                <td>0x2a78</td>
+                <td>10872</td>
+                <td>Rainfall</td>
+                <td>降雨</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.wind_chill">
+                <td>0x2a79</td>
+                <td>10873</td>
+                <td>Wind Chill</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.heat_index">
+                <td>0x2a7a</td>
+                <td>10874</td>
+                <td>Heat Index</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.dew_point">
+                <td>0x2a7b</td>
+                <td>10875</td>
+                <td>Dew Point</td>
+                <td>露点</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.descriptor_value_changed">
+                <td>0x2a7d</td>
+                <td>10877</td>
+                <td>Descriptor Value Changed</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.aerobic_heart_rate_lower_limit">
+                <td>0x2a7e</td>
+                <td>10878</td>
+                <td>Aerobic Heart Rate Lower Limit</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.aerobic_threshold">
+                <td>0x2a7f</td>
+                <td>10879</td>
+                <td>Aerobic Threshold</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.age">
+                <td>0x2a80</td>
+                <td>10880</td>
+                <td>Age</td>
+                <td>年龄</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.anaerobic_heart_rate_lower_limit">
+                <td>0x2a81</td>
+                <td>10881</td>
+                <td>Anaerobic Heart Rate Lower Limit</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.anaerobic_heart_rate_upper_limit">
+                <td>0x2a82</td>
+                <td>10882</td>
+                <td>Anaerobic Heart Rate Upper Limit</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.anaerobic_threshold">
+                <td>0x2a83</td>
+                <td>10883</td>
+                <td>Anaerobic Threshold</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.aerobic_heart_rate_upper_limit">
+                <td>0x2a84</td>
+                <td>10884</td>
+                <td>Aerobic Heart Rate Upper Limit</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.date_of_birth">
+                <td>0x2a85</td>
+                <td>10885</td>
+                <td>Date of Birth</td>
+                <td>出生日期</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.date_of_threshold_assessment">
+                <td>0x2a86</td>
+                <td>10886</td>
+                <td>Date of Threshold Assessment</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.email_address">
+                <td>0x2a87</td>
+                <td>10887</td>
+                <td>Email Address</td>
+                <td>电子邮件地址</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.fat_burn_heart_rate_lower_limit">
+                <td>0x2a88</td>
+                <td>10888</td>
+                <td>Fat Burn Heart Rate Lower Limit</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.fat_burn_heart_rate_upper_limit">
+                <td>0x2a89</td>
+                <td>10889</td>
+                <td>Fat Burn Heart Rate Upper Limit</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.first_name">
+                <td>0x2a8a</td>
+                <td>10890</td>
+                <td>First Name</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.five_zone_heart_rate_limits">
+                <td>0x2a8b</td>
+                <td>10891</td>
+                <td>Five Zone Heart Rate Limits</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.gender">
+                <td>0x2a8c</td>
+                <td>10892</td>
+                <td>Gender</td>
+                <td>性别</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.heart_rate_max">
+                <td>0x2a8d</td>
+                <td>10893</td>
+                <td>Heart Rate Max</td>
+                <td>心率最大值</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.height">
+                <td>0x2a8e</td>
+                <td>10894</td>
+                <td>Height</td>
+                <td>高度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.hip_circumference">
+                <td>0x2a8f</td>
+                <td>10895</td>
+                <td>Hip Circumference</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.last_name">
+                <td>0x2a90</td>
+                <td>10896</td>
+                <td>Last Name</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.maximum_recommended_heart_rate">
+                <td>0x2a91</td>
+                <td>10897</td>
+                <td>Maximum Recommended Heart Rate</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.resting_heart_rate">
+                <td>0x2a92</td>
+                <td>10898</td>
+                <td>Resting Heart Rate</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.sport_type_for_aerobic_and_anaerobic_thresholds">
+                <td>0x2a93</td>
+                <td>10899</td>
+                <td>Sport Type for Aerobic and Anaerobic Thresholds</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.three_zone_heart_rate_limits">
+                <td>0x2a94</td>
+                <td>10900</td>
+                <td>Three Zone Heart Rate Limits</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.two_zone_heart_rate_limits">
+                <td>0x2a95</td>
+                <td>10901</td>
+                <td>Two Zone Heart Rate Limits</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.vo2_max">
+                <td>0x2a96</td>
+                <td>10902</td>
+                <td>VO2 Max</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.waist_circumference">
+                <td>0x2a97</td>
+                <td>10903</td>
+                <td>Waist Circumference</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.weight">
+                <td>0x2a98</td>
+                <td>10904</td>
+                <td>Weight</td>
+                <td>重量</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.database_change_increment">
+                <td>0x2a99</td>
+                <td>10905</td>
+                <td>Database Change Increment</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.user_index">
+                <td>0x2a9a</td>
+                <td>10906</td>
+                <td>User Index</td>
+                <td>用户索引</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.body_composition_feature">
+                <td>0x2a9b</td>
+                <td>10907</td>
+                <td>Body Composition Feature</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.body_composition_measurement">
+                <td>0x2a9c</td>
+                <td>10908</td>
+                <td>Body Composition Measurement</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.weight_measurement">
+                <td>0x2a9d</td>
+                <td>10909</td>
+                <td>Weight Measurement</td>
+                <td>体重测量</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.weight_scale_feature">
+                <td>0x2a9e</td>
+                <td>10910</td>
+                <td>Weight Scale Feature</td>
+                <td>体重秤特性</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.user_control_point">
+                <td>0x2a9f</td>
+                <td>10911</td>
+                <td>User Control Point</td>
+                <td>用户控制点</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.magnetic_flux_density_2d">
+                <td>0x2aa0</td>
+                <td>10912</td>
+                <td>Magnetic Flux Density - 2D</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.magnetic_flux_density_3d">
+                <td>0x2aa1</td>
+                <td>10913</td>
+                <td>Magnetic Flux Density - 3D</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.language">
+                <td>0x2aa2</td>
+                <td>10914</td>
+                <td>Language</td>
+                <td>语言</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.barometric_pressure_trend">
+                <td>0x2aa3</td>
+                <td>10915</td>
+                <td>Barometric Pressure Trend</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bond_management_control_point">
+                <td>0x2aa4</td>
+                <td>10916</td>
+                <td>Bond Management Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bond_management_feature">
+                <td>0x2aa5</td>
+                <td>10917</td>
+                <td>Bond Management Feature</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.gap.central_address_resolution">
+                <td>0x2aa6</td>
+                <td>10918</td>
+                <td>Central Address Resolution</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cgm_measurement">
+                <td>0x2aa7</td>
+                <td>10919</td>
+                <td>CGM Measurement</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cgm_feature">
+                <td>0x2aa8</td>
+                <td>10920</td>
+                <td>CGM Feature</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cgm_status">
+                <td>0x2aa9</td>
+                <td>10921</td>
+                <td>CGM Status</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cgm_session_start_time">
+                <td>0x2aaa</td>
+                <td>10922</td>
+                <td>CGM Session Start Time</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cgm_session_run_time">
+                <td>0x2aab</td>
+                <td>10923</td>
+                <td>CGM Session Run Time</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cgm_specific_ops_control_point">
+                <td>0x2aac</td>
+                <td>10924</td>
+                <td>CGM Specific Ops Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.indoor_positioning_configuration">
+                <td>0x2aad</td>
+                <td>10925</td>
+                <td>Indoor Positioning Configuration</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.latitude">
+                <td>0x2aae</td>
+                <td>10926</td>
+                <td>Latitude</td>
+                <td>纬度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.longitude">
+                <td>0x2aaf</td>
+                <td>10927</td>
+                <td>Longitude</td>
+                <td>经度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.local_north_coordinate">
+                <td>0x2ab0</td>
+                <td>10928</td>
+                <td>Local North Coordinate</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.local_east_coordinate">
+                <td>0x2ab1</td>
+                <td>10929</td>
+                <td>Local East Coordinate</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.floor_number">
+                <td>0x2ab2</td>
+                <td>10930</td>
+                <td>Floor Number</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.altitude">
+                <td>0x2ab3</td>
+                <td>10931</td>
+                <td>Altitude</td>
+                <td>海拔高度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.uncertainty">
+                <td>0x2ab4</td>
+                <td>10932</td>
+                <td>Uncertainty</td>
+                <td>不确定性</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.location_name">
+                <td>0x2ab5</td>
+                <td>10933</td>
+                <td>Location Name</td>
+                <td>本地名称</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.uri">
+                <td>0x2ab6</td>
+                <td>10934</td>
+                <td>URI</td>
+                <td>统一资源标识符</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.http_headers">
+                <td>0x2ab7</td>
+                <td>10935</td>
+                <td>HTTP Headers</td>
+                <td>HTTP头部</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.http_status_code">
+                <td>0x2ab8</td>
+                <td>10936</td>
+                <td>HTTP Status Code</td>
+                <td>HTTP状态码</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.http_entity_body">
+                <td>0x2ab9</td>
+                <td>10937</td>
+                <td>HTTP Entity Body</td>
+                <td>HTTP实体载荷</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.http_control_point">
+                <td>0x2aba</td>
+                <td>10938</td>
+                <td>HTTP Control Point</td>
+                <td>HTTP控制点</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.https_security">
+                <td>0x2abb</td>
+                <td>10939</td>
+                <td>HTTPS Security</td>
+                <td>HTTPS安全</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.tds_control_point">
+                <td>0x2abc</td>
+                <td>10940</td>
+                <td>TDS Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ots_feature">
+                <td>0x2abd</td>
+                <td>10941</td>
+                <td>OTS Feature</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.object_name">
+                <td>0x2abe</td>
+                <td>10942</td>
+                <td>Object Name</td>
+                <td>对象名称</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.object_type">
+                <td>0x2abf</td>
+                <td>10943</td>
+                <td>Object Type</td>
+                <td>对象类型</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.object_size">
+                <td>0x2ac0</td>
+                <td>10944</td>
+                <td>Object Size</td>
+                <td>对象大小</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.object_first_created">
+                <td>0x2ac1</td>
+                <td>10945</td>
+                <td>Object First-Created</td>
+                <td>对象创建时间</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.object_last_modified">
+                <td>0x2ac2</td>
+                <td>10946</td>
+                <td>Object Last-Modified</td>
+                <td>对象修改时间</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.object_id">
+                <td>0x2ac3</td>
+                <td>10947</td>
+                <td>Object ID</td>
+                <td>对象标识符</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.object_properties">
+                <td>0x2ac4</td>
+                <td>10948</td>
+                <td>Object Properties</td>
+                <td>对象属性</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.object_action_control_point">
+                <td>0x2ac5</td>
+                <td>10949</td>
+                <td>Object Action Control Point</td>
+                <td>对象动作控制点</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.object_list_control_point">
+                <td>0x2ac6</td>
+                <td>10950</td>
+                <td>Object List Control Point</td>
+                <td>对象列表控制点</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.object_list_filter">
+                <td>0x2ac7</td>
+                <td>10951</td>
+                <td>Object List Filter</td>
+                <td>对象列表过滤器</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.object_changed">
+                <td>0x2ac8</td>
+                <td>10952</td>
+                <td>Object Changed</td>
+                <td>对象变更</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.resolvable_private_address_only">
+                <td>0x2ac9</td>
+                <td>10953</td>
+                <td>Resolvable Private Address Only</td>
+                <td>仅可解析的私有地址</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.fitness_machine_feature">
+                <td>0x2acc</td>
+                <td>10956</td>
+                <td>Fitness Machine Feature</td>
+                <td>健身机器特性</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.treadmill_data">
+                <td>0x2acd</td>
+                <td>10957</td>
+                <td>Treadmill Data</td>
+                <td>跑步机数据</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cross_trainer_data">
+                <td>0x2ace</td>
+                <td>10958</td>
+                <td>Cross Trainer Data</td>
+                <td>全功能训练器数据</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.step_climber_data">
+                <td>0x2acf</td>
+                <td>10959</td>
+                <td>Step Climber Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.stair_climber_data">
+                <td>0x2ad0</td>
+                <td>10960</td>
+                <td>Stair Climber Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.rower_data">
+                <td>0x2ad1</td>
+                <td>10961</td>
+                <td>Rower Data</td>
+                <td>划船数据</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.indoor_bike_data">
+                <td>0x2ad2</td>
+                <td>10962</td>
+                <td>Indoor Bike Data</td>
+                <td>室内自行车数据</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.training_status">
+                <td>0x2ad3</td>
+                <td>10963</td>
+                <td>Training Status</td>
+                <td>训练状态</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.supported_speed_range">
+                <td>0x2ad4</td>
+                <td>10964</td>
+                <td>Supported Speed Range</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.supported_inclination_range">
+                <td>0x2ad5</td>
+                <td>10965</td>
+                <td>Supported Inclination Range</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.supported_resistance_level_range">
+                <td>0x2ad6</td>
+                <td>10966</td>
+                <td>Supported Resistance Level Range</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.supported_heart_rate_range">
+                <td>0x2ad7</td>
+                <td>10967</td>
+                <td>Supported Heart Rate Range</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.supported_power_range">
+                <td>0x2ad8</td>
+                <td>10968</td>
+                <td>Supported Power Range</td>
+                <td>支持的功率范围</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.fitness_machine_control_point">
+                <td>0x2ad9</td>
+                <td>10969</td>
+                <td>Fitness Machine Control Point</td>
+                <td>健身机器控制点</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.fitness_machine_status">
+                <td>0x2ada</td>
+                <td>10970</td>
+                <td>Fitness Machine Status</td>
+                <td>健身机器状态</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.mesh_provisioning_data_in">
+                <td>0x2adb</td>
+                <td>10971</td>
+                <td>Mesh Provisioning Data In</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.mesh_provisioning_data_out">
+                <td>0x2adc</td>
+                <td>10972</td>
+                <td>Mesh Provisioning Data Out</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.mesh_proxy_data_in">
+                <td>0x2add</td>
+                <td>10973</td>
+                <td>Mesh Proxy Data In</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.mesh_proxy_data_out">
+                <td>0x2ade</td>
+                <td>10974</td>
+                <td>Mesh Proxy Data Out</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.average_current">
+                <td>0x2ae0</td>
+                <td>10976</td>
+                <td>Average Current</td>
+                <td>平均电流</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.average_voltage">
+                <td>0x2ae1</td>
+                <td>10977</td>
+                <td>Average Voltage</td>
+                <td>平均电压</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.boolean">
+                <td>0x2ae2</td>
+                <td>10978</td>
+                <td>Boolean</td>
+                <td>布尔值</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.chromatic_distance_from_planckian">
+                <td>0x2ae3</td>
+                <td>10979</td>
+                <td>Chromatic Distance from Planckian</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.chromaticity_coordinates">
+                <td>0x2ae4</td>
+                <td>10980</td>
+                <td>Chromaticity Coordinates</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.chromaticity_in_cct_and_duv_values">
+                <td>0x2ae5</td>
+                <td>10981</td>
+                <td>Chromaticity in CCT and Duv Values</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.chromaticity_tolerance">
+                <td>0x2ae6</td>
+                <td>10982</td>
+                <td>Chromaticity Tolerance</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cie_13_3_1995_color_rendering_index">
+                <td>0x2ae7</td>
+                <td>10983</td>
+                <td>CIE 13.3-1995 Color Rendering Index</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.coefficient">
+                <td>0x2ae8</td>
+                <td>10984</td>
+                <td>Coefficient</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.correlated_color_temperature">
+                <td>0x2ae9</td>
+                <td>10985</td>
+                <td>Correlated Color Temperature</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.count_16">
+                <td>0x2aea</td>
+                <td>10986</td>
+                <td>Count 16</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.count_24">
+                <td>0x2aeb</td>
+                <td>10987</td>
+                <td>Count 24</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.country_code">
+                <td>0x2aec</td>
+                <td>10988</td>
+                <td>Country Code</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.date_utc">
+                <td>0x2aed</td>
+                <td>10989</td>
+                <td>Date UTC</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.electric_current">
+                <td>0x2aee</td>
+                <td>10990</td>
+                <td>Electric Current</td>
+                <td>电流</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.electric_current_range">
+                <td>0x2aef</td>
+                <td>10991</td>
+                <td>Electric Current Range</td>
+                <td>电流范围</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.electric_current_specification">
+                <td>0x2af0</td>
+                <td>10992</td>
+                <td>Electric Current Specification</td>
+                <td>电流规范</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.electric_current_statistics">
+                <td>0x2af1</td>
+                <td>10993</td>
+                <td>Electric Current Statistics</td>
+                <td>电流统计数据</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.energy">
+                <td>0x2af2</td>
+                <td>10994</td>
+                <td>Energy</td>
+                <td>能量</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.energy_in_a_period_of_day">
+                <td>0x2af3</td>
+                <td>10995</td>
+                <td>Energy in a Period of Day</td>
+                <td>一天内的能量</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.event_statistics">
+                <td>0x2af4</td>
+                <td>10996</td>
+                <td>Event Statistics</td>
+                <td>事件统计</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.fixed_string_16">
+                <td>0x2af5</td>
+                <td>10997</td>
+                <td>Fixed String 16</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.fixed_string_24">
+                <td>0x2af6</td>
+                <td>10998</td>
+                <td>Fixed String 24</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.fixed_string_36">
+                <td>0x2af7</td>
+                <td>10999</td>
+                <td>Fixed String 36</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.fixed_string_8">
+                <td>0x2af8</td>
+                <td>11000</td>
+                <td>Fixed String 8</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.generic_level">
+                <td>0x2af9</td>
+                <td>11001</td>
+                <td>Generic Level</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.global_trade_item_number">
+                <td>0x2afa</td>
+                <td>11002</td>
+                <td>Global Trade Item Number</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.illuminance">
+                <td>0x2afb</td>
+                <td>11003</td>
+                <td>Illuminance</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.luminous_efficacy">
+                <td>0x2afc</td>
+                <td>11004</td>
+                <td>Luminous Efficacy</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.luminous_energy">
+                <td>0x2afd</td>
+                <td>11005</td>
+                <td>Luminous Energy</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.luminous_exposure">
+                <td>0x2afe</td>
+                <td>11006</td>
+                <td>Luminous Exposure</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.luminous_flux">
+                <td>0x2aff</td>
+                <td>11007</td>
+                <td>Luminous Flux</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.luminous_flux_range">
+                <td>0x2b00</td>
+                <td>11008</td>
+                <td>Luminous Flux Range</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.luminous_intensity">
+                <td>0x2b01</td>
+                <td>11009</td>
+                <td>Luminous Intensity</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.mass_flow">
+                <td>0x2b02</td>
+                <td>11010</td>
+                <td>Mass Flow</td>
+                <td>质量流</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.perceived_lightness">
+                <td>0x2b03</td>
+                <td>11011</td>
+                <td>Perceived Lightness</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.percentage_8">
+                <td>0x2b04</td>
+                <td>11012</td>
+                <td>Percentage 8</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.power">
+                <td>0x2b05</td>
+                <td>11013</td>
+                <td>Power</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.power_specification">
+                <td>0x2b06</td>
+                <td>11014</td>
+                <td>Power Specification</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.relative_runtime_in_a_current_range">
+                <td>0x2b07</td>
+                <td>11015</td>
+                <td>Relative Runtime in a Current Range</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.relative_runtime_in_a_generic_level_range">
+                <td>0x2b08</td>
+                <td>11016</td>
+                <td>Relative Runtime in a Generic Level Range</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.relative_value_in_a_voltage_range">
+                <td>0x2b09</td>
+                <td>11017</td>
+                <td>Relative Value in a Voltage Range</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.relative_value_in_an_illuminance_range">
+                <td>0x2b0a</td>
+                <td>11018</td>
+                <td>Relative Value in an Illuminance Range</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.relative_value_in_a_period_of_day">
+                <td>0x2b0b</td>
+                <td>11019</td>
+                <td>Relative Value in a Period of Day</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.relative_value_in_a_temperature_range">
+                <td>0x2b0c</td>
+                <td>11020</td>
+                <td>Relative Value in a Temperature Range</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.temperature_8">
+                <td>0x2b0d</td>
+                <td>11021</td>
+                <td>Temperature 8</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.temperature_8_in_a_period_of_day">
+                <td>0x2b0e</td>
+                <td>11022</td>
+                <td>Temperature 8 in a Period of Day</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.temperature_8_statistics">
+                <td>0x2b0f</td>
+                <td>11023</td>
+                <td>Temperature 8 Statistics</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.temperature_range">
+                <td>0x2b10</td>
+                <td>11024</td>
+                <td>Temperature Range</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.temperature_statistics">
+                <td>0x2b11</td>
+                <td>11025</td>
+                <td>Temperature Statistics</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_decihour_8">
+                <td>0x2b12</td>
+                <td>11026</td>
+                <td>Time Decihour 8</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_exponential_8">
+                <td>0x2b13</td>
+                <td>11027</td>
+                <td>Time Exponential 8</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_hour_24">
+                <td>0x2b14</td>
+                <td>11028</td>
+                <td>Time Hour 24</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_millisecond_24">
+                <td>0x2b15</td>
+                <td>11029</td>
+                <td>Time Millisecond 24</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_second_16">
+                <td>0x2b16</td>
+                <td>11030</td>
+                <td>Time Second 16</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_second_8">
+                <td>0x2b17</td>
+                <td>11031</td>
+                <td>Time Second 8</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.voltage">
+                <td>0x2b18</td>
+                <td>11032</td>
+                <td>Voltage</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.voltage_specification">
+                <td>0x2b19</td>
+                <td>11033</td>
+                <td>Voltage Specification</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.voltage_statistics">
+                <td>0x2b1a</td>
+                <td>11034</td>
+                <td>Voltage Statistics</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.volume_flow">
+                <td>0x2b1b</td>
+                <td>11035</td>
+                <td>Volume Flow</td>
+                <td>体积流</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.chromaticity_coordinate">
+                <td>0x2b1c</td>
+                <td>11036</td>
+                <td>Chromaticity Coordinate</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.rc_feature">
+                <td>0x2b1d</td>
+                <td>11037</td>
+                <td>RC Feature</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.rc_settings">
+                <td>0x2b1e</td>
+                <td>11038</td>
+                <td>RC Settings</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.reconnection_configuration_control_point">
+                <td>0x2b1f</td>
+                <td>11039</td>
+                <td>Reconnection Configuration Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.idd_status_changed">
+                <td>0x2b20</td>
+                <td>11040</td>
+                <td>IDD Status Changed</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.idd_status">
+                <td>0x2b21</td>
+                <td>11041</td>
+                <td>IDD Status</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.idd_annunciation_status">
+                <td>0x2b22</td>
+                <td>11042</td>
+                <td>IDD Annunciation Status</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.idd_features">
+                <td>0x2b23</td>
+                <td>11043</td>
+                <td>IDD Features</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.idd_status_reader_control_point">
+                <td>0x2b24</td>
+                <td>11044</td>
+                <td>IDD Status Reader Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.idd_command_control_point">
+                <td>0x2b25</td>
+                <td>11045</td>
+                <td>IDD Command Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.idd_command_data">
+                <td>0x2b26</td>
+                <td>11046</td>
+                <td>IDD Command Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.idd_record_access_control_point">
+                <td>0x2b27</td>
+                <td>11047</td>
+                <td>IDD Record Access Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.idd_history_data">
+                <td>0x2b28</td>
+                <td>11048</td>
+                <td>IDD History Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.client_supported_features">
+                <td>0x2b29</td>
+                <td>11049</td>
+                <td>Client Supported Features</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.database_hash">
+                <td>0x2b2a</td>
+                <td>11050</td>
+                <td>Database Hash</td>
+                <td>数据库哈希</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bss_control_point">
+                <td>0x2b2b</td>
+                <td>11051</td>
+                <td>BSS Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bss_response">
+                <td>0x2b2c</td>
+                <td>11052</td>
+                <td>BSS Response</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.emergency_id">
+                <td>0x2b2d</td>
+                <td>11053</td>
+                <td>Emergency ID</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.emergency_text">
+                <td>0x2b2e</td>
+                <td>11054</td>
+                <td>Emergency Text</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.acs_status">
+                <td>0x2b2f</td>
+                <td>11055</td>
+                <td>ACS Status</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.acs_data_in">
+                <td>0x2b30</td>
+                <td>11056</td>
+                <td>ACS Data In</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.acs_data_out_notify">
+                <td>0x2b31</td>
+                <td>11057</td>
+                <td>ACS Data Out Notify</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.acs_data_out_indicate">
+                <td>0x2b32</td>
+                <td>11058</td>
+                <td>ACS Data Out Indicate</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.acs_control_point">
+                <td>0x2b33</td>
+                <td>11059</td>
+                <td>ACS Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.enhanced_blood_pressure_measurement">
+                <td>0x2b34</td>
+                <td>11060</td>
+                <td>Enhanced Blood Pressure Measurement</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.enhanced_intermediate_cuff_pressure">
+                <td>0x2b35</td>
+                <td>11061</td>
+                <td>Enhanced Intermediate Cuff Pressure</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.blood_pressure_record">
+                <td>0x2b36</td>
+                <td>11062</td>
+                <td>Blood Pressure Record</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.registered_user">
+                <td>0x2b37</td>
+                <td>11063</td>
+                <td>Registered User</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.br_edr_handover_data">
+                <td>0x2b38</td>
+                <td>11064</td>
+                <td>BR-EDR Handover Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bluetooth_sig_data">
+                <td>0x2b39</td>
+                <td>11065</td>
+                <td>Bluetooth SIG Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.server_supported_features">
+                <td>0x2b3a</td>
+                <td>11066</td>
+                <td>Server Supported Features</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.physical_activity_monitor_features">
+                <td>0x2b3b</td>
+                <td>11067</td>
+                <td>Physical Activity Monitor Features</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.general_activity_instantaneous_data">
+                <td>0x2b3c</td>
+                <td>11068</td>
+                <td>General Activity Instantaneous Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.general_activity_summary_data">
+                <td>0x2b3d</td>
+                <td>11069</td>
+                <td>General Activity Summary Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cardiorespiratory_activity_instantaneous_data">
+                <td>0x2b3e</td>
+                <td>11070</td>
+                <td>CardioRespiratory Activity Instantaneous Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cardiorespiratory_activity_summary_data">
+                <td>0x2b3f</td>
+                <td>11071</td>
+                <td>CardioRespiratory Activity Summary Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.step_counter_activity_summary_data">
+                <td>0x2b40</td>
+                <td>11072</td>
+                <td>Step Counter Activity Summary Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.sleep_activity_instantaneous_data">
+                <td>0x2b41</td>
+                <td>11073</td>
+                <td>Sleep Activity Instantaneous Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.sleep_activity_summary_data">
+                <td>0x2b42</td>
+                <td>11074</td>
+                <td>Sleep Activity Summary Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.physical_activity_monitor_control_point">
+                <td>0x2b43</td>
+                <td>11075</td>
+                <td>Physical Activity Monitor Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.physical_activity_current_session">
+                <td>0x2b44</td>
+                <td>11076</td>
+                <td>Physical Activity Current Session</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.physical_activity_session_descriptor">
+                <td>0x2b45</td>
+                <td>11077</td>
+                <td>Physical Activity Session Descriptor</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.preferred_units">
+                <td>0x2b46</td>
+                <td>11078</td>
+                <td>Preferred Units</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.high_resolution_height">
+                <td>0x2b47</td>
+                <td>11079</td>
+                <td>High Resolution Height</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.middle_name">
+                <td>0x2b48</td>
+                <td>11080</td>
+                <td>Middle Name</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.stride_length">
+                <td>0x2b49</td>
+                <td>11081</td>
+                <td>Stride Length</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.handedness">
+                <td>0x2b4a</td>
+                <td>11082</td>
+                <td>Handedness</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.device_wearing_position">
+                <td>0x2b4b</td>
+                <td>11083</td>
+                <td>Device Wearing Position</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.four_zone_heart_rate_limits">
+                <td>0x2b4c</td>
+                <td>11084</td>
+                <td>Four Zone Heart Rate Limits</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.high_intensity_exercise_threshold">
+                <td>0x2b4d</td>
+                <td>11085</td>
+                <td>High Intensity Exercise Threshold</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.activity_goal">
+                <td>0x2b4e</td>
+                <td>11086</td>
+                <td>Activity Goal</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.sedentary_interval_notification">
+                <td>0x2b4f</td>
+                <td>11087</td>
+                <td>Sedentary Interval Notification</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.caloric_intake">
+                <td>0x2b50</td>
+                <td>11088</td>
+                <td>Caloric Intake</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.tmap_role">
+                <td>0x2b51</td>
+                <td>11089</td>
+                <td>TMAP Role</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.audio_input_state">
+                <td>0x2b77</td>
+                <td>11127</td>
+                <td>Audio Input State</td>
+                <td>音频输入状态</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.gain_settings_attribute">
+                <td>0x2b78</td>
+                <td>11128</td>
+                <td>Gain Settings Attribute</td>
+                <td>增益设定属性</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.audio_input_type">
+                <td>0x2b79</td>
+                <td>11129</td>
+                <td>Audio Input Type</td>
+                <td>音频输入类型</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.audio_input_status">
+                <td>0x2b7a</td>
+                <td>11130</td>
+                <td>Audio Input Status</td>
+                <td>音频输入状态</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.audio_input_control_point">
+                <td>0x2b7b</td>
+                <td>11131</td>
+                <td>Audio Input Control Point</td>
+                <td>音频输入控制点</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.audio_input_description">
+                <td>0x2b7c</td>
+                <td>11132</td>
+                <td>Audio Input Description</td>
+                <td>音频输入描述</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.volume_state">
+                <td>0x2b7d</td>
+                <td>11133</td>
+                <td>Volume State</td>
+                <td>音量</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.volume_control_point">
+                <td>0x2b7e</td>
+                <td>11134</td>
+                <td>Volume Control Point</td>
+                <td>音量控制点</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.volume_flags">
+                <td>0x2b7f</td>
+                <td>11135</td>
+                <td>Volume Flags</td>
+                <td>音量标志位</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.volume_offset_state">
+                <td>0x2b80</td>
+                <td>11136</td>
+                <td>Volume Offset State</td>
+                <td>音量偏移量</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.audio_location">
+                <td>0x2b81</td>
+                <td>11137</td>
+                <td>Audio Location</td>
+                <td>音频位置</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.volume_offset_control_point">
+                <td>0x2b82</td>
+                <td>11138</td>
+                <td>Volume Offset Control Point</td>
+                <td>音量偏移量控制点</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.audio_output_description">
+                <td>0x2b83</td>
+                <td>11139</td>
+                <td>Audio Output Description</td>
+                <td>音频输出描述</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.set_identity_resolving_key">
+                <td>0x2b84</td>
+                <td>11140</td>
+                <td>Set Identity Resolving Key</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.size_characteristic">
+                <td>0x2b85</td>
+                <td>11141</td>
+                <td>Coordinated Set Size</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.lock_characteristic">
+                <td>0x2b86</td>
+                <td>11142</td>
+                <td>Set Member Lock</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.rank_characteristic">
+                <td>0x2b87</td>
+                <td>11143</td>
+                <td>Set Member Rank</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.encrypted_data_key_material">
+                <td>0x2b88</td>
+                <td>11144</td>
+                <td>Encrypted Data Key Material</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.apparent_energy_32">
+                <td>0x2b89</td>
+                <td>11145</td>
+                <td>Apparent Energy 32</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.apparent_power">
+                <td>0x2b8a</td>
+                <td>11146</td>
+                <td>Apparent Power</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.live_health_observations">
+                <td>0x2b8b</td>
+                <td>11147</td>
+                <td>Live Health Observations</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.co2_concentration">
+                <td>0x2b8c</td>
+                <td>11148</td>
+                <td>"CO\\textsubscript{2} Concentration"</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.cosine_of_the_angle">
+                <td>0x2b8d</td>
+                <td>11149</td>
+                <td>Cosine of the Angle</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.device_time_feature">
+                <td>0x2b8e</td>
+                <td>11150</td>
+                <td>Device Time Feature</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.device_time_parameters">
+                <td>0x2b8f</td>
+                <td>11151</td>
+                <td>Device Time Parameters</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.device_time">
+                <td>0x2b90</td>
+                <td>11152</td>
+                <td>Device Time</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.device_time_control_point">
+                <td>0x2b91</td>
+                <td>11153</td>
+                <td>Device Time Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_change_log_data">
+                <td>0x2b92</td>
+                <td>11154</td>
+                <td>Time Change Log Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.media_player_name">
+                <td>0x2b93</td>
+                <td>11155</td>
+                <td>Media Player Name</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.media_player_icon_object_id">
+                <td>0x2b94</td>
+                <td>11156</td>
+                <td>Media Player Icon Object ID</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.media_player_icon_url">
+                <td>0x2b95</td>
+                <td>11157</td>
+                <td>Media Player Icon URL</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.track_changed">
+                <td>0x2b96</td>
+                <td>11158</td>
+                <td>Track Changed</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.track_title">
+                <td>0x2b97</td>
+                <td>11159</td>
+                <td>Track Title</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.track_duration">
+                <td>0x2b98</td>
+                <td>11160</td>
+                <td>Track Duration</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.track_position">
+                <td>0x2b99</td>
+                <td>11161</td>
+                <td>Track Position</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.playback_speed">
+                <td>0x2b9a</td>
+                <td>11162</td>
+                <td>Playback Speed</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.seeking_speed">
+                <td>0x2b9b</td>
+                <td>11163</td>
+                <td>Seeking Speed</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.current_track_segments_object_id">
+                <td>0x2b9c</td>
+                <td>11164</td>
+                <td>Current Track Segments Object ID</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.current_track_object_id">
+                <td>0x2b9d</td>
+                <td>11165</td>
+                <td>Current Track Object ID</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.next_track_object_id">
+                <td>0x2b9e</td>
+                <td>11166</td>
+                <td>Next Track Object ID</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.parent_group_object_id">
+                <td>0x2b9f</td>
+                <td>11167</td>
+                <td>Parent Group Object ID</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.current_group_object_id">
+                <td>0x2ba0</td>
+                <td>11168</td>
+                <td>Current Group Object ID</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.playing_order">
+                <td>0x2ba1</td>
+                <td>11169</td>
+                <td>Playing Order</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.playing_orders_supported">
+                <td>0x2ba2</td>
+                <td>11170</td>
+                <td>Playing Orders Supported</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.media_state">
+                <td>0x2ba3</td>
+                <td>11171</td>
+                <td>Media State</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.media_control_point">
+                <td>0x2ba4</td>
+                <td>11172</td>
+                <td>Media Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.media_control_point_opcodes_supported">
+                <td>0x2ba5</td>
+                <td>11173</td>
+                <td>Media Control Point Opcodes Supported</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.search_results_object_id">
+                <td>0x2ba6</td>
+                <td>11174</td>
+                <td>Search Results Object ID</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.search_control_point">
+                <td>0x2ba7</td>
+                <td>11175</td>
+                <td>Search Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.energy_32">
+                <td>0x2ba8</td>
+                <td>11176</td>
+                <td>Energy 32</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.constant_tone_extension_enable">
+                <td>0x2bad</td>
+                <td>11181</td>
+                <td>Constant Tone Extension Enable</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.advertising_constant_tone_extension_minimum_length">
+                <td>0x2bae</td>
+                <td>11182</td>
+                <td>Advertising Constant Tone Extension Minimum Length</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.advertising_constant_tone_extension_minimum_transmit_count">
+                <td>0x2baf</td>
+                <td>11183</td>
+                <td>Advertising Constant Tone Extension Minimum Transmit Count</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.advertising_constant_tone_extension_transmit_duration">
+                <td>0x2bb0</td>
+                <td>11184</td>
+                <td>Advertising Constant Tone Extension Transmit Duration</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.advertising_constant_tone_extension_interval">
+                <td>0x2bb1</td>
+                <td>11185</td>
+                <td>Advertising Constant Tone Extension Interval</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.advertising_constant_tone_extension_phy">
+                <td>0x2bb2</td>
+                <td>11186</td>
+                <td>Advertising Constant Tone Extension PHY</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bearer_provider_name">
+                <td>0x2bb3</td>
+                <td>11187</td>
+                <td>Bearer Provider Name</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bearer_uci">
+                <td>0x2bb4</td>
+                <td>11188</td>
+                <td>Bearer UCI</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bearer_technology">
+                <td>0x2bb5</td>
+                <td>11189</td>
+                <td>Bearer Technology</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bearer_uri_schemes_supported_list">
+                <td>0x2bb6</td>
+                <td>11190</td>
+                <td>Bearer URI Schemes Supported List</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bearer_signal_strength">
+                <td>0x2bb7</td>
+                <td>11191</td>
+                <td>Bearer Signal Strength</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bearer_signal_strength_reporting_interval">
+                <td>0x2bb8</td>
+                <td>11192</td>
+                <td>Bearer Signal Strength Reporting Interval</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bearer_list_current_calls">
+                <td>0x2bb9</td>
+                <td>11193</td>
+                <td>Bearer List Current Calls</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.content_control_id">
+                <td>0x2bba</td>
+                <td>11194</td>
+                <td>Content Control ID</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.status_flags">
+                <td>0x2bbb</td>
+                <td>11195</td>
+                <td>Status Flags</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.incoming_call_target_bearer_uri">
+                <td>0x2bbc</td>
+                <td>11196</td>
+                <td>Incoming Call Target Bearer URI</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.call_state">
+                <td>0x2bbd</td>
+                <td>11197</td>
+                <td>Call State</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.call_control_point">
+                <td>0x2bbe</td>
+                <td>11198</td>
+                <td>Call Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.call_control_point_optional_opcodes">
+                <td>0x2bbf</td>
+                <td>11199</td>
+                <td>Call Control Point Optional Opcodes</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.termination_reason">
+                <td>0x2bc0</td>
+                <td>11200</td>
+                <td>Termination Reason</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.incoming_call">
+                <td>0x2bc1</td>
+                <td>11201</td>
+                <td>Incoming Call</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.call_friendly_name">
+                <td>0x2bc2</td>
+                <td>11202</td>
+                <td>Call Friendly Name</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.mute">
+                <td>0x2bc3</td>
+                <td>11203</td>
+                <td>Mute</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.sink_ase">
+                <td>0x2bc4</td>
+                <td>11204</td>
+                <td>Sink ASE</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.source_ase">
+                <td>0x2bc5</td>
+                <td>11205</td>
+                <td>Source ASE</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ase_control_point">
+                <td>0x2bc6</td>
+                <td>11206</td>
+                <td>ASE Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.broadcast_audio_scan_control_point">
+                <td>0x2bc7</td>
+                <td>11207</td>
+                <td>Broadcast Audio Scan Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.broadcast_receive_state">
+                <td>0x2bc8</td>
+                <td>11208</td>
+                <td>Broadcast Receive State</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.sink_pac">
+                <td>0x2bc9</td>
+                <td>11209</td>
+                <td>Sink PAC</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.sink_audio_locations">
+                <td>0x2bca</td>
+                <td>11210</td>
+                <td>Sink Audio Locations</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.source_pac">
+                <td>0x2bcb</td>
+                <td>11211</td>
+                <td>Source PAC</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.source_audio_locations">
+                <td>0x2bcc</td>
+                <td>11212</td>
+                <td>Source Audio Locations</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.available_audio_contexts">
+                <td>0x2bcd</td>
+                <td>11213</td>
+                <td>Available Audio Contexts</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.supported_audio_contexts">
+                <td>0x2bce</td>
+                <td>11214</td>
+                <td>Supported Audio Contexts</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ammonia_concentration">
+                <td>0x2bcf</td>
+                <td>11215</td>
+                <td>Ammonia Concentration</td>
+                <td>氨气浓度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.carbon_monoxide_concentration">
+                <td>0x2bd0</td>
+                <td>11216</td>
+                <td>Carbon Monoxide Concentration</td>
+                <td>一氧化碳浓度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.methane_concentration">
+                <td>0x2bd1</td>
+                <td>11217</td>
+                <td>Methane Concentration</td>
+                <td>甲烷浓度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.nitrogen_dioxide_concentration">
+                <td>0x2bd2</td>
+                <td>11218</td>
+                <td>Nitrogen Dioxide Concentration</td>
+                <td>二氧化氮浓度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.non-methane_volatile_organic_compounds_concentration">
+                <td>0x2bd3</td>
+                <td>11219</td>
+                <td>Non-Methane Volatile Organic Compounds Concentration</td>
+                <td>非甲烷不稳定有机物浓度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ozone_concentration">
+                <td>0x2bd4</td>
+                <td>11220</td>
+                <td>Ozone Concentration</td>
+                <td>臭氧浓度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.particulate_matter_pm1_concentration">
+                <td>0x2bd5</td>
+                <td>11221</td>
+                <td>Particulate Matter - PM1 Concentration</td>
+                <td>颗粒物PM1浓度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.particulate_matter_pm2_5_concentration">
+                <td>0x2bd6</td>
+                <td>11222</td>
+                <td>Particulate Matter - PM2.5 Concentration</td>
+                <td>颗粒物PM2.5浓度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.particulate_matter_pm10_concentration">
+                <td>0x2bd7</td>
+                <td>11223</td>
+                <td>Particulate Matter - PM10 Concentration</td>
+                <td>颗粒物PM10浓度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.sulfur_dioxide_concentration">
+                <td>0x2bd8</td>
+                <td>11224</td>
+                <td>Sulfur Dioxide Concentration</td>
+                <td>二氧化硫浓度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.sulfur_hexafluoride_concentration">
+                <td>0x2bd9</td>
+                <td>11225</td>
+                <td>Sulfur Hexafluoride Concentration</td>
+                <td>六氟化硫浓度</td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.hearing_aid_features">
+                <td>0x2bda</td>
+                <td>11226</td>
+                <td>Hearing Aid Features</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.hearing_aid_preset_control_point">
+                <td>0x2bdb</td>
+                <td>11227</td>
+                <td>Hearing Aid Preset Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.active_preset_index">
+                <td>0x2bdc</td>
+                <td>11228</td>
+                <td>Active Preset Index</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.stored_health_observations">
+                <td>0x2bdd</td>
+                <td>11229</td>
+                <td>Stored Health Observations</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.fixed_string_64">
+                <td>0x2bde</td>
+                <td>11230</td>
+                <td>Fixed String 64</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.high_temperature">
+                <td>0x2bdf</td>
+                <td>11231</td>
+                <td>High Temperature</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.high_voltage">
+                <td>0x2be0</td>
+                <td>11232</td>
+                <td>High Voltage</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.light_distribution">
+                <td>0x2be1</td>
+                <td>11233</td>
+                <td>Light Distribution</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.light_output">
+                <td>0x2be2</td>
+                <td>11234</td>
+                <td>Light Output</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.light_source_type">
+                <td>0x2be3</td>
+                <td>11235</td>
+                <td>Light Source Type</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.noise">
+                <td>0x2be4</td>
+                <td>11236</td>
+                <td>Noise</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.relative_runtime_in_a_correlated_color_temperature_range">
+                <td>0x2be5</td>
+                <td>11237</td>
+                <td>Relative Runtime in a Correlated Color Temperature Range</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.time_second_32">
+                <td>0x2be6</td>
+                <td>11238</td>
+                <td>Time Second 32</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.voc_concentration">
+                <td>0x2be7</td>
+                <td>11239</td>
+                <td>VOC Concentration</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.voltage_frequency">
+                <td>0x2be8</td>
+                <td>11240</td>
+                <td>Voltage Frequency</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.battery_critical_status">
+                <td>0x2be9</td>
+                <td>11241</td>
+                <td>Battery Critical Status</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.battery_health_status">
+                <td>0x2bea</td>
+                <td>11242</td>
+                <td>Battery Health Status</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.battery_health_information">
+                <td>0x2beb</td>
+                <td>11243</td>
+                <td>Battery Health Information</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.battery_information">
+                <td>0x2bec</td>
+                <td>11244</td>
+                <td>Battery Information</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.battery_level_status">
+                <td>0x2bed</td>
+                <td>11245</td>
+                <td>Battery Level Status</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.battery_time_status">
+                <td>0x2bee</td>
+                <td>11246</td>
+                <td>Battery Time Status</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.estimated_service_date">
+                <td>0x2bef</td>
+                <td>11247</td>
+                <td>Estimated Service Date</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.battery_energy_status">
+                <td>0x2bf0</td>
+                <td>11248</td>
+                <td>Battery Energy Status</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.observation_schedule_changed">
+                <td>0x2bf1</td>
+                <td>11249</td>
+                <td>Observation Schedule Changed</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.current_elapsed_time">
+                <td>0x2bf2</td>
+                <td>11250</td>
+                <td>Current Elapsed Time</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.health_sensor_features">
+                <td>0x2bf3</td>
+                <td>11251</td>
+                <td>Health Sensor Features</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ghs_control_point">
+                <td>0x2bf4</td>
+                <td>11252</td>
+                <td>GHS Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.le_gatt_security_levels">
+                <td>0x2bf5</td>
+                <td>11253</td>
+                <td>LE GATT Security Levels</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.esl_address">
+                <td>0x2bf6</td>
+                <td>11254</td>
+                <td>ESL Address</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ap_sync_key_material">
+                <td>0x2bf7</td>
+                <td>11255</td>
+                <td>AP Sync Key Material</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.esl_response_key_material">
+                <td>0x2bf8</td>
+                <td>11256</td>
+                <td>ESL Response Key Material</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.esl_current_absolute_time">
+                <td>0x2bf9</td>
+                <td>11257</td>
+                <td>ESL Current Absolute Time</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.esl_display_information">
+                <td>0x2bfa</td>
+                <td>11258</td>
+                <td>ESL Display Information</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.esl_image_information">
+                <td>0x2bfb</td>
+                <td>11259</td>
+                <td>ESL Image Information</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.esl_sensor_information">
+                <td>0x2bfc</td>
+                <td>11260</td>
+                <td>ESL Sensor Information</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.esl_led_information">
+                <td>0x2bfd</td>
+                <td>11261</td>
+                <td>ESL LED Information</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.esl_control_point">
+                <td>0x2bfe</td>
+                <td>11262</td>
+                <td>ESL Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.medical_devices">
+                <td>0x2bff</td>
+                <td>11263</td>
+                <td>UDI for Medical Devices</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.gmap_role">
+                <td>0x2c00</td>
+                <td>11264</td>
+                <td>GMAP Role</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ugg_features">
+                <td>0x2c01</td>
+                <td>11265</td>
+                <td>UGG Features</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ugt_features">
+                <td>0x2c02</td>
+                <td>11266</td>
+                <td>UGT Features</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bgs_features">
+                <td>0x2c03</td>
+                <td>11267</td>
+                <td>BGS Features</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.bgr_features">
+                <td>0x2c04</td>
+                <td>11268</td>
+                <td>BGR Features</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.percentage_8_steps">
+                <td>0x2c05</td>
+                <td>11269</td>
+                <td>Percentage 8 Steps</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.acceleration">
+                <td>0x2c06</td>
+                <td>11270</td>
+                <td>Acceleration</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.force">
+                <td>0x2c07</td>
+                <td>11271</td>
+                <td>Force</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.linear_position">
+                <td>0x2c08</td>
+                <td>11272</td>
+                <td>Linear Position</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.rotational_speed">
+                <td>0x2c09</td>
+                <td>11273</td>
+                <td>Rotational Speed</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.length">
+                <td>0x2c0a</td>
+                <td>11274</td>
+                <td>Length</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.torque">
+                <td>0x2c0b</td>
+                <td>11275</td>
+                <td>Torque</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.imd_status">
+                <td>0x2c0c</td>
+                <td>11276</td>
+                <td>IMD Status</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.imds_descriptor_value_changed">
+                <td>0x2c0d</td>
+                <td>11277</td>
+                <td>IMDS Descriptor Value Changed</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.first_use_date">
+                <td>0x2c0e</td>
+                <td>11278</td>
+                <td>First Use Date</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.life_cycle_data">
+                <td>0x2c0f</td>
+                <td>11279</td>
+                <td>Life Cycle Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.work_cycle_data">
+                <td>0x2c10</td>
+                <td>11280</td>
+                <td>Work Cycle Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.service_cycle_data">
+                <td>0x2c11</td>
+                <td>11281</td>
+                <td>Service Cycle Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.imd_control">
+                <td>0x2c12</td>
+                <td>11282</td>
+                <td>IMD Control</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.imd_historical_data">
+                <td>0x2c13</td>
+                <td>11283</td>
+                <td>IMD Historical Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ras_features">
+                <td>0x2c14</td>
+                <td>11284</td>
+                <td>RAS Features</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.real-time_ranging_data">
+                <td>0x2c15</td>
+                <td>11285</td>
+                <td>Real-time Ranging Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.on-demand_ranging_data">
+                <td>0x2c16</td>
+                <td>11286</td>
+                <td>On-demand Ranging Data</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ras_control_point">
+                <td>0x2c17</td>
+                <td>11287</td>
+                <td>RAS Control Point</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ranging_data_ready">
+                <td>0x2c18</td>
+                <td>11288</td>
+                <td>Ranging Data Ready</td>
+                <td></td>
+            </tr>
+            <tr title="org.bluetooth.characteristic.ranging_data_overwritten">
+                <td>0x2c19</td>
+                <td>11289</td>
+                <td>Ranging Data Overwritten</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

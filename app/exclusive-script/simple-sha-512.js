@@ -203,7 +203,7 @@ class SHA512 {
     }
     finish() {
         let onePadded = false;
-        if (this.position + 17 > SHA512.BLOCK_SIZE) {
+        if (this.position + 17 > SHA512.BLOCK_SIZE) { // need one more block
             if (this.position < SHA512.BLOCK_SIZE) {
                 this.view.setUint8(this.position++, 0x80);
                 onePadded = true;

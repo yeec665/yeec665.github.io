@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SHA256</title>
+    <title>SM3</title>
     <style>
         main {
             width: fit-content;
@@ -15,9 +15,9 @@
             margin: 1em auto;
             border-collapse: collapse;
         }
-        th,td {
+        td {
             border: 1px solid rgb(128, 128, 128);
-            padding: 2px 9px;
+            padding: 3px 10px;
         }
         td.hex {
             font-family: Courier, monospace;
@@ -26,22 +26,13 @@
             color: rgb(212, 32, 0);
         }
     </style>
-    <script src="simple-sha-256.js"></script>
+    <script src="simple-sm3.js"></script>
 </head>
 <body>
     <main>
-        <h2>SHA256 calculator for small files (less than 1MiB)</h2>
+        <h2>SM3 calculator for small files</h2>
         <div><input id="fileInput" type="file"><span>or drag file here</span></div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Size (bytes)</th>
-                    <th>Digest (hex)</th>
-                </tr>
-            </thead>
-            <tbody id="tbody"></tbody>
-        </table>
+        <table><tbody></tbody></table>
     </main>
 </body>
 </html>
