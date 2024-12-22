@@ -2,6 +2,8 @@
 <html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="qsq">
+    <meta name="keywords" content="design,decoration,electronics,breadboard">
     <title>面包板</title>
     <link rel="stylesheet" href="breadboard.css">
     <script src="breadboard.js"></script>
@@ -15,11 +17,78 @@
         </div>
         <div class="gap"></div>
         <div class="logic area">
-            <div class="label border"></div>
+            <div class="label border end"></div>
             <div class="logic holes"></div>
         </div>
     </div>
     <div class="center">
+        <table>
+            <caption>RS232</caption>
+            <thead>
+                <tr>
+                    <th>引脚号</th>
+                    <th>符号</th>
+                    <th>名称</th>
+                    <th>含义</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>RSD/DCD</td>
+                    <td>Received Line Signal Detection / Data Carrier Detection</td>
+                    <td>接收线信号检出、数据载波检出</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>TXD</td>
+                    <td>Transmitted data</td>
+                    <td>发送的数据</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>RXD</td>
+                    <td>Received data</td>
+                    <td>接收的数据</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>DSR</td>
+                    <td>Data Set Ready</td>
+                    <td>数据装置准备好</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>GND</td>
+                    <td>Ground</td>
+                    <td>地线</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>DTR</td>
+                    <td>Data Terminal Ready</td>
+                    <td>数据终端准备好</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>CTS</td>
+                    <td>Clear to Send</td>
+                    <td>清除发送</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>RTS</td>
+                    <td>Request to Send</td>
+                    <td>请求发送</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>RI</td>
+                    <td>Ringing</td>
+                    <td>振铃指示</td>
+                </tr>
+            </tbody>
+        </table>
         <table>
             <caption>USB Micro-A Plug Pin Assignments</caption>
             <thead>
@@ -173,11 +242,169 @@
                 </tr>
             </tbody>
         </table>
+        <table>
+            <caption>Video Graphics Array, VGA</caption>
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Red+</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Green+</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Blue+</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>ID2</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>GND</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Red-</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Green-</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Blue-</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>+5V</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Digital GND</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>ID0</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>ID1</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>H Sync</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>V Sync</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>ID3</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <caption>HDMI-A</caption>
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>TMDS Data2+</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>TMDS Data2 Shield</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>TMDS Data2-</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>TMDS Data1+</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>TMDS Data1 Shield</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>TMDS Data1-</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>TMDS Data0+</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>TMDS Data0 Shield</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>TMDS Data0-</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>TMDS Clock+</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>TMDS Clock Shield</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>TMDS Clock-</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>CEC</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>NC</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>SCL</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>SDA</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>DDC/CEC Ground</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>+5V</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Hot Plug Detect</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <div class="footer board">
         <div class="logic area">
             <div class="logic holes"></div>
-            <div class="label border"></div>
+            <div class="label border start"></div>
         </div>
         <div class="gap"></div>
         <div class="power area">

@@ -14,14 +14,26 @@ function resize(width) {
         }
     });
     const columnCount = powerGroupCount * 6 - 1;
-    const totalCount = 5 * columnCount;
+    const logicHoleCount = 5 * columnCount;
     document.querySelectorAll(".logic.holes").forEach(holes => {
         holes.innerHTML = "";
         holes.style = `grid-template-columns: repeat(${columnCount}, 18px);`;
-        for (let i = 0; i < totalCount; i++) {
+        for (let i = 0; i < logicHoleCount; i++) {
             const hole = document.createElement("div");
             hole.className = "hole";
             holes.append(hole);
+        }
+    });
+    document.querySelectorAll(".label.border").forEach(labelBorder => {
+        labelBorder.innerHTML = "";
+        labelBorder.style = `grid-template-columns: repeat(${columnCount}, 18px);`;
+        for (let i = 0; i < columnCount; i++) {
+            const label = document.createElement("div");
+            label.className = "label piece";
+            if (i == 0 || i % 5 == 4) {
+                label.textContent = i + 1;
+            }
+            labelBorder.append(label);
         }
     });
 }
