@@ -25,6 +25,13 @@
                 a.setAttribute("rel", "noreferrer");
                 a.setAttribute("referrerpolicy", "no-referrer");
             });
+            document.querySelectorAll(".code").forEach(code => {
+                const indent = code.getAttribute("indent");
+                if (indent == null) {
+                    return;
+                }
+                code.style.textIndent = (2 * parseInt(indent)) + "em";
+            });
         });
     </script>
 </head>
@@ -38,7 +45,6 @@
                 <th>Kotlin</th>
                 <th>Groovy</th>
                 <th>Javascript</th>
-                <th>Typescript</th>
                 <th>Python</th>
                 <th>MATLAB</th>
             </tr>
@@ -46,9 +52,20 @@
         <tbody>
             <tr>
                 <th>二分支</th>
+                <td>
+                    <div class="code">if (condition) {</div>
+                    <div class="code" indent="1">do();</div>
+                    <div class="code">} else {</div>
+                    <div class="code" indent="1">do();</div>
+                    <div class="code">}</div>
+                </td>
             </tr>
             <tr>
                 <th>多分支</th>
+                <td>
+                    <div class="code">switch (<span title="int, String">value</span>) {</div>
+                    <div class="code">}</div>
+                </td>
             </tr>
             <tr>
                 <th>首循环</th>
@@ -73,7 +90,6 @@
                 <th>Kotlin</th>
                 <th>Groovy</th>
                 <th>Javascript</th>
-                <th>Typescript</th>
                 <th>Python</th>
                 <th>MATLAB</th>
             </tr>

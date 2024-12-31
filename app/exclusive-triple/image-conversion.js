@@ -129,7 +129,7 @@ function convertNext(files, index) {
         convertNext(files, index + 1);
     });
     src.addEventListener("error", event => {
-        console.log(event);
+        console.error(event);
         convertNext(files, index + 1);
     });
     src.src = URL.createObjectURL(files[index]);
@@ -221,7 +221,6 @@ function drawMark(file, src, canvas, context) {
         return;
     }
     context.font = "16px sans-serif";
-    context.fillStyle = "#404040";
     const metrics = context.measureText(text);
     const margin = 6;
     let x, y;
@@ -248,6 +247,8 @@ function drawMark(file, src, canvas, context) {
             break;
     }
     if (x != null && y != null) {
+        context.globalCompositeOperation = "difference";
+        context.fillStyle = "white";
         context.fillText(text, x, y);
     }
     return context;

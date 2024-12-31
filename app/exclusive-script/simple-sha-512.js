@@ -247,7 +247,6 @@ class SHA512 {
             try {
                 this.start();
                 for await (const chunk of file.stream()) { // https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream
-                    console.log(chunk[0], chunk[1]);
                     this.update(chunk);
                 }
                 this.finish();

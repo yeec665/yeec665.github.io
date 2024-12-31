@@ -142,28 +142,28 @@
                 <td class="none"></td>
                 <td></td>
                 <td class="varargs">newLength = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift">unshift</a>(item)</td>
-                <td></td>
+                <td>list.insert(0, item)</td>
             </tr>
             <tr>
                 <th>末尾移除</th>
                 <td>removedItem = list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#removeLast()">removeLast</a>()</td>
                 <td></td>
                 <td>removedItem = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">pop</a>()</td>
-                <td></td>
+                <td>list.pop()</td>
             </tr>
             <tr>
                 <th>开头移除</th>
                 <td>removedItem = list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#removeFirst()">removeFirst</a>()</td>
                 <td></td>
                 <td>removedItem = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift">shift</a>()</td>
-                <td></td>
+                <td>removedItem = list.pop(0)</td>
             </tr>
             <tr>
                 <th>中间插入</th>
                 <td>list.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#add(int,java.lang.Object)">add</a>(index, item)</td>
                 <td></td>
                 <td class="varargs">array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">splice</a>(index, 0, item)</td>
-                <td></td>
+                <td>list.insert(index, item)</td>
             </tr>
             <tr>
                 <th>中间移除</th>
@@ -177,7 +177,17 @@
                     <div>removedItems = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">splice</a>(index, count)</div>
                     <div>newArray = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced">toSpliced</a>(index, count)</div>
                 </td>
-                <td>del list[index]</td>
+                <td>
+                    <div>del list[index]</div>
+                    <div>removedItem = list.pop(index)</div>
+                </td>
+            </tr>
+            <tr>
+                <th>清空</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>list.clear()</td>
             </tr>
             <tr>
                 <th>排序</th>
@@ -187,7 +197,7 @@
                     <div>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">sort</a>((a, b) => 0)</div>
                     <div>sortedArray = array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted">toSorted</a>((a, b) => compareResult)</div>
                 </td>
-                <td></td>
+                <td>list.<a href="https://docs.python.org/3/library/stdtypes.html#list.sort">sort</a>()</td>
             </tr>
             <tr>
                 <th>倒转</th>
@@ -197,7 +207,7 @@
                     <div>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse">reverse</a>()</div>
                     <div>array.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toReversed">reverse</a>()</div>
                 </td>
-                <td></td>
+                <td>list.reverse()</td>
             </tr>
             <tr>
                 <th>映射</th>
@@ -438,21 +448,21 @@
                 <td>map = new HashMap&lt;&gt;();</td>
                 <td></td>
                 <td>map = new Map();</td>
-                <td></td>
+                <td>d = dict()</td>
             </tr>
             <tr>
                 <th>键值对数量</th>
                 <td>map.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html#size()">size</a>()</td>
                 <td></td>
                 <td>map.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/size">size</a></td>
-                <td></td>
+                <td>len(d)</td>
             </tr>
             <tr>
                 <th>判断空映射</th>
                 <td>map.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html#isEmpty()">isEmpty</a>()</td>
                 <td></td>
                 <td>map.size == 0</td>
-                <td></td>
+                <td>len(d) == 0</td>
             </tr>
             <tr>
                 <th>键值对迭代器</th>
@@ -466,7 +476,10 @@
                 <td>map.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html#keySet()">keySet</a>().iterator()</td>
                 <td></td>
                 <td>map.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/keys">keys</a>()[Symbol.iterator]()</td>
-                <td></td>
+                <td>
+                    <div>iter(d)</div>
+                    <div>iter(d.keys())</div>
+                </td>
             </tr>
             <tr>
                 <th>值迭代器</th>
@@ -511,21 +524,21 @@
                 <td>map.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html#containsKey(java.lang.Object)">containsKey</a>(key)</td>
                 <td></td>
                 <td>map.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has">has</a>(key)</td>
-                <td></td>
+                <td>key in d</td>
             </tr>
             <tr>
                 <th>删除键</th>
                 <td>value = map.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html#remove(java.lang.Object)">remove</a>(key)</td>
                 <td></td>
                 <td>map.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/delete">delete</a>(key)</td>
-                <td></td>
+                <td>del d[key]</td>
             </tr>
             <tr>
                 <th>取出值</th>
                 <td>value = map.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html#get(java.lang.Object)">get</a>(key)</td>
                 <td></td>
                 <td>map.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get">get</a>(key)</td>
-                <td></td>
+                <td>d[key]</td>
             </tr>
             <tr>
                 <th>修改旧值</th>
@@ -552,7 +565,7 @@
                 </td>
                 <td></td>
                 <td>map.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set">set</a>(key, value)</td>
-                <td></td>
+                <td>d[key] = value</td>
             </tr>
         </thead>
     </table>

@@ -11,7 +11,7 @@
             <li>break</li>
             <li>case</li>
             <li class="primitive">char</li>
-            <li>const</li>
+            <li data-full="constant">const</li>
             <li>continue</li>
             <li>default</li>
             <li>do</li>
@@ -21,7 +21,7 @@
             <li>extern</li>
             <li class="primitive">float</li>
             <li>for</li>
-            <li>goto</li>
+            <li>go<wbr>to</li>
             <li>if</li>
             <li>inline</li>
             <li class="primitive">int</li>
@@ -33,7 +33,7 @@
             <li>signed</li>
             <li>size<wbr>of</li>
             <li>static</li>
-            <li>struct</li>
+            <li data-full="structure">struct</li>
             <li>switch</li>
             <li>type<wbr>def</li>
             <li>union</li>
@@ -47,12 +47,12 @@
             <li class="reserved">abstract</li>
             <li class="reserved">as</li>
             <li class="reserved">base</li>
-            <li class="reserved primitive">bool</li>
+            <li class="reserved primitive" data-full="boolean">bool</li>
             <li class="reserved">break</li>
             <li class="reserved primitive">byte</li>
             <li class="reserved">case</li>
             <li class="reserved">catch</li>
-            <li class="reserved primitive">char</li>
+            <li class="reserved primitive" data-full="character">char</li>
             <li class="reserved">checked</li>
             <li class="reserved">class</li>
             <li class="reserved">const</li>
@@ -73,11 +73,11 @@
             <li class="reserved primitive">float</li>
             <li class="reserved">for</li>
             <li class="reserved">for<wbr>each</li>
-            <li class="reserved">goto</li>
+            <li class="reserved">go<wbr>to</li>
             <li class="reserved">if</li>
             <li class="reserved">implicit</li>
             <li class="reserved">in</li>
-            <li class="reserved primitive">int</li>
+            <li class="reserved primitive" data-full="integer">int</li>
             <li class="reserved">interface</li>
             <li class="reserved">internal</li>
             <li class="reserved">is</li>
@@ -151,6 +151,33 @@
             <li class="contextual">where</li>
             <li class="contextual">yield</li>
         </ul>
+        <ul data-lang="Go" data-ref="https://go.dev/ref/spec#Keywords">
+            <li>break</li>
+            <li>case</li>
+            <li>chan</li>
+            <li>const</li>
+            <li>continue</li>
+            <li>default</li>
+            <li>defer</li>
+            <li>else</li>
+            <li>fall<wbr>through</li>
+            <li>for</li>
+            <li data-full="function">func</li>
+            <li>go</li>
+            <li>go<wbr>to</li>
+            <li>if</li>
+            <li>import</li>
+            <li>interface</li>
+            <li>map</li>
+            <li>package</li>
+            <li>range</li>
+            <li>return</li>
+            <li>select</li>
+            <li>struct</li>
+            <li>switch</li>
+            <li>type</li>
+            <li data-full="variable">var</li>
+        </ul>
         <ul data-lang="java">
             <li class="reserved definition">abstract</li>
             <li class="reserved">assert</li>
@@ -159,7 +186,7 @@
             <li class="reserved primitive">byte</li>
             <li class="reserved control">case</li>
             <li class="reserved control">catch</li>
-            <li class="reserved primitive">char</li>
+            <li class="reserved primitive" data-full="character">char</li>
             <li class="reserved definition">class</li>
             <li class="reserved unused">const</li>
             <li class="reserved control">continue</li>
@@ -167,7 +194,7 @@
             <li class="reserved control">do</li>
             <li class="reserved primitive">double</li>
             <li class="reserved control">else</li>
-            <li class="reserved definition">enum</li>
+            <li class="reserved definition" data-full="enumeration">enum</li>
             <li class="reserved definition">extends</li>
             <li class="reserved definition">final</li>
             <li class="reserved control">finally</li>
@@ -178,7 +205,7 @@
             <li class="reserved definition">implements</li>
             <li class="reserved">import</li>
             <li class="reserved">instance<wbr>of</li>
-            <li class="reserved primitive">int</li>
+            <li class="reserved primitive" data-full="integer">int</li>
             <li class="reserved definition">interface</li>
             <li class="reserved primitive">long</li>
             <li class="reserved definition">native</li>
@@ -190,7 +217,7 @@
             <li class="reserved control">return</li>
             <li class="reserved primitive">short</li>
             <li class="reserved definition">static</li>
-            <li class="reserved definition">strict<wbr>fp</li>
+            <li class="reserved definition" data-full="strict floating point">strict<wbr>fp</li>
             <li class="reserved">super</li>
             <li class="reserved control">switch</li>
             <li class="reserved definition">synchronized</li>
@@ -259,8 +286,8 @@
             <li class="soft">finally</li>
             <li class="soft">get</li>
             <li class="soft">import</li>
-            <li class="soft">init</li>
-            <li class="soft">param</li>
+            <li class="soft" data-full="initialize">init</li>
+            <li class="soft" data-full="parameter">param</li>
             <li class="soft">property</li>
             <li class="soft">receiver</li>
             <li class="soft">set</li>
@@ -282,8 +309,8 @@
             <li class="modifier">inline</li>
             <li class="modifier">inner</li>
             <li class="modifier">internal</li>
-            <li class="modifier">lateinit</li>
-            <li class="modifier">noinline</li>
+            <li class="modifier">late<wbr>init</li>
+            <li class="modifier">no<wbr>inline</li>
             <li class="modifier">open</li>
             <li class="modifier">operator</li>
             <li class="modifier">out</li>
@@ -294,8 +321,8 @@
             <li class="modifier">reified</li>
             <li class="modifier">sealed</li>
             <li class="modifier">suspend</li>
-            <li class="modifier">tailrec</li>
-            <li class="modifier">verarg</li>
+            <li class="modifier" data-full="tail recursive">tail<wbr>rec</li>
+            <li class="modifier">ver<wbr>arg</li>
             <li class="identifier">field</li>
             <li class="identifier">it</li>
         </ul>
@@ -318,7 +345,7 @@
             <li>final</li>
             <li>finally</li>
             <li>for</li>
-            <li class="unused">goto</li>
+            <li class="unused">go<wbr>to</li>
             <li>if</li>
             <li>implements</li>
             <li>import</li>
@@ -360,7 +387,7 @@
             <li>delete</li>
             <li class="control">do</li>
             <li class="control">else</li>
-            <li>enum</li>
+            <li data-full="enumeration">enum</li>
             <li>export</li>
             <li>extends</li>
             <li>false</li>
@@ -381,7 +408,7 @@
             <li>true</li>
             <li class="control">try</li>
             <li>type<wbr>of</li>
-            <li>var</li>
+            <li data-full="variable">var</li>
             <li>void</li>
             <li class="control">while</li>
             <li>with</li>
@@ -405,7 +432,7 @@
             <li class="control">break</li>
             <li>class</li>
             <li class="control">continue</li>
-            <li>def</li>
+            <li data-full="define">def</li>
             <li>del</li>
             <li>elif</li>
             <li>else</li>

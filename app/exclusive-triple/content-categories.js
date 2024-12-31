@@ -2,12 +2,24 @@ document.addEventListener("readystatechange", () => {
     if (document.readyState !== "interactive") {
         return;
     }
-    document.querySelectorAll("li.tag").forEach(li => {
+    document.querySelectorAll("ul").forEach(ul => {
+        const all = ul.dataset.all;
+        if (all != null) {
+            ul.querySelectorAll("li").forEach(li => {
+                li.classList.add(all);
+            });
+        }
+    });
+    document.querySelectorAll("li").forEach(li => {
         makeAnchor(li, li.textContent.trim());
     });
     function makeAnchor(li, text) {
         const anchor = document.createElement("a");
-        anchor.setAttribute("href", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/" + text);
+        if (li.classList.contains("svg")) {
+            anchor.setAttribute("href", "https://developer.mozilla.org/en-US/docs/Web/SVG/Element/" + text);
+        } else {
+            anchor.setAttribute("href", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/" + text);
+        }
         anchor.setAttribute("target", "_blank");
         anchor.setAttribute("rel", "noreferrer");
         anchor.setAttribute("referrerpolicy", "no-referrer");
@@ -16,7 +28,7 @@ document.addEventListener("readystatechange", () => {
         li.append(anchor);
     }
     function clearHierarchy() {
-        document.querySelectorAll("li.tag.show-hierarchy").forEach(li => {
+        document.querySelectorAll("li.show-hierarchy").forEach(li => {
             const anchor = li.querySelector("a");
             if (anchor == null) {
                 return;
@@ -28,7 +40,7 @@ document.addEventListener("readystatechange", () => {
         });
     }
     document.body.addEventListener("mouseover", event => {
-        const li = event.target?.closest("li.tag");
+        const li = event.target?.closest("li");
         if (li == null || li.classList.contains("show-hierarchy")) {
             return;
         }
@@ -65,7 +77,7 @@ document.addEventListener("readystatechange", () => {
     });
     document.body.addEventListener("mouseout", event => {
         const li = event.target;
-        if (li != null && li.matches("li.tag.show-hierarchy")) {
+        if (li != null && li.matches("li.show-hierarchy")) {
             clearHierarchy();
         }
     });
