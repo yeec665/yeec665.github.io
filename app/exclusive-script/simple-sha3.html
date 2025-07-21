@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SHA3</title>
+    <style>
+        main {
+            width: fit-content;
+            margin: auto;
+        }
+        table {
+            margin: 1em auto;
+            border-collapse: collapse;
+        }
+        th,td {
+            border: 1px solid gray;
+            padding: 2px 9px;
+        }
+        td.result {
+            font-family: Courier, monospace;
+            word-wrap: break-word;
+            word-break: break-all;
+            line-break: loose;
+        }
+        span {
+            margin: 0 1em;
+        }
+    </style>
+    <script src="simple-sha3.js"></script>
+</head>
+<body>
+    <main>
+        <h2>SHA3 calculator for files</h2>
+        <div><input id="fileInput" type="file"></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>File</th>
+                    <th>Byte size</th>
+                    <th>Hash type</th>
+                    <th>Hash value</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </main>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可执行文件中定义的机器类型</title>
+    <style>
+        table {
+            margin: auto;
+        }
+        th,td {
+            padding: 2px 9px;
+            background-color: hsl(0, 0%, 99%);
+        }
+        tr:nth-child(odd)>td {
+            background-color: hsl(0, 0%, 93%);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>十六进制</th>
+                <th>十进制</th>
+                <th>英文</th>
+                <th>中文</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr title="IMAGE_FILE_RELOCS_STRIPPED">
+                <td>0x1</td>
+                <td>1</td>
+                <td>Image only, Windows CE, and Microsoft Windows NT and later. This indicates that the file does not contain base relocations and must therefore be loaded at its preferred base address. If the base address is not available, the loader reports an error. The default behavior of the linker is to strip base relocations from executable (EXE) files.</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_EXECUTABLE_IMAGE">
+                <td>0x2</td>
+                <td>2</td>
+                <td>Image only. This indicates that the image file is valid and can be run. If this flag is not set, it indicates a linker error.</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_LINE_NUMS_STRIPPED">
+                <td>0x4</td>
+                <td>4</td>
+                <td>COFF line numbers have been removed. This flag is deprecated and should be zero.</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_LOCAL_SYMS_STRIPPED">
+                <td>0x8</td>
+                <td>8</td>
+                <td>COFF symbol table entries for local symbols have been removed. This flag is deprecated and should be zero.</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_AGGRESSIVE_WS_TRIM">
+                <td>0x10</td>
+                <td>16</td>
+                <td>Obsolete. Aggressively trim working set. This flag is deprecated for Windows 2000 and later and must be zero.</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_LARGE_ADDRESS_AWARE">
+                <td>0x20</td>
+                <td>32</td>
+                <td>Application can handle &gt; 2-GB addresses.</td>
+                <td>应用程序可以处理大于2GB的地址。</td>
+            </tr>
+            <tr title="">
+                <td>0x40</td>
+                <td>64</td>
+                <td>This flag is reserved for future use.</td>
+                <td>这个标志位保留供未来使用。</td>
+            </tr>
+            <tr title="IMAGE_FILE_BYTES_REVERSED_LO">
+                <td>0x80</td>
+                <td>128</td>
+                <td>Little endian: the least significant bit (LSB) precedes the most significant bit (MSB) in memory. This flag is deprecated and should be zero.</td>
+                <td>小端序：在内存中低位在前高位在后。这个标志位已经废弃，应该为零。</td>
+            </tr>
+            <tr title="IMAGE_FILE_32BIT_MACHINE">
+                <td>0x100</td>
+                <td>256</td>
+                <td>Machine is based on a 32-bit-word architecture.</td>
+                <td>机器基于32位字长的架构。</td>
+            </tr>
+            <tr title="IMAGE_FILE_DEBUG_STRIPPED">
+                <td>0x200</td>
+                <td>512</td>
+                <td>Debugging information is removed from the image file.</td>
+                <td>调试信息从这个镜像文件中移除了。</td>
+            </tr>
+            <tr title="IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP">
+                <td>0x400</td>
+                <td>1024</td>
+                <td>If the image is on removable media, fully load it and copy it to the swap file.</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_NET_RUN_FROM_SWAP">
+                <td>0x800</td>
+                <td>2048</td>
+                <td>If the image is on network media, fully load it and copy it to the swap file.</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_SYSTEM">
+                <td>0x1000</td>
+                <td>4096</td>
+                <td>The image file is a system file, not a user program.</td>
+                <td>这个镜像文件是一个系统文件，不是用户程序。</td>
+            </tr>
+            <tr title="IMAGE_FILE_DLL">
+                <td>0x2000</td>
+                <td>8192</td>
+                <td>The image file is a dynamic-link library (DLL). Such files are considered executable files for almost all purposes, although they cannot be directly run.</td>
+                <td>这个镜像文件是一个动态链接库。这样的文件在几乎所有用途下都被认为是可执行的，尽管它们不能直接运行。</td>
+            </tr>
+            <tr title="IMAGE_FILE_UP_SYSTEM_ONLY">
+                <td>0x4000</td>
+                <td>16384</td>
+                <td>The file should be run only on a uniprocessor machine.</td>
+                <td>这个文件应该仅在单处理器的机器上运行。</td>
+            </tr>
+            <tr title="IMAGE_FILE_BYTES_REVERSED_HI">
+                <td>0x8000</td>
+                <td>32768</td>
+                <td>Big endian: the MSB precedes the LSB in memory. This flag is deprecated and should be zero.</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

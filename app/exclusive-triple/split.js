@@ -57,6 +57,7 @@ class Split {
         let part;
         if ((typeof item) === "string") {
             part = document.createElement("iframe");
+            part.setAttribute("sandbox", "allow-scripts");
             part.src = item;
         } else {
             part = document.createElement("div");

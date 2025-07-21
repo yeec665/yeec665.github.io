@@ -137,6 +137,7 @@ class Browser {
         this.historyPanel = document.createElement("main");
         /** @type {HTMLIFrameElement} */
         this.iframe = document.createElement("iframe");
+        this.iframe.setAttribute("sandbox", "allow-scripts");
         this.addressBar.addEventListener("click", event => {
             if (this.click != null) {
                 this.click.call(this, event);
@@ -507,7 +508,7 @@ class Browser {
     }
 }
 document.addEventListener("readystatechange", () => {
-    if (document.readyState == "interactive") {
+    if (document.readyState === "interactive") {
         window.app = new Browser();
     }
 });

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可执行文件中定义的机器类型</title>
+    <style>
+        table {
+            margin: auto;
+        }
+        th,td {
+            padding: 2px 9px;
+            background-color: hsl(0, 0%, 99%);
+        }
+        tr:nth-child(odd)>td {
+            background-color: hsl(0, 0%, 93%);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>十六进制</th>
+                <th>十进制</th>
+                <th>英文</th>
+                <th>中文</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr title="IMAGE_FILE_MACHINE_UNKNOWN">
+                <td>0x0</td>
+                <td>0</td>
+                <td>The content of this field is assumed to be applicable to any machine type</td>
+                <td>未知类型；假定适用于任何机器</td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_ALPHA">
+                <td>0xb8</td>
+                <td>184</td>
+                <td>Alpha AXP, 32-bit address space</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_ALPHA64">
+                <td>0x11c</td>
+                <td>284</td>
+                <td>Alpha 64, 64-bit address space</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_AM33">
+                <td>0x1</td>
+                <td>1</td>
+                <td>Matsushita AM33</td>
+                <td>松下AM33</td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_AMD64">
+                <td>0x21d8</td>
+                <td>8664</td>
+                <td>x64</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_ARM">
+                <td>0x1</td>
+                <td>1</td>
+                <td>ARM little endian</td>
+                <td>高级精简指令集计算机，小端序</td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_ARMNT">
+                <td>0x1</td>
+                <td>1</td>
+                <td>ARM Thumb-2 little endian</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_AXP64">
+                <td>0x11c</td>
+                <td>284</td>
+                <td>AXP 64 (Same as Alpha 64)</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_I386">
+                <td>0xe</td>
+                <td>14</td>
+                <td>Intel 386 or later processors and compatible processors</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_IA64">
+                <td>0xc8</td>
+                <td>200</td>
+                <td>Intel Itanium processor family</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_LOONGARCH32">
+                <td>0x1858</td>
+                <td>6232</td>
+                <td>LoongArch 32-bit processor family</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_LOONGARCH64">
+                <td>0x1878</td>
+                <td>6264</td>
+                <td>LoongArch 64-bit processor family</td>
+                <td>龙架构64为处理器家族</td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_M32R">
+                <td>0x2351</td>
+                <td>9041</td>
+                <td>Mitsubishi M32R little endian</td>
+                <td>三菱M32R，小端序</td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_MIPS16">
+                <td>0x10a</td>
+                <td>266</td>
+                <td>MIPS16</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_MIPSFPU">
+                <td>0x16e</td>
+                <td>366</td>
+                <td>MIPS with FPU</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_MIPSFPU16">
+                <td>0x1d2</td>
+                <td>466</td>
+                <td>MIPS16 with FPU</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_POWERPC">
+                <td>0x1</td>
+                <td>1</td>
+                <td>Power PC little endian</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_POWERPCFP">
+                <td>0x1</td>
+                <td>1</td>
+                <td>Power PC with floating point support</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_R3000BE">
+                <td>0xa0</td>
+                <td>160</td>
+                <td>MIPS I compatible 32-bit big endian</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_R3000">
+                <td>0xa2</td>
+                <td>162</td>
+                <td>MIPS I compatible 32-bit little endian</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_R4000">
+                <td>0xa6</td>
+                <td>166</td>
+                <td>MIPS III compatible 64-bit little endian</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_R10000">
+                <td>0xa8</td>
+                <td>168</td>
+                <td>MIPS IV compatible 64-bit little endian</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_RISCV32">
+                <td>0x13a8</td>
+                <td>5032</td>
+                <td>RISC-V 32-bit address space</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_RISCV64">
+                <td>0x13c8</td>
+                <td>5064</td>
+                <td>RISC-V 64-bit address space</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_RISCV128">
+                <td>0x1408</td>
+                <td>5128</td>
+                <td>RISC-V 128-bit address space</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_SH3">
+                <td>0x1</td>
+                <td>1</td>
+                <td>Hitachi SH3</td>
+                <td>日立SH3</td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_SH3DSP">
+                <td>0x1</td>
+                <td>1</td>
+                <td>Hitachi SH3 DSP</td>
+                <td>日立SH3数字信号处理器</td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_SH4">
+                <td>0x1</td>
+                <td>1</td>
+                <td>Hitachi SH4</td>
+                <td>日立SH4</td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_SH5">
+                <td>0x1</td>
+                <td>1</td>
+                <td>Hitachi SH5</td>
+                <td>日立SH5</td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_THUMB">
+                <td>0x1</td>
+                <td>1</td>
+                <td>Thumb</td>
+                <td></td>
+            </tr>
+            <tr title="IMAGE_FILE_MACHINE_WCEMIPSV2">
+                <td>0xa9</td>
+                <td>169</td>
+                <td>MIPS little-endian WCE v2</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
