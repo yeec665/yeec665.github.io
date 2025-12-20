@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="qsq">
     <meta name="keywords" content="fullscreen">
     <meta name="color-scheme" content="dark">
+    <meta name="viewport" content="user-scalable=no">
     <title>black</title>
     <link rel="shortcut icon" href="../image/favicon.svg">
     <style>
@@ -22,10 +24,18 @@
             event.preventDefault();
         });
         window.addEventListener("keydown", event => {
-            if (event.key == "Control") {
-                event.preventDefault();
+            if (event.key == "Tab") {
+                //
+            } else if (event.key == "F11") {
+                document.body.requestFullscreen();
+            } else if (event.key == "Escape") {
+                document.exitFullscreen();
+            } else if (event.key == "Control") {
                 document.documentElement.classList.add("ctrl");
+            } else {
+                return;
             }
+            event.preventDefault();
         });
         window.addEventListener("keyup", event => {
             if (event.key == "Control") {
