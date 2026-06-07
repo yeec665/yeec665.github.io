@@ -22,7 +22,7 @@
             }
             document.querySelectorAll("a").forEach(a => {
                 a.setAttribute("target", "_blank");
-                a.setAttribute("rel", "noreferrer");
+                a.setAttribute("rel", "noreferrer noopener");
                 a.setAttribute("referrerpolicy", "no-referrer");
             });
             document.querySelectorAll(".code").forEach(code => {

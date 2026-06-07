@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="qsq">
+    <meta name="keywords" content="article,quiz">
+    <title>虚构测试</title>
+    <style>
+        article {
+            margin: auto;
+            max-width: 1220px;
+            font-size: 22px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .paragraph {
+            padding: 10px;
+        }
+        .question {
+            counter-increment: question;
+        }
+        .question::before {
+            content: counter(question) ". ";
+        }
+        .choices {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .choice {
+            counter-increment: choice;
+        }
+        .choice::before {
+            content: counter(choice, upper-latin) ". ";
+        }
+        .reveal .answer {
+            font-weight: bold;
+            color: brown;
+        }
+        .comment {
+            display: none;
+            font-style: italic;
+            color: gray;
+        }
+        .reveal .comment {
+            display: block;
+        }
+    </style>
+    <script>
+        window.answer = "ADBCB" + "AACBA";
+        window.addEventListener("keydown", event => {
+            if (event.key == "F1") {
+                event.preventDefault();
+                document.body.classList.toggle("reveal");
+            }
+        });
+    </script>
+</head>
+<body>
+    <article>
+        <h1>虚构测试</h1>
+        <div class="paragraph question">以下哪一个作家是虚构的？</div>
+        <div class="paragraph choices">
+            <div class="choice answer">青山蓝山</div>
+            <div class="choice">柯南道尔</div>
+            <div class="choice">卡夫卡</div>
+            <div class="choice">博尔赫斯</div>
+        </div>
+        <div class="paragraph question">以下哪一个研究所是虚构的？</div>
+        <div class="paragraph choices">
+            <div class="choice">上海应用物理研究所</div>
+            <div class="choice">先进制造技术研究所</div>
+            <div class="choice">农业科学院都市农业研究所</div>
+            <div class="choice answer">基本粒子工学研究所</div>
+        </div>
+        <div class="paragraph question">以下哪一种花是虚构的？</div>
+        <div class="paragraph choices">
+            <div class="choice">仙女木</div>
+            <div class="choice answer">永久香</div>
+            <div class="choice">绒球葱</div>
+            <div class="choice">金盏花</div>
+        </div>
+        <div class="paragraph question">以下哪一种矿石是虚构的？</div>
+        <div class="paragraph choices">
+            <div class="choice">青金石</div>
+            <div class="choice">冰洲石</div>
+            <div class="choice answer">夜泊石</div>
+            <div class="choice">孔雀石</div>
+        </div>
+        <div class="paragraph question">以下哪一种饮料是虚构的？</div>
+        <div class="paragraph choices">
+            <div class="choice">崂山可乐</div>
+            <div class="choice answer">核子可乐</div>
+            <div class="choice">Dr Pepper</div>
+            <div class="choice">魔爪能量</div>
+        </div>
+        <div class="paragraph question">以下哪一种粒子是虚构的？</div>
+        <div class="paragraph choices">
+            <div class="choice answer">米诺夫斯基粒子</div>
+            <div class="choice">阳电子</div>
+            <div class="choice">阿尔法粒子</div>
+            <div class="choice">希格斯粒子</div>
+        </div>
+        <div class="paragraph question">以下哪一种物质是虚构的？</div>
+        <div class="paragraph choices">
+            <div class="choice answer">LCL</div>
+            <div class="choice">GABA</div>
+            <div class="choice">ADP</div>
+            <div class="choice">NADPH</div>
+        </div>
+        <div class="paragraph question">以下哪一个画师是虚构的？</div>
+        <div class="paragraph choices">
+            <div class="choice">海猫络合物</div>
+            <div class="choice">幻象黑兔</div>
+            <div class="choice answer">埃罗芒阿老师</div>
+            <div class="choice">harrymiao</div>
+        </div>
+        <div class="paragraph question">以下哪一场战斗是虚构的？</div>
+        <div class="paragraph choices">
+            <div class="choice">英法百年战争</div>
+            <div class="choice answer">亚斯提会战</div>
+            <div class="choice">十字军东征</div>
+            <div class="choice">南斯拉夫内战</div>
+        </div>
+        <div class="paragraph question">以下哪一个时代是虚构的？</div>
+        <div class="paragraph choices">
+            <div class="choice answer">掩体纪元</div>
+            <div class="choice">平成时代</div>
+            <div class="choice">寒武纪</div>
+            <div class="choice">中世纪</div>
+        </div>
+        <div class="paragraph question">以下哪一种动物是虚构的？</div>
+        <div class="paragraph choices">
+            <div class="choice">蜘蛛</div>
+            <div class="choice answer">貔貅</div>
+            <div class="choice">狐狸</div>
+            <div class="choice">珊瑚</div>
+        </div>
+    </article>
+</body>
+</html>

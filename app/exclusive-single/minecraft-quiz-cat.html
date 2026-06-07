@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-Hans">
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="qsq">
@@ -39,6 +39,8 @@
         }
         .comment {
             display: none;
+            font-style: italic;
+            color: gray;
         }
         .reveal .comment {
             display: block;
@@ -46,6 +48,12 @@
     </style>
     <script>
         window.answer = "BCADC" + "DDBDD";
+        window.addEventListener("keydown", event => {
+            if (event.key == "F1") {
+                event.preventDefault();
+                document.body.classList.toggle("reveal");
+            }
+        });
     </script>
 </head>
 <body>

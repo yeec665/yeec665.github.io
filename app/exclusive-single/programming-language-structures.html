@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-Hans">
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="qsq">
@@ -27,7 +27,7 @@
             }
             document.querySelectorAll("a").forEach(a => {
                 a.setAttribute("target", "_blank");
-                a.setAttribute("rel", "noreferrer");
+                a.setAttribute("rel", "noreferrer noopener");
                 a.setAttribute("referrerpolicy", "no-referrer");
             });
         });
@@ -496,21 +496,21 @@
                     <div>for (const entry of map) {}</div>
                     <div>for (const [key, value] of map) {}</div>
                 </td>
-                <td></td>
+                <td>for key, value in d.items():</td>
             </tr>
             <tr>
                 <th>for遍历键集合</th>
                 <td>for (K key : map.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html#keySet()">keySet</a>()) {}</td>
                 <td></td>
                 <td>for (const key of map.keys()) {}</td>
-                <td></td>
+                <td>for key in d.keys():</td>
             </tr>
             <tr>
                 <th>for遍历值</th>
                 <td>for (V value : map.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html#values()">values</a>()) {}</td>
                 <td></td>
                 <td>for (const value of map.values()) {}</td>
-                <td></td>
+                <td>for value in d.values():</td>
             </tr>
             <tr>
                 <th>不中止遍历</th>

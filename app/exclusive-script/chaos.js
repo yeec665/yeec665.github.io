@@ -30,15 +30,15 @@ document.addEventListener("readystatechange", () => {
     function step() {
         /** @type {CanvasRenderingContext2D} */
         const ctx = cv.getContext("2d");
-        if ((t & 0xF) == 0) {
+        if ((t & 0xf) == 0) {
             ctx.fillStyle = "rgb(0 0 0/0.03125)";
             ctx.fillRect(0, 0, width, height);
         }
         ctx.lineWidth = 3.0;
         if (z >= 10) {
-            ctx.strokeStyle = "rgb(" + Math.min(20 * (z - 10), 255) + " 220 0/0.75)";
+            ctx.strokeStyle = `rgb(${Math.min(20 * (z - 10), 255)} 220 0/0.75)`;
         } else {
-            ctx.strokeStyle = "rgb(0 220 " + Math.min(20 * (10 - z), 255) + "/0.75)";
+            ctx.strokeStyle = `rgb(0 220 ${Math.min(20 * (10 - z), 255)}/0.75)`;
         }
         ctx.beginPath();
         ctx.moveTo(0.5 * width + mag * x, 0.5 * height + mag * y);

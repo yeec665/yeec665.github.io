@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a+a {
+            margin-left: 1em;
+        }
+    </style>
+</head>
+<body>
+    <table id="table-font" class="sortable">
+        <thead>
+            <tr style="cursor: pointer;">
+                <th>Name</th>
+                <th>Template</th>
+                <th>Extension</th>
+                <th>Reference</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>collection</td>
+                <td>
+                    <a href="font/collection">font/collection</a>
+                </td>
+                <td></td>
+                <td><a href=".">RFC8081</a></td>
+            </tr>
+            <tr>
+                <td>otf</td>
+                <td>
+                    <a href="font/otf">font/otf</a>
+                </td>
+                <td>otf</td>
+                <td><a href=".">RFC8081</a></td>
+            </tr>
+            <tr>
+                <td>sfnt</td>
+                <td>
+                    <a href="font/sfnt">font/sfnt</a>
+                </td>
+                <td></td>
+                <td><a href=".">RFC8081</a></td>
+            </tr>
+            <tr>
+                <td>ttf</td>
+                <td>
+                    <a href="font/ttf">font/ttf</a>
+                </td>
+                <td>ttf</td>
+                <td><a href=".">RFC8081</a></td>
+            </tr>
+            <tr>
+                <td>woff</td>
+                <td>
+                    <a href="font/woff">font/woff</a>
+                </td>
+                <td>woff</td>
+                <td><a href=".">RFC8081</a></td>
+            </tr>
+            <tr>
+                <td>woff2</td>
+                <td>
+                    <a href="font/woff2">font/woff2</a>
+                </td>
+                <td></td>
+                <td><a href=".">RFC8081</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        document.querySelectorAll("a").forEach(a => {
+            if (a.textContent.match(/RFC\d+/)) {
+                a.setAttribute("href", `https://www.rfc-editor.org/rfc/${a.textContent.toLowerCase()}.html`);
+            }
+        });
+    </script>
+</body>
+</html>
